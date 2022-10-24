@@ -23,3 +23,1186 @@
     year = {2008},
     url = {http://grs.zju.edu.cn/redir.php?catalog_id=10038&object_id=12877},
 }
+% Please download the latest anthology.bib from
+%
+% http://aclweb.org/anthology/anthology.bib.gz
+% newest vc
+@inproceedings{gagast,
+    title = "Automatic Song Translation for Tonal Languages",
+    author = "Guo, Fenfei  and
+      Zhang, Chen  and
+      Zhang, Zhirui  and
+      He, Qixin  and
+      Zhang, Kejun  and
+      Xie, Jun  and
+      Boyd-Graber, Jordan",
+    booktitle = "Findings of the Association for Computational Linguistics: ACL 2022",
+    month = may,
+    year = "2022",
+    address = "Dublin, Ireland",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.findings-acl.60",
+    doi = "10.18653/v1/2022.findings-acl.60",
+    pages = "729--743",
+    abstract = "This paper develops automatic song translation (AST) for tonal languages and addresses the unique challenge of aligning words{'} tones with melody of a song in addition to conveying the original meaning. We propose three criteria for effective AST{---}preserving meaning, singability and intelligibility{---}and design metrics for these criteria. We develop a new benchmark for English{--}Mandarin song translation and develop an unsupervised AST system, Guided AliGnment for Automatic Song Translation (GagaST), which combines pre-training with three decoding constraints. Both automatic and human evaluations show GagaST successfully balances semantics and singability.",
+}
+@article{LMD,
+author = {Yu, Yi and Srivastava, Abhishek and Canales, Simon},
+title = {Conditional LSTM-GAN for Melody Generation from Lyrics},
+year = {2021},
+issue_date = {February 2021},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {17},
+number = {1},
+issn = {1551-6857},
+url = {https://doi.org/10.1145/3424116},
+doi = {10.1145/3424116},
+abstract = {Melody generation from lyrics has been a challenging research issue in the field of artificial intelligence and music, which enables us to learn and discover latent relationships between interesting lyrics and accompanying melodies. Unfortunately, the limited availability of a paired lyrics–melody dataset with alignment information has hindered the research progress. To address this problem, we create a large dataset consisting of 12,197 MIDI songs each with paired lyrics and melody alignment through leveraging different music sources where alignment relationship between syllables and music attributes is extracted. Most importantly, we propose a novel deep generative model, conditional Long Short-Term Memory (LSTM)–Generative Adversarial Network for melody generation from lyrics, which contains a deep LSTM generator and a deep LSTM discriminator both conditioned on lyrics. In particular, lyrics-conditioned melody and alignment relationship between syllables of given lyrics and notes of predicted melody are generated simultaneously. Extensive experimental results have proved the effectiveness of our proposed lyrics-to-melody generative model, where plausible and tuneful sequences can be inferred from lyrics.},
+journal = {ACM Trans. Multimedia Comput. Commun. Appl.},
+month = {apr},
+articleno = {35},
+numpages = {20},
+keywords = {Lyrics-conditioned melody generation, conditional LSTM-GAN}
+}
+@inproceedings{songmass,
+  title={Songmass: Automatic song writing with pre-training and alignment constraint},
+  author={Sheng, Zhonghao and Song, Kaitao and Tan, Xu and Ren, Yi and Ye, Wei and Zhang, Shikun and Qin, Tao},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={35},
+  number={15},
+  pages={13798--13805},
+  year={2021}
+}
+@inproceedings{diffsinger,
+  title={Diffsinger: Singing voice synthesis via shallow diffusion mechanism},
+  author={Liu, Jinglin and Li, Chengxi and Ren, Yi and Chen, Feiyang and Zhao, Zhou},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={36},
+  number={10},
+  pages={11020--11028},
+  year={2022}
+}
+@inproceedings{nsvb,
+    title = "Learning the Beauty in Songs: Neural Singing Voice Beautifier",
+    author = "Liu, Jinglin  and
+      Li, Chengxi  and
+      Ren, Yi  and
+      Zhu, Zhiying  and
+      Zhao, Zhou",
+    booktitle = "Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = may,
+    year = "2022",
+    address = "Dublin, Ireland",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.acl-long.549",
+    doi = "10.18653/v1/2022.acl-long.549",
+    pages = "7970--7983",
+    abstract = "We are interested in a novel task, singing voice beautification (SVB). Given the singing voice of an amateur singer, SVB aims to improve the intonation and vocal tone of the voice, while keeping the content and vocal timbre. Current automatic pitch correction techniques are immature, and most of them are restricted to intonation but ignore the overall aesthetic quality. Hence, we introduce Neural Singing Voice Beautifier (NSVB), the first generative model to solve the SVB task, which adopts a conditional variational autoencoder as the backbone and learns the latent representations of vocal tone. In NSVB, we propose a novel time-warping approach for pitch correction: Shape-Aware Dynamic Time Warping (SADTW), which ameliorates the robustness of existing time-warping approaches, to synchronize the amateur recording with the template pitch curve. Furthermore, we propose a latent-mapping algorithm in the latent space to convert the amateur vocal tone to the professional one. To achieve this, we also propose a new dataset containing parallel singing recordings of both amateur and professional versions. Extensive experiments on both Chinese and English songs demonstrate the effectiveness of our methods in terms of both objective and subjective metrics. Audio samples are available at \url{https://neuralsvb.github.io}. Codes: \url{https://github.com/MoonInTheRiver/NeuralSVB}.",
+}
+@inproceedings{liu-etal-2022-learning-beauty,
+    title = "Learning the Beauty in Songs: Neural Singing Voice Beautifier",
+    author = "Liu, Jinglin  and
+      Li, Chengxi  and
+      Ren, Yi  and
+      Zhu, Zhiying  and
+      Zhao, Zhou",
+    booktitle = "Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = may,
+    year = "2022",
+    address = "Dublin, Ireland",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.acl-long.549",
+    doi = "10.18653/v1/2022.acl-long.549",
+    pages = "7970--7983",
+    abstract = "We are interested in a novel task, singing voice beautification (SVB). Given the singing voice of an amateur singer, SVB aims to improve the intonation and vocal tone of the voice, while keeping the content and vocal timbre. Current automatic pitch correction techniques are immature, and most of them are restricted to intonation but ignore the overall aesthetic quality. Hence, we introduce Neural Singing Voice Beautifier (NSVB), the first generative model to solve the SVB task, which adopts a conditional variational autoencoder as the backbone and learns the latent representations of vocal tone. In NSVB, we propose a novel time-warping approach for pitch correction: Shape-Aware Dynamic Time Warping (SADTW), which ameliorates the robustness of existing time-warping approaches, to synchronize the amateur recording with the template pitch curve. Furthermore, we propose a latent-mapping algorithm in the latent space to convert the amateur vocal tone to the professional one. To achieve this, we also propose a new dataset containing parallel singing recordings of both amateur and professional versions. Extensive experiments on both Chinese and English songs demonstrate the effectiveness of our methods in terms of both objective and subjective metrics. Audio samples are available at \url{https://neuralsvb.github.io}. Codes: \url{https://github.com/MoonInTheRiver/NeuralSVB}.",
+}
+@article{act,
+  title={Adaptive computation time for recurrent neural networks},
+  author={Graves, Alex},
+  journal={arXiv preprint arXiv:1603.08983},
+  year={2016}
+}
+@inproceedings{backtrans,
+    title = "Improving Neural Machine Translation Models with Monolingual Data",
+    author = "Sennrich, Rico  and
+      Haddow, Barry  and
+      Birch, Alexandra",
+    booktitle = "Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = aug,
+    year = "2016",
+    address = "Berlin, Germany",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/P16-1009",
+    doi = "10.18653/v1/P16-1009",
+    pages = "86--96",
+}
+@inproceedings{backtrans-noise,
+    title = "Understanding Back-Translation at Scale",
+    author = "Edunov, Sergey  and
+      Ott, Myle  and
+      Auli, Michael  and
+      Grangier, David",
+    booktitle = "Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing",
+    month = oct # "-" # nov,
+    year = "2018",
+    address = "Brussels, Belgium",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/D18-1045",
+    doi = "10.18653/v1/D18-1045",
+    pages = "489--500",
+    abstract = "An effective method to improve neural machine translation with monolingual data is to augment the parallel training corpus with back-translations of target language sentences. This work broadens the understanding of back-translation and investigates a number of methods to generate synthetic source sentences. We find that in all but resource poor settings back-translations obtained via sampling or noised beam outputs are most effective. Our analysis shows that sampling or noisy synthetic data gives a much stronger training signal than data generated by beam or greedy search. We also compare how synthetic data compares to genuine bitext and study various domain effects. Finally, we scale to hundreds of millions of monolingual sentences and achieve a new state of the art of 35 BLEU on the WMT{'}14 English-German test set.",
+}
+@article{telemelody,
+  author    = {Zeqian Ju and
+               Peiling Lu and
+               Xu Tan and
+               Rui Wang and
+               Chen Zhang and
+               Songruoyao Wu and
+               Kejun Zhang and
+               Xiangyang Li and
+               Tao Qin and
+               Tie{-}Yan Liu},
+  title     = {TeleMelody: Lyric-to-Melody Generation with a Template-Based Two-Stage
+               Method},
+  journal   = {CoRR},
+  volume    = {abs/2109.09617},
+  year      = {2021},
+  url       = {https://arxiv.org/abs/2109.09617},
+  eprinttype = {arXiv},
+  eprint    = {2109.09617},
+  timestamp = {Wed, 27 Apr 2022 19:47:22 +0200},
+  biburl    = {https://dblp.org/rec/journals/corr/abs-2109-09617.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+@article{pdaugment,
+  title={PDAugment: Data Augmentation by Pitch and Duration Adjustments for Automatic Lyrics Transcription},
+  author={Zhang, Chen and Yu, Jiaxing and Chang, LuChin and Tan, Xu and Chen, Jiawei and Qin, Tao and Zhang, Kejun},
+  journal={arXiv preprint arXiv:2109.07940},
+  year={2021}
+}
+@inproceedings{ren2020deepsinger,
+  title={Deepsinger: Singing voice synthesis with data mined from the web},
+  author={Ren, Yi and Tan, Xu and Qin, Tao and Luan, Jian and Zhao, Zhou and Liu, Tie-Yan},
+  booktitle={Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery \& Data Mining},
+  pages={1979--1989},
+  year={2020}
+}
+@article{low_2003,
+author = {Low, Peter},
+year = {2003},
+month = {01},
+pages = {87-103},
+title = {Singable translations of songs},
+volume = {11},
+journal = {Perspectives: Studies in Translatology},
+doi = {10.1080/0907676X.2003.9961466}
+}
+@article{nmt,
+  title={Neural machine translation by jointly learning to align and translate},
+  author={Bahdanau, Dzmitry and Cho, Kyunghyun and Bengio, Yoshua},
+  journal={In Proceedings of the Inter-national Conference on Learning Representations},
+  year={2015}
+}
+@article{vaswani2017attention,
+  title={Attention is all you need},
+  author={Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N and Kaiser, {\L}ukasz and Polosukhin, Illia},
+  journal={Advances in neural information processing systems},
+  volume={30},
+  year={2017}
+}
+@article{hassan2018achieving,
+  title={Achieving human parity on automatic chinese to english news translation},
+  author={Hassan, Hany and Aue, Anthony and Chen, Chang and Chowdhary, Vishal and Clark, Jonathan and Federmann, Christian and Huang, Xuedong and Junczys-Dowmunt, Marcin and Lewis, William and Li, Mu and others},
+  journal={arXiv preprint arXiv:1803.05567},
+  year={2018}
+}
+@inproceedings{pndm,
+    title={Pseudo Numerical Methods for Diffusion Models on Manifolds},
+    author={Luping Liu and Yi Ren and Zhijie Lin and Zhou Zhao},
+    booktitle={International Conference on Learning Representations},
+    year={2022},
+    url={https://openreview.net/forum?id=PlKWVd2yBkY}
+}
+@inbook{low_2022, place={Cambridge}, series={Cambridge Handbooks in Language and Linguistics}, title={Translating the Texts of Songs and Other Vocal Music}, DOI={10.1017/9781108616119.026}, booktitle={The Cambridge Handbook of Translation}, publisher={Cambridge University Press}, author={Low, Peter}, editor={Malmkjær, KirstenEditor}, year={2022}, pages={499–518}, collection={Cambridge Handbooks in Language and Linguistics}}
+@article{low2008translating,
+  title={Translating songs that rhyme},
+  author={Low, Peter},
+  journal={Perspectives: Studies in translatology},
+  volume={16},
+  number={1-2},
+  pages={1--20},
+  year={2008},
+  publisher={Taylor \& Francis}
+}
+@article{three_d_of_singability,
+  title={Three dimensions of singability. An approach to subtitled and sung translations},
+  author={Franzon, Johan},
+  journal={Text and Tune. On the Association of Music and Lyrics in Sung Verse. Bern: Peter Lang},
+  pages={333--346},
+  year={2015}
+}
+@article{trans_of_music,
+  title={Translation of music},
+  author={Desblache, Lucile},
+  journal={An encyclopedia of practical translation and interpreting},
+  pages={297--324},
+  year={2018}
+}
+@article{interplay_lyrics_melody,
+  title={The materiality of music: interplay of lyrics and melody in song translation},
+  author={Riku Haapaniemi and Emma Laakkonen},
+  journal={Translation Matters},
+  year={2019}
+}
+@inproceedings{bart,
+    title = "{BART}: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension",
+    author = "Lewis, Mike  and
+      Liu, Yinhan  and
+      Goyal, Naman  and
+      Ghazvininejad, Marjan  and
+      Mohamed, Abdelrahman  and
+      Levy, Omer  and
+      Stoyanov, Veselin  and
+      Zettlemoyer, Luke",
+    booktitle = "Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics",
+    month = jul,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2020.acl-main.703",
+    doi = "10.18653/v1/2020.acl-main.703",
+    pages = "7871--7880",
+    abstract = "We present BART, a denoising autoencoder for pretraining sequence-to-sequence models. BART is trained by (1) corrupting text with an arbitrary noising function, and (2) learning a model to reconstruct the original text. It uses a standard Tranformer-based neural machine translation architecture which, despite its simplicity, can be seen as generalizing BERT (due to the bidirectional encoder), GPT (with the left-to-right decoder), and other recent pretraining schemes. We evaluate a number of noising approaches, finding the best performance by both randomly shuffling the order of sentences and using a novel in-filling scheme, where spans of text are replaced with a single mask token. BART is particularly effective when fine tuned for text generation but also works well for comprehension tasks. It matches the performance of RoBERTa on GLUE and SQuAD, and achieves new state-of-the-art results on a range of abstractive dialogue, question answering, and summarization tasks, with gains of up to 3.5 ROUGE. BART also provides a 1.1 BLEU increase over a back-translation system for machine translation, with only target language pretraining. We also replicate other pretraining schemes within the BART framework, to understand their effect on end-task performance.",
+}
+@inproceedings{li-etal-2020-rigid,
+    title = "Rigid Formats Controlled Text Generation",
+    author = "Li, Piji  and
+      Zhang, Haisong  and
+      Liu, Xiaojiang  and
+      Shi, Shuming",
+    booktitle = "Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics",
+    month = jul,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2020.acl-main.68",
+    doi = "10.18653/v1/2020.acl-main.68",
+    pages = "742--751",
+    abstract = "Neural text generation has made tremendous progress in various tasks. One common characteristic of most of the tasks is that the texts are not restricted to some rigid formats when generating. However, we may confront some special text paradigms such as Lyrics (assume the music score is given), Sonnet, SongCi (classical Chinese poetry of the Song dynasty), etc. The typical characteristics of these texts are in three folds: (1) They must comply fully with the rigid predefined formats. (2) They must obey some rhyming schemes. (3) Although they are restricted to some formats, the sentence integrity must be guaranteed. To the best of our knowledge, text generation based on the predefined rigid formats has not been well investigated. Therefore, we propose a simple and elegant framework named SongNet to tackle this problem. The backbone of the framework is a Transformer-based auto-regressive language model. Sets of symbols are tailor-designed to improve the modeling performance especially on format, rhyme, and sentence integrity. We improve the attention mechanism to impel the model to capture some future information on the format. A pre-training and fine-tuning framework is designed to further improve the generation quality. Extensive experiments conducted on two collected corpora demonstrate that our proposed framework generates significantly better results in terms of both automatic metrics and the human evaluation.",
+}
+@inproceedings{lakew-etal-2019-controlling,
+    title = "Controlling the Output Length of Neural Machine Translation",
+    author = "Lakew, Surafel Melaku  and
+      Di Gangi, Mattia  and
+      Federico, Marcello",
+    booktitle = "Proceedings of the 16th International Conference on Spoken Language Translation",
+    month = nov # " 2-3",
+    year = "2019",
+    address = "Hong Kong",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2019.iwslt-1.31",
+    abstract = "The recent advances introduced by neural machine translation (NMT) are rapidly expanding the application fields of machine translation, as well as reshaping the quality level to be targeted. In particular, if translations have to fit some given layout, quality should not only be measured in terms of adequacy and fluency, but also length. Exemplary cases are the translation of document files, subtitles, and scripts for dubbing, where the output length should ideally be as close as possible to the length of the input text. This pa-per addresses for the first time, to the best of our knowledge, the problem of controlling the output length in NMT. We investigate two methods for biasing the output length with a transformer architecture: i) conditioning the output to a given target-source length-ratio class and ii) enriching the transformer positional embedding with length information. Our experiments show that both methods can induce the network to generate shorter translations, as well as acquiring inter- pretable linguistic skills.",
+}
+@inproceedings{saboo-baumann-2019-integration,
+    title = "Integration of Dubbing Constraints into Machine Translation",
+    author = "Saboo, Ashutosh  and
+      Baumann, Timo",
+    booktitle = "Proceedings of the Fourth Conference on Machine Translation (Volume 1: Research Papers)",
+    month = aug,
+    year = "2019",
+    address = "Florence, Italy",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/W19-5210",
+    doi = "10.18653/v1/W19-5210",
+    pages = "94--101",
+    abstract = "Translation systems aim to perform a meaning-preserving conversion of linguistic material (typically text but also speech) from a source to a target language (and, to a lesser degree, the corresponding socio-cultural contexts). Dubbing, i.e., the lip-synchronous translation and revoicing of speech adds to this constraints about the close matching of phonetic and resulting visemic synchrony characteristics of source and target material. There is an inherent conflict between a translation{'}s meaning preservation and {`}dubbability{'} and the resulting trade-off can be controlled by weighing the synchrony constraints. We introduce our work, which to the best of our knowledge is the first of its kind, on integrating synchrony constraints into the machine translation paradigm. We present first results for the integration of synchrony constraints into encoder decoder-based neural machine translation and show that considerably more {`}dubbable{'} translations can be achieved with only a small impact on BLEU score, and dubbability improves more steeply than BLEU degrades.",
+}
+@inproceedings{spanish_verse,
+  title={WASP: Evaluation of Different Strategies for the Automatic Generation of Spanish Verse},
+  author={Pablo Gerv{\'a}s},
+  year={2002}
+}
+@inproceedings{lee-etal-2019-icomposer,
+    title = "i{C}omposer: An Automatic Songwriting System for {C}hinese Popular Music",
+    author = "Lee, Hsin-Pei  and
+      Fang, Jhih-Sheng  and
+      Ma, Wei-Yun",
+    booktitle = "Proceedings of the 2019 Conference of the North {A}merican Chapter of the Association for Computational Linguistics (Demonstrations)",
+    month = jun,
+    year = "2019",
+    address = "Minneapolis, Minnesota",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/N19-4015",
+    doi = "10.18653/v1/N19-4015",
+    pages = "84--88",
+    abstract = "In this paper, we introduce iComposer, an interactive web-based songwriting system designed to assist human creators by greatly simplifying music production. iComposer automatically creates melodies to accompany any given text. It also enables users to generate a set of lyrics given arbitrary melodies. iComposer is based on three sequence-to-sequence models, which are used to predict melody, rhythm, and lyrics, respectively. Songs generated by iComposer are compared with human-composed and randomly-generated ones in a subjective test, the experimental results of which demonstrate the capability of the proposed system to write pleasing melodies and meaningful lyrics at a level similar to that of humans.",
+}
+@article{Chen2020MelodyConditionedLG,
+  title={Melody-Conditioned Lyrics Generation with SeqGANs},
+  author={Yihao Chen and Alexander Lerch},
+  journal={2020 IEEE International Symposium on Multimedia (ISM)},
+  year={2020},
+  pages={189-196}
+}
+@inproceedings{ai_lyricist,
+author = {Ma, Xichu and Wang, Ye and Kan, Min-Yen and Lee, Wee Sun},
+title = {AI-Lyricist: Generating Music and Vocabulary Constrained Lyrics},
+year = {2021},
+isbn = {9781450386517},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3474085.3475502},
+doi = {10.1145/3474085.3475502},
+abstract = {We propose AI-Lyricist: a system to generate novel yet meaningful lyrics given a required vocabulary and a MIDI file as inputs. This task involves multiple challenges, including automatically identifying the melody and extracting a syllable template from multi-channel music, generating creative lyrics that match the input music's style and syllable alignment, and satisfying vocabulary constraints. To address these challenges, we propose an automatic lyrics generation system consisting of four modules: (1) A music structure analyzer to derive the musical structure and syllable template from a given MIDI file, utilizing the concept of expected syllable number to better identify the melody, (2) a SeqGAN-based lyrics generator optimized by multi-adversarial training through policy gradients with twin discriminators for text quality and syllable alignment, (3) a deep coupled music-lyrics embedding model to project music and lyrics into a joint space to allow fair comparison of both melody and lyric constraints, and a module called (4) Polisher, to satisfy vocabulary constraints by applying a mask to the generator and substituting the words to be learned. We trained our model on a dataset of over 7,000 music-lyrics pairs, enhanced with manually annotated labels in terms of theme, sentiment and genre. Both objective and subjective evaluations show AI-Lyricist's superior performance against the state-of-the-art for the proposed tasks.},
+booktitle = {Proceedings of the 29th ACM International Conference on Multimedia},
+pages = {1002–1011},
+numpages = {10},
+keywords = {adversarial training, music, language learning, lyrics generation},
+location = {Virtual Event, China},
+series = {MM '21}
+}
+@inproceedings{xue-etal-2021-deeprapper,
+    title = "{D}eep{R}apper: Neural Rap Generation with Rhyme and Rhythm Modeling",
+    author = "Xue, Lanqing  and
+      Song, Kaitao  and
+      Wu, Duocai  and
+      Tan, Xu  and
+      Zhang, Nevin L.  and
+      Qin, Tao  and
+      Zhang, Wei-Qiang  and
+      Liu, Tie-Yan",
+    booktitle = "Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)",
+    month = aug,
+    year = "2021",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.acl-long.6",
+    doi = "10.18653/v1/2021.acl-long.6",
+    pages = "69--81",
+    abstract = "Rap generation, which aims to produce lyrics and corresponding singing beats, needs to model both rhymes and rhythms. Previous works for rap generation focused on rhyming lyrics, but ignored rhythmic beats, which are important for rap performance. In this paper, we develop DeepRapper, a Transformer-based rap generation system that can model both rhymes and rhythms. Since there is no available rap datasets with rhythmic beats, we develop a data mining pipeline to collect a large-scale rap dataset, which includes a large number of rap songs with aligned lyrics and rhythmic beats. Second, we design a Transformer-based autoregressive language model which carefully models rhymes and rhythms. Specifically, we generate lyrics in the reverse order with rhyme representation and constraint for rhyme enhancement, and insert a beat symbol into lyrics for rhythm/beat modeling. To our knowledge, DeepRapper is the first system to generate rap with both rhymes and rhythms. Both objective and subjective evaluations demonstrate that DeepRapper generates creative and high-quality raps with rhymes and rhythms.",
+}
+@inproceedings{zou_controllable,
+author = {Zou, Xu and Yin, Da and Zhong, Qingyang and Yang, Hongxia and Yang, Zhilin and Tang, Jie},
+title = {Controllable Generation from Pre-Trained Language Models via Inverse Prompting},
+year = {2021},
+isbn = {9781450383325},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3447548.3467418},
+doi = {10.1145/3447548.3467418},
+abstract = {Large-scale pre-trained language models have demonstrated strong capabilities of generating realistic texts. However, it remains challenging to control the generation results. Previous approaches such as prompting are far from sufficient, and lack of controllability limits the usage of language models. To tackle this challenge, we propose an innovative method, inverse prompting, to better control text generation. The core idea of inverse prompting is to use generated text to inversely predict the prompt during beam search, which enhances the relevance between the prompt and the generated text and thus improves controllability. Empirically, we pre-train a large-scale Chinese language model to perform a systematic study using human evaluation on the tasks of open-domain poem generation and open-domain long-form question answering. Results demonstrate that our proposed method substantially outperforms the baselines and that our generation quality is close to human performance on some of the tasks.},
+booktitle = {Proceedings of the 27th ACM SIGKDD Conference on Knowledge Discovery; Data Mining},
+pages = {2450–2460},
+numpages = {11},
+keywords = {language modeling, controllable generation, beam search, poem generation, machine question answering},
+location = {Virtual Event, Singapore},
+series = {KDD '21}
+}
+@inproceedings{hokamp-liu-2017-lexically,
+    title = "Lexically Constrained Decoding for Sequence Generation Using Grid Beam Search",
+    author = "Hokamp, Chris  and
+      Liu, Qun",
+    booktitle = "Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = jul,
+    year = "2017",
+    address = "Vancouver, Canada",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/P17-1141",
+    doi = "10.18653/v1/P17-1141",
+    pages = "1535--1546",
+    abstract = "We present Grid Beam Search (GBS), an algorithm which extends beam search to allow the inclusion of pre-specified lexical constraints. The algorithm can be used with any model which generates sequences token by token. Lexical constraints take the form of phrases or words that must be present in the output sequence. This is a very general way to incorporate auxillary knowledge into a model{'}s output without requiring any modification of the parameters or training data. We demonstrate the feasibility and flexibility of Lexically Constrained Decoding by conducting experiments on Neural Interactive-Predictive Translation, as well as Domain Adaptation for Neural Machine Translation. Experiments show that GBS can provide large improvements in translation quality in interactive scenarios, and that, even without any user input, GBS can be used to achieve significant gains in performance in domain adaptation scenarios.",
+}
+@inproceedings{Manurung2004AnEA,
+  title={An evolutionary algorithm approach to poetry generation},
+  author={Hisar Maruli Manurung},
+  year={2004}
+}
+@article{He_Zhou_Jiang_2012, title={Generating Chinese Classical Poems with Statistical Machine Translation Models}, volume={26}, url={https://ojs.aaai.org/index.php/AAAI/article/view/8344}, DOI={10.1609/aaai.v26i1.8344}, abstractNote={This paper describes a statistical approach to generation of Chinese classical poetry and proposes a novel method to automatically evaluate poems. The system accepts a set of keywords representing the writing intents from a writer and generates sentences one by one to form a completed poem. A statistical machine translation (SMT) system is applied to generate new sentences, given the sentences generated previously. For each line of sentence a specific model specially trained for that line is used, as opposed to using a single model for all sentences. To enhance the coherence of sentences on every line, a coherence model using mutual information is applied to select candidates with better consistency with previous sentences. In addition, we demonstrate the effectiveness of the BLEU metric for evaluation with a novel method of generating diverse references.}, number={1}, journal={Proceedings of the AAAI Conference on Artificial Intelligence}, author={He, Jing and Zhou, Ming and Jiang, Long}, year={2012}, month={Sep.}, pages={1650-1656} }
+@inproceedings{ghazvininejad-etal-2016-generating,
+    title = "Generating Topical Poetry",
+    author = "Ghazvininejad, Marjan  and
+      Shi, Xing  and
+      Choi, Yejin  and
+      Knight, Kevin",
+    booktitle = "Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2016",
+    address = "Austin, Texas",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/D16-1126",
+    doi = "10.18653/v1/D16-1126",
+    pages = "1183--1191",
+}
+@inproceedings{ghazvininejad-etal-2017-hafez,
+    title = "{H}afez: an Interactive Poetry Generation System",
+    author = "Ghazvininejad, Marjan  and
+      Shi, Xing  and
+      Priyadarshi, Jay  and
+      Knight, Kevin",
+    booktitle = "Proceedings of {ACL} 2017, System Demonstrations",
+    month = jul,
+    year = "2017",
+    address = "Vancouver, Canada",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/P17-4008",
+    pages = "43--48",
+}
+@inproceedings{ghazvininejad-etal-2018-neural,
+    title = "Neural Poetry Translation",
+    author = "Ghazvininejad, Marjan  and
+      Choi, Yejin  and
+      Knight, Kevin",
+    booktitle = "Proceedings of the 2018 Conference of the North {A}merican Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers)",
+    month = jun,
+    year = "2018",
+    address = "New Orleans, Louisiana",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/N18-2011",
+    doi = "10.18653/v1/N18-2011",
+    pages = "67--71",
+    abstract = "We present the first neural poetry translation system. Unlike previous works that often fail to produce any translation for fixed rhyme and rhythm patterns, our system always translates a source text to an English poem. Human evaluation of the translations ranks the quality as acceptable 78.2{\%} of the time.",
+}
+% mine.
+@article{jeong2021diff,
+  title={Diff-tts: A denoising diffusion model for text-to-speech},
+  author={Jeong, Myeonghun and Kim, Hyeongju and Cheon, Sung Jun and Choi, Byoung Jin and Kim, Nam Soo},
+  journal={arXiv preprint arXiv:2104.01409},
+  year={2021}
+}
+
+@inproceedings{lee2020bidirectional,
+  title={Bidirectional variational inference for non-autoregressive text-to-speech},
+  author={Lee, Yoonhyung and Shin, Joongbo and Jung, Kyomin},
+  booktitle={International Conference on Learning Representations},
+  year={2020}
+}
+
+@article{kong2020hifi,
+  title={HiFi-GAN: Generative Adversarial Networks for Efficient and High Fidelity Speech Synthesis},
+  author={Kong, Jungil and Kim, Jaehyeon and Bae, Jaekyoung},
+  journal={Advances in Neural Information Processing Systems},
+  volume={33},
+  year={2020}
+}
+
+@article{kim2020glow,
+  title={Glow-TTS: A Generative Flow for Text-to-Speech via Monotonic Alignment Search},
+  author={Kim, Jaehyeon and Kim, Sungwon and Kong, Jungil and Yoon, Sungroh},
+  journal={Advances in Neural Information Processing Systems},
+  volume={33},
+  year={2020}
+}
+
+@article{popov2021grad,
+  title={Grad-TTS: A Diffusion Probabilistic Model for Text-to-Speech},
+  author={Popov, Vadim and Vovk, Ivan and Gogoryan, Vladimir and Sadekova, Tasnima and Kudinov, Mikhail},
+  journal={arXiv preprint arXiv:2105.06337},
+  year={2021}
+}
+
+@inproceedings{
+song2021scorebased,
+title={Score-Based Generative Modeling through Stochastic Differential Equations},
+author={Yang Song and Jascha Sohl-Dickstein and Diederik P Kingma and Abhishek Kumar and Stefano Ermon and Ben Poole},
+booktitle={International Conference on Learning Representations},
+year={2021},
+url={https://openreview.net/forum?id=PxTIG12RRHS}
+}
+
+
+@misc{ljspeech17,
+  author       = {Keith Ito and Linda Johnson},
+  year         = {2017},
+  title        = {The LJ Speech Dataset},
+  howpublished = {\url{https://keithito.com/LJ-Speech-Dataset/}},
+  note = {Accessed: 2019-10-12}
+}
+
+
+@inproceedings{he2016deep,
+  title={Deep residual learning for image recognition},
+  author={He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian},
+  booktitle={Proceedings of the IEEE conference on computer vision and pattern recognition},
+  pages={770--778},
+  year={2016}
+}
+
+@inproceedings{li2019neural,
+  title={Neural speech synthesis with transformer network},
+  author={Li, Naihan and Liu, Shujie and Liu, Yanqing and Zhao, Sheng and Liu, Ming},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={33},
+  number={01},
+  pages={6706--6713},
+  year={2019}
+}
+
+@article{wu2020adversarially,
+  title={Adversarially Trained Multi-Singer Sequence-to-Sequence Singing Synthesizer},
+  author={Wu, Jie and Luan, Jian},
+  journal={Proc. Interspeech 2020},
+  pages={1296--1300},
+  year={2020}
+}
+
+@article{morise2016world,
+  title={WORLD: a vocoder-based high-quality speech synthesis system for real-time applications},
+  author={Morise, Masanori and Yokomori, Fumiya and Ozawa, Kenji},
+  journal={IEICE TRANSACTIONS on Information and Systems},
+  volume={99},
+  number={7},
+  pages={1877--1884},
+  year={2016},
+  publisher={The Institute of Electronics, Information and Communication Engineers}
+}
+@inproceedings{yamamoto2020parallel,
+  title={Parallel WaveGAN: A fast waveform generation model based on generative adversarial networks with multi-resolution spectrogram},
+  author={Yamamoto, Ryuichi and Song, Eunwoo and Kim, Jae-Min},
+  booktitle={ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={6199--6203},
+  year={2020},
+  organization={IEEE}
+}
+
+@inproceedings{vanwavenet,
+  title={WaveNet: A Generative Model for Raw Audio},
+  author={Oord, Aaron van den and Dieleman, Sander and Zen, Heiga and Simonyan, Karen and Vinyals, Oriol and Graves, Alex and Kalchbrenner, Nal and Senior, Andrew and Kavukcuoglu, Koray},
+  booktitle={9th ISCA Speech Synthesis Workshop},
+  pages={125--125},
+  year={2016}
+}
+
+@article{lluis2019end,
+  title={End-to-End Music Source Separation: Is it Possible in the Waveform Domain?},
+  author={Lluis, Francesc and Pons, Jordi and Serra, Xavier},
+  journal={Proc. Interspeech 2019},
+  pages={4619--4623},
+  year={2019}
+}
+
+@inproceedings{rethage2018wavenet,
+  title={A wavenet for speech denoising},
+  author={Rethage, Dario and Pons, Jordi and Serra, Xavier},
+  booktitle={2018 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={5069--5073},
+  year={2018},
+  organization={IEEE}
+}
+
+@inproceedings{
+score2011vincent,
+title={A Connection Between Score Matching and Denoising Autoencoders},
+author={Pascal Vincent},
+booktitle={Neural Computation},
+year={2011},
+}
+
+@inproceedings{
+song2021denoising,
+title={Denoising Diffusion Implicit Models},
+author={Jiaming Song and Chenlin Meng and Stefano Ermon},
+booktitle={International Conference on Learning Representations},
+year={2021},
+}
+
+@inproceedings{song2019generative,
+  title={Generative Modeling by Estimating Gradients of the Data Distribution},
+  author={Song, Yang and Ermon, Stefano},
+  booktitle={Proceedings of the 33rd Annual Conference on Neural Information Processing Systems},
+  year={2019}
+}
+
+@inproceedings{
+chen2021wavegrad,
+title={WaveGrad: Estimating Gradients for Waveform Generation},
+author={Nanxin Chen and Yu Zhang and Heiga Zen and Ron J Weiss and Mohammad Norouzi and William Chan},
+booktitle={International Conference on Learning Representations},
+year={2021},
+}
+
+@inproceedings{
+kong2021diffwave,
+title={DiffWave: A Versatile Diffusion Model for Audio Synthesis},
+author={Zhifeng Kong and Wei Ping and Jiaji Huang and Kexin Zhao and Bryan Catanzaro},
+booktitle={International Conference on Learning Representations},
+year={2021},
+}
+
+
+@inproceedings{nichol2021improved,
+  title={Improved denoising diffusion probabilistic models},
+  author={Nichol, Alexander Quinn and Dhariwal, Prafulla},
+  booktitle={International Conference on Machine Learning},
+  pages={8162--8171},
+  year={2021},
+  organization={PMLR}
+}
+
+@inproceedings{Ho2020ddpm,
+ author = {Ho, Jonathan and Jain, Ajay and Abbeel, Pieter},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {H. Larochelle and M. Ranzato and R. Hadsell and M. F. Balcan and H. Lin},
+ pages = {6832--6843},
+ publisher = {Curran Associates, Inc.},
+ title = {Denoising Diffusion Probabilistic Models},
+ volume = {33},
+ year = {2020}
+}
+
+@inproceedings{sohl2015deep,
+  title={Deep Unsupervised Learning using Nonequilibrium Thermodynamics},
+  author={Sohl-Dickstein, Jascha and Weiss, Eric and Maheswaranathan, Niru and Ganguli, Surya},
+  booktitle={International Conference on Machine Learning},
+  pages={2256--2265},
+  year={2015}
+}
+
+@article{gu2020bytesing,
+  title={ByteSing: A Chinese Singing Voice Synthesis System Using Duration Allocated Encoder-Decoder Acoustic Models and WaveRNN Vocoders},
+  author={Gu, Yu and Yin, Xiang and Rao, Yonghui and Wan, Yuan and Tang, Benlai and Zhang, Yang and Chen, Jitong and Wang, Yuxuan and Ma, Zejun},
+  journal={arXiv preprint arXiv:2004.11012},
+  year={2020}
+}
+
+@inproceedings{blaauw2020sequence,
+  title={Sequence-to-sequence singing synthesis using the feed-forward transformer},
+  author={Blaauw, Merlijn and Bonada, Jordi},
+  booktitle={ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={7229--7233},
+  year={2020},
+  organization={IEEE}
+}
+
+@article{chen2020hifisinger,
+  title={HiFiSinger: Towards High-Fidelity Neural Singing Voice Synthesis},
+  author={Chen, Jiawei and Tan, Xu and Luan, Jian and Qin, Tao and Liu, Tie-Yan},
+  journal={arXiv preprint arXiv:2009.01776},
+  year={2020}
+}
+
+
+@article{wu2020speech,
+  title={Speech-to-Singing Conversion based on Boundary Equilibrium GAN},
+  author={Wu, Da-Yi and Yang, Yi-Hsuan},
+  journal={arXiv preprint arXiv:2005.13835},
+  year={2020}
+}
+
+@inproceedings{blaauw2019data,
+  title={Data efficient voice cloning for neural singing synthesis},
+  author={Blaauw, Merlijn and Bonada, Jordi and Daido, Ryunosuke},
+  booktitle={ICASSP 2019-2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={6840--6844},
+  year={2019},
+  organization={IEEE}
+}
+
+@inproceedings{parekh2020speech,
+  title={Speech-to-singing conversion in an encoder-decoder framework},
+  author={Parekh, Jayneel and Rao, Preeti and Yang, Yi-Hsuan},
+  booktitle={ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={261--265},
+  year={2020},
+  organization={IEEE}
+}
+@article{vijayan2018speech,
+  title={Speech-to-singing voice conversion: The challenges and strategies for improving vocal conversion processes},
+  author={Vijayan, Karthika and Li, Haizhou and Toda, Tomoki},
+  journal={IEEE Signal Processing Magazine},
+  volume={36},
+  number={1},
+  pages={95--102},
+  year={2018},
+  publisher={IEEE}
+}
+
+@inproceedings{luo2020singing,
+  title={Singing voice conversion with disentangled representations of singer and vocal technique using variational autoencoders},
+  author={Luo, Yin-Jyun and Hsu, Chin-Cheng and Agres, Kat and Herremans, Dorien},
+  booktitle={ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={3277--3281},
+  year={2020},
+  organization={IEEE}
+}
+
+@inproceedings{deng2020pitchnet,
+  title={Pitchnet: Unsupervised Singing Voice Conversion with Pitch Adversarial Network},
+  author={Deng, Chengqi and Yu, Chengzhu and Lu, Heng and Weng, Chao and Yu, Dong},
+  booktitle={ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={7749--7753},
+  year={2020},
+  organization={IEEE}
+}
+
+@inproceedings{chen2019singing,
+  title={Singing voice conversion with non-parallel data},
+  author={Chen, Xin and Chu, Wei and Guo, Jinxi and Xu, Ning},
+  booktitle={2019 IEEE Conference on Multimedia Information Processing and Retrieval (MIPR)},
+  pages={292--296},
+  year={2019},
+  organization={IEEE}
+}
+
+@article{nachmani2019unsupervised,
+  title={Unsupervised singing voice conversion},
+  author={Nachmani, Eliya and Wolf, Lior},
+  journal={arXiv preprint arXiv:1904.06590},
+  year={2019}
+}
+
+@inproceedings{villavicencio2010applying,
+  title={Applying voice conversion to concatenative singing-voice synthesis},
+  author={Villavicencio, Fernando and Bonada, Jordi},
+  booktitle={Eleventh annual conference of the international speech communication association},
+  year={2010}
+}
+
+@inproceedings{kobayashi2015statistical,
+  title={Statistical singing voice conversion based on direct waveform modification with global variance},
+  author={Kobayashi, Kazuhiro and Toda, Tomoki and Neubig, Graham and Sakti, Sakriani and Nakamura, Satoshi},
+  booktitle={Sixteenth Annual Conference of the International Speech Communication Association},
+  year={2015}
+}
+
+@inproceedings{kobayashi2014statistical,
+  title={Statistical singing voice conversion with direct waveform modification based on the spectrum differential},
+  author={Kobayashi, Kazuhiro and Toda, Tomoki and Neubig, Graham and Sakti, Sakriani and Nakamura, Satoshi},
+  booktitle={Fifteenth Annual Conference of the International Speech Communication Association},
+  year={2014}
+}
+
+@inproceedings{saino2006hmm,
+  title={An HMM-based singing voice synthesis system},
+  author={Saino, Keijiro and Zen, Heiga and Nankaku, Yoshihiko and Lee, Akinobu and Tokuda, Keiichi},
+  booktitle={Ninth International Conference on Spoken Language Processing},
+  year={2006}
+}
+@inproceedings{oura2010recent,
+  title={Recent development of the HMM-based singing voice synthesis system—Sinsy},
+  author={Oura, Keiichiro and Mase, Ayami and Yamada, Tomohiko and Muto, Satoru and Nankaku, Yoshihiko and Tokuda, Keiichi},
+  booktitle={Seventh ISCA Workshop on Speech Synthesis},
+  year={2010}
+}
+
+@inproceedings{kenmochi2007vocaloid,
+  title={Vocaloid-commercial singing synthesizer based on sample concatenation},
+  author={Kenmochi, Hideki and Ohshita, Hayato},
+  booktitle={Eighth Annual Conference of the International Speech Communication Association},
+  year={2007}
+}
+
+@inproceedings{macon1997concatenation,
+  title={Concatenation-based MIDI-to-singing voice synthesis},
+  author={Macon, Michael and Jensen-Link, Leslie and George, E Bryan and Oliverio, James and Clements, Mark},
+  booktitle={Audio Engineering Society Convention 103},
+  year={1997},
+  organization={Audio Engineering Society}
+}
+
+@inproceedings{ren2020deepsinger,
+  title={Deepsinger: Singing voice synthesis with data mined from the web},
+  author={Ren, Yi and Tan, Xu and Qin, Tao and Luan, Jian and Zhao, Zhou and Liu, Tie-Yan},
+  booktitle={Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery \& Data Mining},
+  pages={1979--1989},
+  year={2020}
+}
+
+% rz: deepsinger bib:
+@inproceedings{nishimura2016singing,
+  title={Singing Voice Synthesis Based on Deep Neural Networks.},
+  author={Nishimura, Masanari and Hashimoto, Kei and Oura, Keiichiro and Nankaku, Yoshihiko and Tokuda, Keiichi},
+  booktitle={Interspeech},
+  pages={2478--2482},
+  year={2016}
+}
+
+@article{blaauw2017neural,
+  title={A neural parametric singing synthesizer modeling timbre and expression from natural songs},
+  author={Blaauw, Merlijn and Bonada, Jordi},
+  journal={Applied Sciences},
+  volume={7},
+  number={12},
+  pages={1313},
+  year={2017},
+  publisher={Multidisciplinary Digital Publishing Institute}
+}
+
+@article{lee2019adversarially,
+  title={Adversarially Trained End-to-End Korean Singing Voice Synthesis System},
+  author={Lee, Juheon and Choi, Hyeong-Seok and Jeon, Chang-Bin and Koo, Junghyun and Lee, Kyogu},
+  journal={Proc. Interspeech 2019},
+  pages={2588--2592},
+  year={2019}
+}
+
+@inproceedings{kim2018korean,
+  title={Korean Singing Voice Synthesis System based on an LSTM Recurrent Neural Network},
+  author={Kim, Juntae and Choi, Heejin and Park, Jinuk and Kim, Sangjin and Kim, Jongjin and Hahn, Minsoo},
+  booktitle={INTERSPEECH 2018},
+  year={2018},
+  organization={ISCA}
+}
+
+@article{lu2020xiaoicesing,
+  title={XiaoiceSing: A High-Quality and Integrated Singing Voice Synthesis System},
+  author={Lu, Peiling and Wu, Jie and Luan, Jian and Tan, Xu and Zhou, Li},
+  journal={Proc. Interspeech 2020},
+  pages={1306--1310},
+  year={2020}
+}
+
+@article{umbert2015expression,
+  title={Expression control in singing voice synthesis: Features, approaches, evaluation, and challenges},
+  author={Umbert, Marti and Bonada, Jordi and Goto, Masataka and Nakano, Tomoyasu and Sundberg, Johan},
+  journal={IEEE Signal Processing Magazine},
+  volume={32},
+  number={6},
+  pages={55--73},
+  year={2015},
+  publisher={IEEE}
+}
+
+@article{nakamura2019singing,
+  title={Singing voice synthesis based on convolutional neural networks},
+  author={Nakamura, Kazuhiro and Hashimoto, Kei and Oura, Keiichiro and Nankaku, Yoshihiko and Tokuda, Keiichi},
+  journal={arXiv preprint arXiv:1904.06868},
+  year={2019}
+}
+
+@inproceedings{hono2019singing,
+  title={Singing Voice Synthesis Based on Generative Adversarial Networks},
+  author={Hono, Yukiya and Hashimoto, Kei and Oura, Keiichiro and Nankaku, Yoshihiko and Tokuda, Keiichi},
+  booktitle={ICASSP 2019},
+  pages={6955--6959},
+  year={2019},
+  organization={IEEE}
+}
+
+@inproceedings{shen2018natural,
+  title={Natural tts synthesis by conditioning wavenet on mel spectrogram predictions},
+  author={Shen, Jonathan and Pang, Ruoming and Weiss, Ron J and Schuster, Mike and Jaitly, Navdeep and Yang, Zongheng and Chen, Zhifeng and Zhang, Yu and Wang, Yuxuan and Skerrv-Ryan, Rj and others},
+  booktitle={ICASSP 2018},
+  pages={4779--4783},
+  year={2018},
+  organization={IEEE}
+}
+
+
+@inproceedings{ren2019fastspeech,
+  title={Fastspeech: Fast, robust and controllable text to speech},
+  author={Ren, Yi and Ruan, Yangjun and Tan, Xu and Qin, Tao and Zhao, Sheng and Zhao, Zhou and Liu, Tie-Yan},
+  booktitle={Advances in Neural Information Processing Systems},
+  pages={3171--3180},
+  year={2019}
+}
+
+@inproceedings{
+ren2021fastspeech,
+title={FastSpeech 2: Fast and High-Quality End-to-End Text to Speech},
+author={Yi Ren and Chenxu Hu and Xu Tan and Tao Qin and Sheng Zhao and Zhou Zhao and Tie-Yan Liu},
+booktitle={International Conference on Learning Representations},
+year={2021},
+}
+
+
+@inproceedings{gupta2018semi,
+  title={Semi-supervised Lyrics and Solo-singing Alignment.},
+  author={Gupta, Chitralekha and Tong, Rong and Li, Haizhou and Wang, Ye},
+  booktitle={ISMIR},
+  pages={600--607},
+  year={2018}
+}
+
+@article{fujihara2011lyricsynchronizer,
+  title={LyricSynchronizer: Automatic synchronization system between musical audio signals and lyrics},
+  author={Fujihara, Hiromasa and Goto, Masataka and Ogata, Jun and Okuno, Hiroshi G},
+  journal={IJSTSP},
+  volume={5},
+  number={6},
+  pages={1252--1261},
+  year={2011},
+  publisher={IEEE}
+}
+
+@article{chien2016alignment,
+  title={Alignment of lyrics with accompanied singing audio based on acoustic-phonetic vowel likelihood modeling},
+  author={Chien, Yu-Ren and Wang, Hsin-Min and Jeng, Shyh-Kang and Chien, Yu-Ren and Wang, Hsin-Min and Jeng, Shyh-Kang},
+  journal={TASLP},
+  volume={24},
+  number={11},
+  pages={1998--2008},
+  year={2016},
+  publisher={IEEE Press}
+}
+
+@article{nguyen2018study,
+  title={A Study on Correlates of Acoustic Features to Emotional Singing Voice Synthesis},
+  author={Nguyen, Thi Hao},
+  year={2018}
+}
+
+@article{chandna2019wgansing,
+  title={WGANSing: A Multi-Voice Singing Voice Synthesizer Based on the Wasserstein-GAN},
+  author={Chandna, Pritish and Blaauw, Merlijn and Bonada, Jordi and Gomez, Emilia},
+  journal={arXiv preprint arXiv:1903.10729},
+  year={2019}
+}
+
+@inproceedings{hunt1996unit,
+  title={Unit selection in a concatenative speech synthesis system using a large speech database},
+  author={Hunt, Andrew J and Black, Alan W},
+  booktitle={ICASSP 1996},
+  volume={1},
+  pages={373--376},
+  year={1996},
+  organization={IEEE}
+}
+
+@inproceedings{wu2016merlin,
+  title={Merlin: An Open Source Neural Network Speech Synthesis System.},
+  author={Wu, Zhizheng and Watts, Oliver and King, Simon},
+  booktitle={SSW},
+  pages={202--207},
+  year={2016}
+}
+
+@article{li2018emphasis,
+  title={EMPHASIS: An emotional phoneme-based acoustic model for speech synthesis system},
+  author={Li, Hao and Kang, Yongguo and Wang, Zhenyu},
+  journal={arXiv preprint arXiv:1806.09276},
+  year={2018}
+}
+
+@inproceedings{ping2018clarinet,
+title={ClariNet: Parallel Wave Generation in End-to-End Text-to-Speech},
+author={Wei Ping and Kainan Peng and Jitong Chen},
+booktitle={ICLR},
+year={2019},
+}
+
+@article{kingma2014adam,
+  title={Adam: A method for stochastic optimization},
+  author={Kingma, Diederik P and Ba, Jimmy},
+  journal={arXiv preprint arXiv:1412.6980},
+  year={2014}
+}
+
+
+@inproceedings{mase2010hmm,
+  title={HMM-based singing voice synthesis system using pitch-shifted pseudo training data},
+  author={Mase, Ayami and Oura, Keiichiro and Nankaku, Yoshihiko and Tokuda, Keiichi},
+  booktitle={Eleventh Annual Conference of the ISCA},
+  year={2010}
+}
+
+@inproceedings{bengio2015scheduled,
+  title={Scheduled sampling for sequence prediction with recurrent neural networks},
+  author={Bengio, Samy and Vinyals, Oriol and Jaitly, Navdeep and Shazeer, Noam},
+  booktitle={NIPS},
+  pages={1171--1179},
+  year={2015}
+}
+
+@inproceedings{sharma2019automatic,
+  title={Automatic Lyrics-to-audio Alignment on Polyphonic Music Using Singing-adapted Acoustic Models},
+  author={Sharma, Bidisha and Gupta, Chitralekha and Li, Haizhou and Wang, Ye},
+  booktitle={ICASSP 2019},
+  pages={396--400},
+  year={2019},
+  organization={IEEE}
+}
+
+@article{gupta2019acoustic,
+  title={Acoustic Modeling for Automatic Lyrics-to-Audio Alignment},
+  author={Gupta, Chitralekha and Y{\i}lmaz, Emre and Li, Haizhou},
+  journal={arXiv preprint arXiv:1906.10369},
+  year={2019}
+}
+
+@article{griffin1984signal,
+  title={Signal estimation from modified short-time Fourier transform},
+  author={Griffin, Daniel and Lim, Jae},
+  journal={ICASSP},
+  volume={32},
+  number={2},
+  pages={236--243},
+  year={1984},
+  publisher={IEEE}
+}
+
+
+@article{kalchbrenner2018efficient,
+  title={Efficient neural audio synthesis},
+  author={Kalchbrenner, Nal and Elsen, Erich and Simonyan, Karen and Noury, Seb and Casagrande, Norman and Lockhart, Edward and Stimberg, Florian and Oord, Aaron van den and Dieleman, Sander and Kavukcuoglu, Koray},
+  journal={arXiv preprint arXiv:1802.08435},
+  year={2018}
+}
+
+
+@inproceedings{mcauliffe2017montreal,
+  title={Montreal Forced Aligner: Trainable Text-Speech Alignment Using Kaldi},
+  author={McAuliffe, Michael and Socolof, Michaela and Mihuc, Sarah and Wagner, Michael and Sonderegger, Morgan},
+  booktitle={Interspeech},
+  pages={498--502},
+  year={2017}
+}
+
+@article{bahdanau2014neural,
+  title={Neural machine translation by jointly learning to align and translate},
+  author={Bahdanau, Dzmitry and Cho, Kyunghyun and Bengio, Yoshua},
+  journal={arXiv preprint arXiv:1409.0473},
+  year={2014}
+}
+
+@book{jaeger2002tutorial,
+  title={Tutorial on training recurrent neural networks, covering BPPT, RTRL, EKF and the" echo state network" approach},
+  author={Jaeger, Herbert},
+  volume={5},
+  year={2002},
+  publisher={GMD-Forschungszentrum Informationstechnik Bonn}
+}
+
+@inproceedings{mesaros2008automatic,
+  title={Automatic alignment of music audio and lyrics},
+  author={Mesaros, Annamaria and Virtanen, Tuomas},
+  booktitle={Proceedings of the 11th Int. Conference on Digital Audio Effects (DAFx-08)},
+  year={2008}
+}
+
+
+@phdthesis{dzhambazov2017knowledge,
+  title={Knowledge-based probabilistic modeling for tracking lyrics in music audio signals},
+  author={Dzhambazov, Georgi and others},
+  year={2017},
+  school={Universitat Pompeu Fabra}
+}
+
+
+@inproceedings{tachibana2018efficiently,
+  title={Efficiently trainable text-to-speech system based on deep convolutional networks with guided attention},
+  author={Tachibana, Hideyuki and Uenoyama, Katsuya and Aihara, Shunsuke},
+  booktitle={ICASSP 2018},
+  pages={4784--4788},
+  year={2018},
+  organization={IEEE}
+}
+
+
+@article{boersma2002praat,
+  title={Praat, a system for doing phonetics by computer},
+  author={Boersma, Paul and others},
+  journal={Glot international},
+  volume={5},
+  year={2002}
+}
+
+@misc{callan2009clueweb09,
+  title={Clueweb09 data set},
+  author={Callan, Jamie and Hoy, Mark and Yoo, Changkuk and Zhao, Le},
+  year={2009}
+}
+
+@inproceedings{yang2019xlnet,
+  title={Xlnet: Generalized autoregressive pretraining for language understanding},
+  author={Yang, Zhilin and Dai, Zihang and Yang, Yiming and Carbonell, Jaime and Salakhutdinov, Russ R and Le, Quoc V},
+  booktitle={Advances in neural information processing systems},
+  pages={5754--5764},
+  year={2019}
+}
+
+
+@article{qin2010letor,
+  title={LETOR: A benchmark collection for research on learning to rank for information retrieval},
+  author={Qin, Tao and Liu, Tie-Yan and Xu, Jun and Li, Hang},
+  journal={Information Retrieval},
+  volume={13},
+  number={4},
+  pages={346--374},
+  year={2010},
+  publisher={Springer}
+}
+
+@inproceedings{cao2007learning,
+  title={Learning to rank: from pairwise approach to listwise approach},
+  author={Cao, Zhe and Qin, Tao and Liu, Tie-Yan and Tsai, Ming-Feng and Li, Hang},
+  booktitle={Proceedings of the 24th international conference on Machine learning},
+  pages={129--136},
+  year={2007}
+}
+
+@article{li2017webvision,
+  title={Webvision database: Visual learning and understanding from web data},
+  author={Li, Wen and Wang, Limin and Li, Wei and Agustsson, Eirikur and Van Gool, Luc},
+  journal={arXiv preprint arXiv:1708.02862},
+  year={2017}
+}
+
+@inproceedings{hennequin2019spleeter,
+  title={Spleeter: A fast and state-of-the art music source separation tool with pre-trained models},
+  author={Hennequin, Romain and Khlif, Anis and Voituret, Felix and Moussalam, Manuel},
+  booktitle={Proc. International Society for Music Information Retrieval Conference},
+  year={2019}
+}
+
+
+@article{zhang2019learning,
+  title={Learning Singing From Speech},
+  author={Zhang, Liqiang and Yu, Chengzhu and Lu, Heng and Weng, Chao and Wu, Yusong and Xie, Xiang and Li, Zijin and Yu, Dong},
+  journal={arXiv preprint arXiv:1912.10128},
+  year={2019}
+}
+
+@article{zhang2020durian,
+  title={DurIAN-SC: Duration Informed Attention Network Based Singing Voice Conversion System},
+  author={Zhang, Liqiang and Yu, Chengzhu and Lu, Heng and Weng, Chao and Zhang, Chunlei and Wu, Yusong and Xie, Xiang and Li, Zijin and Yu, Dong},
+  journal={Proc. Interspeech 2020},
+  pages={1231--1235},
+  year={2020}
+}
+
+@inproceedings{vaswani2017attention,
+  title={Attention is all you need},
+  author={Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N and Kaiser, {\L}ukasz and Polosukhin, Illia},
+  booktitle={Advances in Neural Information Processing Systems},
+  pages={5998--6008},
+  year={2017}
+}
+
+@misc{THCHS30_2015,
+  title={THCHS-30 : A Free Chinese Speech Corpus},
+  author={Dong Wang, Xuewei Zhang, Zhiyong Zhang},
+  year={2015},
+  url={http://arxiv.org/abs/1512.01882}
+}
+
+@article{zen2019libritts,
+  title={LibriTTS: A corpus derived from librispeech for text-to-speech},
+  author={Zen, Heiga and Dang, Viet and Clark, Rob and Zhang, Yu and Weiss, Ron J and Jia, Ye and Chen, Zhifeng and Wu, Yonghui},
+  journal={arXiv preprint arXiv:1904.02882},
+  year={2019}
+}
+
+@article{yi2019singing,
+  title={Singing Voice Synthesis Using Deep Autoregressive Neural Networks for Acoustic Modeling},
+  author={Yi, Yuan-Hao and Ai, Yang and Ling, Zhen-Hua and Dai, Li-Rong},
+  year={2019}
+}
+
+
+@article{dhariwal2020jukebox,
+  title={Jukebox: A generative model for music},
+  author={Dhariwal, Prafulla and Jun, Heewoo and Payne, Christine and Kim, Jong Wook and Radford, Alec and Sutskever, Ilya},
+  journal={arXiv preprint arXiv:2005.00341},
+  year={2020}
+}
+
+
+@article{wang2020using,
+  title={Using Cyclic Noise as the Source Signal for Neural Source-Filter-Based Speech Waveform Model},
+  author={Wang, Xin and Yamagishi, Junichi},
+  journal={Proc. Interspeech 2020},
+  pages={1992--1996},
+  year={2020}
+}

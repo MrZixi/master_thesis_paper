@@ -1,0 +1,16 @@
+\input{./body/graduate/content.tex}
+\input{./body/graduate/intro.tex}
+\input{body/graduate/intro.tex}
+\input{./body/graduate/intro.tex}
+\input{body/graduate/intro.tex}
+\input{./body/graduate/ast.tex}
+\input{body/graduate/ast.tex}
+\input{./body/graduate/ast.tex}
+\input{body/graduate/ast.tex}
+\input{./body/graduate/svs.tex}
+\input{body/graduate/svs.tex}
+\input{./body/graduate/svs.tex}
+\input{body/graduate/svs.tex}
+\input{./body/graduate/post.tex}
+\input{./body/graduate/post/ref.tex}
+\input{./body/graduate/post/appendix.tex}

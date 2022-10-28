@@ -1,7 +1,259 @@
+\newcommand{\modelname}{LTAG}
 \chapter{自动歌曲翻译}
+本章将详细介绍本文在自动歌曲翻译研究中使用的数据、提出的模型和实验结果。本章首先说明了使用的单语言数据集来源、收集双语平行数据集的方法，并提出一种基于神经机器翻译中常用的Transformer Encoder-Decoder结构的歌词和歌词-旋律对齐共同翻译框架，并在此基础上设计了一系列实验来检验模型框架的表现。实验结果显示，本章提出的框架相比其他自动歌曲翻译算法，在歌词文本翻译质量和歌曲翻译整体演唱效果上都取得了更好的效果。
 \section{歌曲翻译数据集}
+目前，在歌曲翻译研究领域并没有高质量的平行歌词翻译和歌词-旋律对齐的公共数据集可用，所以本文收集并标注了一个数据集PopCV（Pop songs with Cover Version），该数据集包含若干中文歌曲的英文翻唱版本和英文歌曲翻唱版本。除此以外，本文还使用了一些单语言歌曲语料, 包括一个英文歌词和歌词-旋律对齐数据集LMD\footnote{\url{https://github.com/yy1lab/Lyrics-Conditioned-Neural-Melody-Generation}}~\citep{LMD}，以及一个从唱吧App上爬取的一些中文歌曲语料。
+两组单语言歌曲数据仅被用于训练模型，测试数据是在经专业标注人员标注的真实数据上进行的。数据集概述见表\ref{tab:dataset_stat}.
+\begin{table}[htbp]
+    \centering
+    % \setlength{\tabcolsep}{2pt}
+    \begin{tabular}{|l|c|c|c|c|}
+    \hline
+         & 语种 & 歌曲数（首） & 歌词数（句） & 数据来源和实验用途\\
+    \hline
+     LMD & 英文 & \diagbox[]{}{} & 152,991 & 回译\\
+    \hline
+     唱吧 & 中文 & \diagbox[]{}{} & 542,034 & 回译\\
+    \hline
+     PopCV & 中文、英文 & 79 & 2,959 & 标注\\
+    \hline
+     测试集 & 中文、英文 & 25 & 629 & 标注\\
+    \hline
+    \end{tabular}
+    \caption{本文中所涉及的数据集的数据统计情况。}
+    \label{tab:dataset_stat}
+\end{table}
 \section{歌曲翻译数据的收集和预处理}
-\section{Transformer Encoder-Decoder模型的结构}
-\section{Adaptive Computation Time算法原理}
+由于此类歌曲翻译的数据集并没有行业标准或其他公开发布的先例，于是，本文首先设计了一个相对省时且对于标注员来说，比较容易执行的标注过程。
+首先，从一些公开的乐谱网站收集歌曲的乐谱文件\footnote{\url{https://www.musescore.com} 和 \url{https://wwww.midishow.com}}.
+然后，专业标注人员会根据歌曲在原版和翻唱版本中的演唱方式，按照一般的歌谱编纂规则的指示\footnote{\url{https://lilypond.org} and \url{https://musescore.org/howto}}将歌词添加到乐谱的音符上。
+然后，标注好的乐谱文件会被以\texttt{.musicxml}的格式导出，然后自动提取出歌词及其对齐的音符并整理成数据集。
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.99\textwidth]{figure/ast/da_pipeline}
+    \caption{本文提出的歌曲翻译数据标注流程概览。}
+    \label{fig:da_pipeline}
+\end{figure}
+\section{自动歌曲翻译模型结构}
+本章设计的模型属于神经机器翻译中常用的自回归翻译架构，但与一般的翻译模型不同的是，它能同时进行自回归的歌词文本翻译和歌词文本与旋律的对齐预测。
+如图\ref{fig:model}所示，它由用于歌词翻译的基于Transformer Encoder-Decoder的子结构、两个音符表示池化嵌入层和一个对齐解码器组成。
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.99\textwidth]{figure/ast/pipeline_svs.pdf}
+    \caption{本章提出的模型架构概览，图示以第$j$个解码时间步进行了说明。Transformer解码器将输出目标语言的词语，对齐解码器会输出对齐音符的数量。}
+    \label{fig:model}
+\end{figure}
+Transformer Encoder-Decoder部分参考了\citet{gagast}中的做法，使用去噪自编码器~\citep{bart}和翻译作为预训练任务。
+在预训练期间，由于混合使用了单语言和双语翻译数据，且数据文本来自新闻、书本和歌词等多个领域，两个分别表示翻译方向和文本域的前缀词语会被添加到源语言的输入句子里以建立模型区分翻译方向和目标文本所属文本域的能力。
+音符表示池化嵌入层的结构如图~\ref{fig:align_enc}所示，这是一个用于处理歌曲旋律信息的模块。
+图~\ref{fig:align_dec}中的对齐解码器则是基于本章后提出的节的自适应音符分组方法构建，该方法在自回归解码期间能动态预测与当前解码时间步预测出的的词语相对齐的音符数量。
+\begin{figure}[t]
+    \centering
+\subfloat[The note-pooling embedding layer]{
+    \label{fig:align_enc}
+    \includegraphics[width=0.34\textwidth,clip=true]{figure/ast/note-pooling.pdf}
+}
+\subfloat[The alignment decoder]{
+    \label{fig:align_dec}
+    \includegraphics[width=0.31\textwidth,clip=true]{figure/ast/alignment_decoder.pdf}
+}
+\subfloat[Adaptive grouping process]{
+    \label{fig:act_gp}
+    \includegraphics[width=0.28\textwidth,clip=true]{figure/ast/act_gp.pdf}
+}
+\caption{（a）音符表示池化嵌入层会根据音符序列的表示和对齐信息进行编码。（b）（c）对齐解码器会根据停止概率的分布计算对齐音符的数量。}
+\label{fig:enc_dec_act}
+\end{figure}
+\subsection{音符表示池化嵌入层}
+\label{sec:note_pooling}
+音符表示池化嵌入层将音符和音符与歌词词语的对齐信息作为输入，并输出池化后的音符嵌入表示和对齐嵌入表示。
+输入的旋律音符序列由MIDI格式的音高和每个音符的持续时间两部分组成。每一个音符的持续时间都是离散的谱面时长的一类：四分音符、半音符或八分音符等。
+音符的MIDI音高和持续时间可以分别表示为嵌入表示$e_{midi}$和$e_{dur}$。
+定义第$i$个音符的嵌入表示为：
+\begin{equation}
+\label{eq:note}
+    \mathbf{e}_{note}^i = \mathbf{e}_{midi}^i + \mathbf{e}_{dur}^i + \mathbf{e}_p^i
+\end{equation}
+其中，$\mathbf{e}_p^i$是位置嵌入表示。
+池化嵌入层会根据对齐信息，对音符的嵌入表示序列进行互不重叠的平均池化操作。具体而言，就是将对齐到同一词语的连续的一段音符序列的嵌入表示进行平均。下面给出公式化的表达，对齐信息$\mathcal{A}$会被表示为一个01矩阵$\mathbf{M} \in \{0,1\}^{L \times N}$，其中$L$和$N$分别表示文本序列和音符序列的序列长度。如果第$i$个音符对齐到了第$j$个词语，那么$\mathbf{M}_{ji}=1$，否则$\mathbf{M}_{ji}=0$。
+这样，$\mathbf{M}$就能直接通过矩阵乘法有效地进行互不重叠的平均池化操作，其结果记为为旋律嵌入表示$\mathbf{e}_{md}$。
+\begin{equation}
+\label{eq:md_embed}
+    \mathbf{e}_{md} = \text{Non-Overlap-Mean-Pool}(\mathbf{e}_{note}, \mathbf{M})
+\end{equation}
+有音符嵌入表示$\mathbf{e}_{note} \in \mathbb{R}^{N \times d}$（$d$ 是嵌入表示张量的维度）和对齐矩阵$\mathbf{M} \in \{0, 1\}^{L \times N}$.
+互不重叠的平均池化操作可以按照如下计算进行：
+\begin{align*}
+\mathbf{W} &= \mathbf{M} / \text{sum}(\mathbf{M}, \text{dim}=-1, \text{keepdim}=\text{True}) \\
+\mathbf{e}_{md} &= \mathbf{W} * \mathbf{e}_{note}
+\end{align*}
+其中，$/$代表矩阵按元素相除，$*$代表矩阵相乘。
+通过pytorch支持的\texttt{gather}和\texttt{scatter}张量操作，上述互不重叠的平均池化操作就可以在训练时的小批次数据中进行了。
+由上述说明易知，此池化操作的核的尺寸大小不是固定的，而是随着01矩阵$\mathbf{M}$的行的和变化而变化。
+
+进一步说，由于歌词-旋律的对齐是单调的，即歌谱中每个音符只能对应一个词语，通过计算对齐音符的数量的累积和就可以更简洁地编码对齐情况：
+\begin{equation}
+\label{eq:cumsum}
+    \mathbf{s} = \text{CumSum}(\text{RowSum}(\mathbf{M}))
+\end{equation}
+其中，$\mathbf{s}$是一个长度为$L$的整数向量。那么$s^j / N$就表示每个对齐音符的\textbf{对齐比率}。
+接下来，通过将累积对齐比率分组为$(0，1]$范围内的大小相等的区间就可以将比率离散化，并引入一组嵌入表示张量$\mathbf{E}_{ratio}$来表示每个区间。划分成的区间数是一个可调节的超参数。所以，对齐比率嵌入表示的计算方法如下：
+\begin{align}
+\label{eq:align}
+    \mathbf{e}_{align}^j = f(\mathbf{E}_{ratio}(s^j / N))
+\end{align}
+其中，$f(\cdot)$是一个简单的非线性神经网络层，由一维因果卷积层和ReLU激活函数组成。
+最后，将旋律嵌入表示和对齐比率嵌入求和，结果被输入到基于Transformer的子结构的编码器或解码器，和其中原有的嵌入表示相加：
+\begin{equation}
+\label{eq:embed}
+    \mathbf{e}_{\text{enc(dec)}} = \mathbf{e}_{token} + \mathbf{e}_p + (\mathbf{e}_{md} + \mathbf{e}_{align})
+\end{equation}
+如公式~(\ref{eq:md_embed})所示，每个旋律嵌入表示都会对应于该段旋律对齐到的词语。
+此外，使用因果卷积层意味着音符对齐比率的嵌入张量也具有与文本序列相同的长度，并且能够保证每个对齐比率的嵌入表示仅以自回归的方式与先前的比率嵌入表示相关。上述性质就保证了该层在解码器中可以完美地适应自回归方式的翻译需要进行的Teacher-forcing式训练。
+来自源端歌词的对齐嵌入表示由于在解码时并没有目标端的词语可以对去，所以这部分会整体经过池化层处理以形成全局的对齐参考表示，并输入到对齐解码器中。
+本章提出的这种设计的动机在于用对齐的音符数来隐式地对歌词的翻译过程进行限制。
+
+\subsection{对齐解码器的结构}
+受自适应计算时间方法（Adaptive Computation Time，ACT）~\citep{act}的启发，本章提出了\textbf{自适应分组}模块来对歌词和音符的对齐情况进行建模。
+如图\ref{fig:align_dec}，\ref{fig:act_gp}所示，此模块能够预测出应将多少个连续的音符分配给当前解码时间步正在处理的词语。
+\subsubsection{自适应音符分组预测}
+一般地，有$1 \leq j \leq L_Y$，设$y_j$为第$j$个目标端文本词语，$\mathbf{h}_j$为基于Transformer的解码器的最后一层相对应的隐层表示。
+为了说明之便而又不失一般性，假设之前的文本序列$y_{j-1:0}$已经与前$n-1$个音符完成对齐，下文将通过遍历一个索引变量$k$（$k$从1开始）来定义自适应音符分组预测与$y_j$对齐的音符数量的过程。
+\begin{align}
+    \mathcal{S}_{re}^j &= N -s^{j-1}_{tgt} \\
+     \mathbf{h}_j^0 &= \mathbf{h}_j  \\
+     \mathbf{h}_j^k &= g(\mathbf{h}_j^{k-1}, \mathbf{e}_{align(X)}, \mathbf{h}_{align(y_{j-1:0})}, \mathcal{S}_{re}^j, k-1) \\
+     \alpha_j^k &= \sigma(\text{Linear}(\mathbf{h}_j^k))
+\end{align}
+其中，$\mathbf{e}_{align(X)}$是完整的来自源语言端的对齐嵌入表示，$\mathbf{e}_{align(y_{j-1:0})}$则是已经过解码的先前部分的对齐嵌入表示，$s^{j-1}_{tgt}$是$\mathbf{s}$向量中的第$j$元素（$\mathbf{s}$来自公式~(\ref{eq:cumsum}）。
+现在模型既有每句歌词对应的完整旋律中的音符数量信息，又有已经对齐到目标端的音符数量，那么可以计算当前解码步骤中第$j$时间步时，剩余未对齐音符的数量为$\mathcal{S}_{re}^j$。如上文所述，$\mathbf{e}_{align(X)}$经过一个平均池化层以获得单个向量表示作为全局参考，从而使得来自源语言端的对齐情况始终可以与可变长度的目标端的$\mathbf{e}_{align(y_{j-1:0})}$进行加和。
+一个多层神经网络$g(\cdot)$会对所有的输入进行处理，具体网络结构如图\ref{fig:align_dec}中绿色部分所示。
+最后，经Sigmoid函数$\sigma(\cdot)$处理，模块会这一步处理中间态的自适应分组停止概率$\alpha_j^k$。
+所有中间态停止概率的总和表示当前$k$个音符与目标端词语$y_j$对齐的可能性。
+
+给定一个超参数$\epsilon$，通常为一个很小的浮点数（例如，0.01），如果此时的$k$满足$\sum_k \alpha_j^k < 1-\epsilon$，即累计概率未超过阈值，那么自适应分组过程会继续进行并将$k$递增为$k=k+1$；相应递减$\mathcal{S}_{re}^j=\mathcal{S}_{re}^j-1$，然后进行上述计算。
+否则，累计概率已经超过了既定阈值，对齐预测的分组过程停止，对齐解码器输出当前对齐的音符数$K(j)$。
+\begin{equation}
+\label{eq:Kj}
+    K(j) = \underset{K}{\mathrm{argmin}} \left\{\sum_{k=1}^K \alpha_j^k \geq 1-\epsilon \right\}
+\end{equation}
+
+在$\epsilon$是正值$\epsilon>0$的情况下，这个预测过程能确保$K(j)\geq1$，也就是说对于每个词语，至少有一个音符会被对齐到该词语上。
+为了清晰地定义对齐$K(j)$个音符到当前词语的概率，引入一个余项$R(j) = 1-\sum_{k=1}^{K(j)-1} \alpha_j^k$。
+这样，$\alpha_j^k$和$R(j)$就都可以是有效的概率分布了。
+图\ref{fig:act_gp}是本节提出的自适应分组方法在歌词音符对齐预测上运行的一个示例。
+
+\begin{equation}
+\begin{array}{rl}
+    L_G = & \left| \sum_j K(j) - N \right| + \sum_j \left|K(j) - \Delta_j\right| \\
+    \approx &\left|\sum_j \left(K(j) - (1 - R(j))\right) - N \right| \\
+    & + \sum_j \left|K(j) - (1 - R(j)) - \Delta_j\right|
+\end{array}
+\end{equation}
+\subsubsection{自适应分组模块的梯度计算}
+
+
+\section{基于Back Translation的数据增强}
+\label{sec:bta}
+虽然本章中收集的规模在上千句左右的歌曲数据集能够初步满足训练模型的需求，其中包含的来自人工翻译平行双语歌词和歌词-旋律对齐信息的标注数量是非常有限的，而且这对标注人员素质提也提出了较高要求，因此对于实际应用会有收集耗时较长，代价昂贵的问题。
+
+所以，本章还改造了近年来神经机器翻译研究中广泛使用的基于回译的数据增强方法\citep{backtrans}来生成更多的双语歌曲训练数据。
+相比于本章提出的人工标注的平行双语歌曲数据集，在公开网络上显然可以搜集到数量更为庞大的单语歌曲数据。通过构建一个可以进行长度控制的预训练歌词翻译模型，目标语言中的单语数据就能被回译到源语言中。
+长度控制可以确保翻译出的结果的词语的数量与所对应的旋律的音符数量相同，这样就能在源语言端制造歌词和音符的简单一对一对齐。
+经过如此改造后的回译方法就能够制造出相对较大的双语歌曲数据集。显然，这样增强出的数据在源端有信息噪声，但在目标端仍然保留了非常准确的信息。
+由于回译出的数据比人工标注的数规模大得多，本章在实际训练中采用了类似课程学习的方式来进行训练时的数据采样。即在训练初期，来自回译增强的数据将与来自人工标注的数据真实数据混合。人工标注的数据被上采样到与回译数据差不多的数量级，
+对回译数据的降采样率则会随训练进行不断减小，这样，每个小批次训练数据中人工标注数据的占比就会随着训练的进行不断提高。
+
+\section{损失函数对于自动歌曲翻译模型的优化}
 \section{歌曲翻译的评价指标}
+对本章提出的模型所针对的自动歌曲翻译任务的表现的评价，最有说服力的指标就是翻译后的歌曲结果是否能被正常演唱、歌词文本易于理解，以及，最核心的指标，是否仍和原歌曲一样是人类乐于欣赏的歌曲作品。
+因此，本章的实验评测参考了\citet{songmass}~中的做法：在进行人工评测时，评测人员会根据展示出的模型翻译结果——歌词和歌词-旋律对齐情况制成的歌谱，给出评测打分。
+
+但是由于本章针对的自动歌曲翻译任务的特殊性，为了以一种接近实际中端到端的方式验证翻译结果的可唱性，本章的实验评测还使用了一个开源的歌唱语音合成模型~\citep{diffsinger}为评测人员提供翻译后歌曲的演唱音频，期望以此让标注人员进行更直观的演唱评测。
+
+
+客观翻译BLEU，主观MOS，对齐情况Alignment Score。
+\begin{equation}
+    % \text{AS} = \frac{\sum_{k} \min(\text{freq}_{pred}^k, \text{freq}_{gt}^k) * k)}{\sum_{k} \text{freq}_{gt}^k * k }
+    \text{AS} = \frac{\sum_{k}\min(\text{freq}_{pred}^k/F_{pred}, \text{freq}_{gt}^k/F_{gt}) * k)}{\sum_{k} (\text{freq}_{gt}^k/F_{gt}) * k) }
+\end{equation}
+\section{实验设计}
+
+\section{实验结果与分析}
+\begin{table}[t]
+    \centering
+    %\setlength{\tabcolsep}{4pt}
+    \begin{tabular}{l|c|c|c|c|c|c}
+    \hline
+    \multirow{2}{*}{模型名称} & \multicolumn{2}{c|}{MOS-T} & \multicolumn{2}{c|}{MOS-S} & \multicolumn{2}{c}{MOS-Q} \\
+    \cline{2-7}
+    & En$\rightarrow$Zh & Zh$\rightarrow$En & En$\rightarrow$Zh & Zh$\rightarrow$En$^\dagger$ & En$\rightarrow$Zh & Zh$\rightarrow$En$^\dagger$ \\
+    \hline\hline
+    GagaST & 3.66 $\pm$ 0.06 & 3.72 $\pm$ 0.05 & 3.49 $\pm$ 0.10 & \multirow{7}{*}{\diagbox[height=25pt, width=0.05\textwidth]{}{}} & 3.65 $\pm$ 0.05 & \multirow{7}{*}{\diagbox[height=25pt, width=0.05\textwidth]{}{}}\\
+    \cline{1-4} \cline{6-6}
+    \modelname-cls  & 3.66 $\pm$ 0.05& 3.79 $\pm$ 0.05 & 3.58 $\pm$ 0.07& & 3.62 $\pm$ 0.05& \\
+    ~~~ only bt & 3.69 $\pm$ 0.05 & 3.80 $\pm$ 0.04 & 3.53 $\pm$ 0.09 & & 3.63 $\pm$ 0.05&\\
+    ~~~ w/o bt & 3.64 $\pm$ 0.05 & 3.30 $\pm$ 0.05 & 2.16 $\pm$ 0.05 & & 3.14 $\pm$ 0.04 &\\
+    \cline{1-4} \cline{6-6}
+    \modelname  & 3.71 $\pm$ 0.05& 3.85 $\pm$ 0.05 & 3.68 $\pm$ 0.05&  & 3.69 $\pm$ 0.04&\\
+    ~~~ only bt & 3.71 $\pm$ 0.05 & 3.80 $\pm$ 0.05 & 3.58 $\pm$ 0.07 & & 3.65 $\pm$ 0.04&\\
+    ~~~ w/o bt  & 3.69 $\pm$ 0.05 & 3.28 $\pm$ 0.04 & 3.63 $\pm$ 0.07 & & 3.67 $\pm$ 0.04&\\
+    % \midrule
+    % \modelname~w/o bt  & & & & & & \\
+    % \modelname~only bt & & & & & & \\
+    % \modelname~+ bt  & & & & & & \\
+    \hline
+    \end{tabular}
+    \caption{The Mean Opinion Score in translation intelligibility and naturalness~(MOS-T), singability~(MOS-S) and overall quality~(MOS-Q) with 95\% confidence intervals. The translation direction with $^\dagger$ means that audio samples of the translated song for evaluation are generated with the voice synthesis model that is not trained for that target language. So those results are presented in Appendix \ref{appendix:zh-en} and for reference only.}
+    %带*的结果仅供参考
+    \label{tab:subjective}
+\end{table}
+
+
+\begin{table}[tbp]
+    \centering
+    \begin{tabular}{l|c|c|c|c}
+    \hline
+    \multirow{2}{*}{模型名称} & \multicolumn{2}{c|}{BLEU$\uparrow$} & \multicolumn{2}{c}{AS. $\uparrow$}\\
+    \cline{2-5}
+    & En$\rightarrow$Zh & Zh$\rightarrow$En & En$\rightarrow$Zh & Zh$\rightarrow$En \\
+    \hline\hline
+    GagaST & 11.87 & 5.67 & 0.701 & 0.468\\
+    \hline
+    \modelname-cls & 14.21 & 10.01 & 0.827 & 0.555\\
+    ~~~ only bt  & 15.54 & 10.21 & 0.709 & 0.667\\
+    ~~~ w/o bt & 13.73 & 8.26 & 0.704 & 0.490 \\
+    \hline
+    \modelname & 16.02* & \textbf{10.68} & \textbf{0.923} & \textbf{0.781} \\
+    ~~~ only bt  & \textbf{16.27} & 10.26* & 0.880* & 0.718* \\
+    ~~~ w/o bt & 14.12 & 7.86 & 0.845 & 0.710\\
+    ~~~ w/o $\mathbf{e}_{align}$  & 15.16 & 9.24 & 0.852 & 0.703\\
+    \hline
+    \end{tabular}
+    \caption{两个翻译方向上的saceBLEU和对齐分数。*表示行内第二优的结果。}
+    \label{tab:objective}
+\end{table}
+
+\begin{figure}[t]
+    \centering
+\subfloat[源歌谱和参考翻译结果 左图：英$\rightarrow$中。 右图： 中$\rightarrow$英。]{
+    \includegraphics[width=0.55\textwidth,clip=true]{figure/ast/analysis_cases/exp_en_1.pdf}
+    \includegraphics[width=0.43\textwidth,clip=true]{figure/ast/analysis_cases/exp_zh_2.pdf}
+}\\
+\subfloat[GagaST]{
+    \includegraphics[width=0.55\textwidth,clip=true]{figure/ast/analysis_cases/exp_gagast_zh_1.pdf}
+    \includegraphics[width=0.44\textwidth,clip=true]{figure/ast/analysis_cases/exp_gagast_en_2.pdf}
+}\\
+\subfloat[\modelname-cls]{
+    \includegraphics[width=0.55\textwidth,clip=true]{figure/ast/analysis_cases/exp_baseline_zh_1.pdf}
+    \includegraphics[width=0.44\textwidth,clip=true]{figure/ast/analysis_cases/exp_baseline_en_2.pdf}
+}\\
+\subfloat[\modelname]{
+    \includegraphics[width=0.55\textwidth,clip=true]{figure/ast/analysis_cases/exp_LTAG_zh_1.pdf}
+    \includegraphics[width=0.44\textwidth,clip=true]{figure/ast/analysis_cases/exp_LTAG_en_2.pdf}
+}\\
+\caption{Example scores of the source, reference and the translation for ``Is love I can be sure of'' in 《\textit{Will You Love Me Tomorrow}》 and ``她会有多幸运'' in 《\textit{小幸运}》 from three systems.}
+\label{fig:score_analysis}
+\end{figure}
 \section{本章小结}
+本章主要针对自动歌曲翻译任务提出了一个完整的。本章提出的，。本章细致阐述了，介绍了本章提出的数据收集方法、实验中使用的数据集情况、。最后，通过对比实验和翻译结果的歌谱展示说明了xxxx取得了更好的文本语义翻译表现和更为合理、更有表现力的歌词-旋律对齐，从而获得了整体上更好的歌曲翻译表现。

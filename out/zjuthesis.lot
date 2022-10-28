@@ -1,4 +1,9 @@
 \addvspace {10.0pt}
 \addvspace {10.0pt}
 \addvspace {10.0pt}
+\contentsline {table}{\numberline {3.1}{\ignorespaces 本文中所涉及的数据集的数据统计情况。\relax }}{7}{table.caption.15}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces The Mean Opinion Score in translation intelligibility and naturalness\nobreakspace {}(MOS-T), singability\nobreakspace {}(MOS-S) and overall quality\nobreakspace {}(MOS-Q) with 95\% confidence intervals. The translation direction with $^\dagger $ means that audio samples of the translated song for evaluation are generated with the voice synthesis model that is not trained for that target language. So those results are presented in Appendix \ref {appendix:zh-en} and for reference only.\relax }}{14}{table.caption.19}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces 两个翻译方向上的saceBLEU和对齐分数。*表示行内第二优的结果。\relax }}{15}{table.caption.20}%
+\addvspace {10.0pt}
+\addvspace {10.0pt}
 \addvspace {10.0pt}

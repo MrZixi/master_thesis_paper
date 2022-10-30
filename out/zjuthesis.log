@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.10.24)  28 OCT 2022 11:35
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.10.24)  30 OCT 2022 16:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -29,7 +29,7 @@ Degree: {graduate}
 MajorFormat: {cs}
 Type: {thesis}
 Period: {paper}
-BlindReview: {true}
+BlindReview: {false}
 Language: {chinese}
 GradLevel: {master}
 PrintFilePath: {false}
@@ -210,28 +210,10 @@ X
 \l__fontspec_tmpb_dim=\dimen171
 \l__fontspec_tmpc_dim=\dimen172
 
-/usr/local/texlive/2022/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty:456: M
-issing \endcsname inserted.
-<to be read again> 
-                   \let 
-l.456 \ProcessOptions*
-                      
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
 (/usr/local/texlive/2022/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-
-/usr/local/texlive/2022/texmf-dist/tex/latex/base/fontenc.sty:111: Missing \end
-csname inserted.
-<to be read again> 
-                   \let 
-l.111 \ProcessOptions*
-                      
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-) (/usr/local/texlive/2022/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
 (/usr/local/texlive/2022/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg
 File: xeCJK.cfg 2022/08/05 v3.9.1 Configuration file for xeCJK package
 ))
@@ -342,17 +324,8 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \Gm@layouthoffset=\dimen185
 \Gm@layoutvoffset=\dimen186
 \Gm@dimlist=\toks17
-
-/usr/local/texlive/2022/texmf-dist/tex/latex/geometry/geometry.sty:1003: Missin
-g \endcsname inserted.
-<to be read again> 
-                   \let 
-l.1003 \ProcessOptionsKV[c]{Gm}
-                               %
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/tabularx.sty
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/array.sty
@@ -388,16 +361,6 @@ File: multido.tex 2010/05/14 v1.42 `multido' (tvz,hv)
 (/usr/local/texlive/2022/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2022/05/18 v4.0.3 Extensive control of page headers and foote
 rs
-
-/usr/local/texlive/2022/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty:126: Missing
- \endcsname inserted.
-<to be read again> 
-                   \let 
-l.126 \ProcessOptions*
-                      
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
 \f@nch@headwidth=\skip64
 \f@nch@O@elh=\skip65
 \f@nch@O@erh=\skip66
@@ -407,7 +370,8 @@ not appear between \csname and \endcsname.
 \f@nch@O@erf=\skip70
 \f@nch@O@olf=\skip71
 \f@nch@O@orf=\skip72
-) (/usr/local/texlive/2022/texmf-dist/tex/latex/titlesec/titlesec.sty
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \ttl@box=\box57
 \beforetitleunit=\skip73
@@ -622,15 +586,6 @@ Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
 \ESO@tempdima=\dimen264
 \ESO@tempdimb=\dimen265
 
-/usr/local/texlive/2022/texmf-dist/tex/latex/eso-pic/eso-pic.sty:261: Missing \
-endcsname inserted.
-<to be read again> 
-                   \let 
-l.261 \ProcessOptionsWithKV{ESO}
-                                %
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
 (/usr/local/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
 
@@ -837,17 +792,9 @@ Package biblatex Info: ... file 'blx-compat.def' found.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/biblatex/blx-compat.def
 File: blx-compat.def 2022/07/12 v3.18b biblatex compatibility (PK/MW)
 )
-/usr/local/texlive/2022/texmf-dist/tex/latex/biblatex/biblatex.sty:16113: Missi
-ng \endcsname inserted.
-<to be read again> 
-                   \let 
-l.16113 \ProcessOptions*
-                        
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
+
 (/usr/local/texlive/2022/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2022/07/12 v3.18b biblatex compatibility (PK/MW)
 \c@textcitecount=\count435
@@ -1007,21 +954,12 @@ Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
 \caption@parindent=\dimen281
 \caption@hangindent=\dimen282
 Package caption Info: Standard document class detected.
-
-/usr/local/texlive/2022/texmf-dist/tex/latex/caption/caption3.sty:1864: Missing
- \endcsname inserted.
-<to be read again> 
-                   \let 
-l.1864 \ProcessOptions*
-                       
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
 )
 \c@caption@flags=\count468
 \c@continuedfloat=\count469
 Package caption Info: hyperref package is loaded.
-) (/usr/local/texlive/2022/texmf-dist/tex/latex/chngcntr/chngcntr.sty
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/chngcntr/chngcntr.sty
 Package: chngcntr 2018/04/09 v1.1a change counter resetting
 Package chngcntr Info: \counterwithout already defined.
 (chngcntr)             Quitting chngcntr on input line 21.
@@ -1174,23 +1112,14 @@ Package: subfig 2005/06/28 ver: 1.3 subfig package
 \sf@captopadj=\dimen316
 \sf@capskip=\skip146
 \sf@nearskip=\skip147
-
-/usr/local/texlive/2022/texmf-dist/tex/latex/subfig/subfig.sty:297: Missing \en
-dcsname inserted.
-<to be read again> 
-                   \let 
-l.297 \ProcessPackageOptions
-                            
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
 \c@subfigure=\count494
 \c@subfigure@save=\count495
 \c@subtable=\count496
 \c@subtable@save=\count497
 \sf@top=\skip148
 \sf@bottom=\skip149
-)) (/usr/local/texlive/2022/texmf-dist/tex/latex/mathtools/mathtools.sty
+))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2022/06/29 v1.29 mathematical typesetting tools
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/mathtools/mhsetup.sty
@@ -1425,15 +1354,6 @@ Package hyperref Info: Link coloring OFF on input line 163.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
 
-/usr/local/texlive/2022/texmf-dist/tex/latex/pdflscape/pdflscape.sty:66: Missin
-g \endcsname inserted.
-<to be read again> 
-                   \let 
-l.66 \ProcessOptions*
-                     
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
 (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
@@ -1455,30 +1375,7 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'zjuthesis.bbl' found.
 
-(out/zjuthesis.bbl)
-Package biblatex Info: Reference section=0 on input line 163.
-Package biblatex Info: Reference segment=0 on input line 163.
-
-(/usr/local/texlive/2022/texmf-dist/tex/latex/translations/translations-basic-d
-ictionary-english.trsl
-File: translations-basic-dictionary-english.trsl (english translation file `tra
-nslations-basic-dictionary')
-)
-Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 163.
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: subfig package v1.3 is loaded.
-Package caption Info: float package is loaded.
-Package caption Info: listings package is loaded.
-Package caption Info: longtable package is loaded.
-
-(/usr/local/texlive/2022/texmf-dist/tex/latex/caption/ltcaption.sty
-Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
-)
-Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count513
-
-(./page/graduate/cover.tex (./page/graduate/cover-chn.tex
+(out/zjuthesis.bbl
 
 Package fontspec Warning: Font "Songti SC Light" does not contain requested
 (fontspec)                Script "CJK".
@@ -1509,6 +1406,30 @@ Package fontspec Info: Font family 'SongtiSCLight(1)' created for font 'Songti
 (fontspec)             Light/BI/OT:language=dflt;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
+)
+Package biblatex Info: Reference section=0 on input line 163.
+Package biblatex Info: Reference segment=0 on input line 163.
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/translations/translations-basic-d
+ictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `tra
+nslations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' f
+or `english'. on input line 163.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: longtable package is loaded.
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+)
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count513
+
+(./page/graduate/cover.tex (./page/graduate/cover-chn.tex
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd)
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd)
 (/usr/local/texlive/2022/texmf-dist/tex/latex/jknapltx/ursfs.fd)
@@ -1527,7 +1448,12 @@ Overfull \hbox (49.28423pt too wide) in paragraph at lines 81--81
  []
 
 
-Overfull \hbox (322.9432pt too wide) in paragraph at lines 81--81
+Overfull \hbox (29.41705pt too wide) in paragraph at lines 81--81
+ |   [] 
+ []
+
+
+Overfull \hbox (67.28116pt too wide) in paragraph at lines 81--81
  |   [] 
  []
 
@@ -1542,17 +1468,11 @@ File: figure//logo/zju.pdf Graphic file (type pdf)
 ] [4
 
 ]
-Overfull \hbox (131.95583pt too wide) in paragraph at lines 19--19
- |   [] 
- []
-
 File: figure//logo/zju.pdf Graphic file (type pdf)
 <use figure//logo/zju.pdf>
+) (./page/graduate/auth-claim.tex [5] [6
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5])
-(./page/graduate/auth-claim.tex [6]
+]
 
 Package fontspec Warning: Font "Kaiti SC" does not contain requested Script
 (fontspec)                "CJK".
@@ -1583,29 +1503,32 @@ Package fontspec Info: Font family 'KaitiSC(0)' created for font 'Kaiti SC'
 (fontspec)             Bold/OT:language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
-)) [7
-
-] [8
+)) [7] [8
 
 ] (./page/graduate/previous.tex (./page/graduate/correction.tex)
-(./page/graduate/preface.tex [1
+(./page/graduate/acknowledgement.tex [1
 
 
 
 ] [2
 
-]) (./page/graduate/abstract.tex [3
+]) (./page/graduate/preface.tex
+[3
 
-]
-[4
+] [4
 
-] [5
+]) (./page/graduate/abstract.tex [5
 
 ] [6
 
-]) (./page/graduate/term-translation.tex [7
+] [7
 
 ] [8
+
+])
+(./page/graduate/term-translation.tex [9
+
+] [10
 
 ]
 Overfull \hbox (7.54721pt too wide) in alignment at lines 8--13
@@ -1628,139 +1551,50 @@ Overfull \hbox (7.54721pt too wide) in alignment at lines 19--21
  []
 
 
-Overfull \hbox (7.54721pt too wide) in alignment at lines 21--26
+Overfull \hbox (7.54721pt too wide) in alignment at lines 21--27
  [] [] [] 
  []
 
-)) (./page/graduate/toc.tex [9
+)) (./page/graduate/toc.tex [11
 
-] [10
+] [12
 
 ] (out/zjuthesis.toc
-Underfull \vbox (badness 1675) has occurred while \output is active []
+Underfull \vbox (badness 2035) has occurred while \output is active []
 
- [11])
+ [13])
 \tf@toc=\write4
 \openout4 = `zjuthesis.toc'.
 
 
-[12] (out/zjuthesis.lof
+[14] (out/zjuthesis.lof
 
 LaTeX Font Warning: Font shape `TU/STFangsong(0)/m/it' undefined
-(Font)              using `TU/STFangsong(0)/m/n' instead on input line 11.
+(Font)              using `TU/STFangsong(0)/m/n' instead on input line 12.
 
 )
 \tf@lof=\write5
 \openout5 = `zjuthesis.lof'.
 
- [13
+ [15
 
-] [14
+] [16
 
-] (out/zjuthesis.lot
-
-LaTeX Warning: Reference `appendix:zh-en' on page XV undefined on input line 5.
-
-
-)
+] (out/zjuthesis.lot)
 \tf@lot=\write6
 \openout6 = `zjuthesis.lot'.
 
-) [15] [16
+) [17] [18
 
-] (./body/graduate/content.tex (./body/graduate/intro.tex
+] (./body/graduate/content.tex
+(./body/graduate/intro.tex
 1
-
-LaTeX Warning: Citation 'macon1997concatenation' on page 1 undefined on input l
-ine 13.
-
-
-LaTeX Warning: Citation 'kenmochi2007vocaloid' on page 1 undefined on input lin
-e 13.
-
-
-LaTeX Warning: Citation 'saino2006hmm' on page 1 undefined on input line 13.
-
-
-LaTeX Warning: Citation 'oura2010recent' on page 1 undefined on input line 13.
-
-
-LaTeX Warning: Citation 'ren2020deepsinger' on page 1 undefined on input line 1
-5.
-
-
-LaTeX Warning: Citation '' on page 1 undefined on input line 15.
-
-
-LaTeX Warning: Citation 'blaauw2020sequence' on page 1 undefined on input line 
-15.
-
-
-LaTeX Warning: Citation '' on page 1 undefined on input line 15.
-
-
-LaTeX Warning: Citation 'lee2019adversarially' on page 1 undefined on input lin
-e 16.
-
-
-LaTeX Warning: Citation '' on page 1 undefined on input line 16.
-
-
-LaTeX Warning: Citation 'wu2020adversarially' on page 1 undefined on input line
- 16.
-
-
-LaTeX Warning: Citation '' on page 1 undefined on input line 16.
-
-
-LaTeX Warning: Citation 'chen2020hifisinger' on page 1 undefined on input line 
-16.
-
-
-LaTeX Warning: Citation '' on page 1 undefined on input line 16.
-
 [1
 
 ]
 File: figure/ast/exp.pdf Graphic file (type pdf)
 <use figure/ast/exp.pdf>
-
-
-LaTeX Warning: Citation 'nmt' on page 2 undefined on input line 24.
-
-
-LaTeX Warning: Citation 'vaswani2017attention' on page 2 undefined on input lin
-e 24.
-
-
-LaTeX Warning: Citation 'hassan2018achieving' on page 2 undefined on input line
- 24.
-
-
-LaTeX Warning: Citation 'three_d_of_singability' on page 2 undefined on input l
-ine 24.
-
-[2]
-
-LaTeX Warning: Citation 'gagast' on page 3 undefined on input line 26.
-
-
-LaTeX Warning: Citation '' on page 3 undefined on input line 26.
-
-
-LaTeX Warning: Citation 'gagast' on page 3 undefined on input line 26.
-
-
-LaTeX Warning: Citation '' on page 3 undefined on input line 26.
-
-
-LaTeX Warning: Citation 'interplay_lyrics_melody' on page 3 undefined on input 
-line 26.
-
-
-LaTeX Warning: Citation '' on page 3 undefined on input line 26.
-
-[3]) (./body/graduate/related.tex [4]
+ [2] [3]) (./body/graduate/related.tex [4]
 2
 ) (./body/graduate/ast.tex [5
 
@@ -1768,9 +1602,6 @@ LaTeX Warning: Citation '' on page 3 undefined on input line 26.
 
 ]
 3
-
-LaTeX Warning: Citation 'LMD' on page 7 undefined on input line 5.
-
 
 Package fontspec Warning: Font "STFangsong" does not contain requested Script
 (fontspec)                "CJK".
@@ -1783,54 +1614,26 @@ Underfull \vbox (badness 5893) has occurred while \output is active []
  [7]
 File: figure/ast/pipeline_svs.pdf Graphic file (type pdf)
 <use figure/ast/pipeline_svs.pdf>
-
-
-LaTeX Warning: Citation 'gagast' on page 8 undefined on input line 46.
-
-
-LaTeX Warning: Citation '' on page 8 undefined on input line 46.
-
-
-LaTeX Warning: Citation 'bart' on page 8 undefined on input line 46.
-
 File: figure/ast/note-pooling.pdf Graphic file (type pdf)
 <use figure/ast/note-pooling.pdf>
 File: figure/ast/alignment_decoder.pdf Graphic file (type pdf)
 <use figure/ast/alignment_decoder.pdf>
 File: figure/ast/act_gp.pdf Graphic file (type pdf)
 <use figure/ast/act_gp.pdf>
+
 [8] [9]
 Missing character: There is no ， ("FF0C) in font cmr12!
 [10]
-
-LaTeX Warning: Citation 'act' on page 11 undefined on input line 117.
-
-
 Underfull \vbox (badness 4168) has occurred while \output is active []
 
  [11]
-[12]
+[12] [13] [14]
+File: figure/ast/backtrans_curriculum.pdf Graphic file (type pdf)
+<use figure/ast/backtrans_curriculum.pdf>
+ [15]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Citation 'backtrans' on page 13 undefined on input line 160.
-
-
-LaTeX Warning: Citation 'songmass' on page 13 undefined on input line 170.
-
-
-LaTeX Warning: Citation '' on page 13 undefined on input line 170.
-
-
-LaTeX Warning: Citation 'diffsinger' on page 13 undefined on input line 172.
-
-[13]
-
-LaTeX Warning: Reference `appendix:zh-en' on page 14 undefined on input line 20
-7.
-
-
-LaTeX Warning: Reference `appendix:zh-en' on page 14 undefined on input line 20
-7.
-
+ [16]
 File: figure/ast/analysis_cases/exp_en_1.pdf Graphic file (type pdf)
 <use figure/ast/analysis_cases/exp_en_1.pdf>
 File: figure/ast/analysis_cases/exp_zh_2.pdf Graphic file (type pdf)
@@ -1840,7 +1643,7 @@ File: figure/ast/analysis_cases/exp_gagast_zh_1.pdf Graphic file (type pdf)
 File: figure/ast/analysis_cases/exp_gagast_en_2.pdf Graphic file (type pdf)
 <use figure/ast/analysis_cases/exp_gagast_en_2.pdf>
 
-Overfull \hbox (4.48378pt too wide) in paragraph at lines 246--246
+Overfull \hbox (4.48378pt too wide) in paragraph at lines 303--303
  [][] 
  []
 
@@ -1849,7 +1652,7 @@ File: figure/ast/analysis_cases/exp_baseline_zh_1.pdf Graphic file (type pdf)
 File: figure/ast/analysis_cases/exp_baseline_en_2.pdf Graphic file (type pdf)
 <use figure/ast/analysis_cases/exp_baseline_en_2.pdf>
 
-Overfull \hbox (4.48378pt too wide) in paragraph at lines 250--250
+Overfull \hbox (4.48378pt too wide) in paragraph at lines 307--307
  [][] 
  []
 
@@ -1858,39 +1661,52 @@ File: figure/ast/analysis_cases/exp_LTAG_zh_1.pdf Graphic file (type pdf)
 File: figure/ast/analysis_cases/exp_LTAG_en_2.pdf Graphic file (type pdf)
 <use figure/ast/analysis_cases/exp_LTAG_en_2.pdf>
 
-Overfull \hbox (4.48378pt too wide) in paragraph at lines 254--254
+Overfull \hbox (4.48378pt too wide) in paragraph at lines 311--311
  [][] 
  []
 
-) (./body/graduate/svs.tex [14] [15] [16
+[17]
+File: figure/ast/hists/gagast_align_hist.pdf Graphic file (type pdf)
+<use figure/ast/hists/gagast_align_hist.pdf>
+File: figure/ast/hists/baseline_align_hist.pdf Graphic file (type pdf)
+<use figure/ast/hists/baseline_align_hist.pdf>
+File: figure/ast/hists/ltag_align_hist.pdf Graphic file (type pdf)
+<use figure/ast/hists/ltag_align_hist.pdf>
+) (./body/graduate/svs.tex [18] [19] [20
 
 ]
 4
-) (./body/graduate/sys.tex [17] [18
+) (./body/graduate/sys.tex [21] [22
 
 ]
 5
-) [19] [20
+) [23] [24
 
 ]
 6
-) [21] [22
+) [25] [26
 
 ] (./body/graduate/post.tex (./body/graduate/post/ref.tex
+Underfull \hbox (badness 6063) in paragraph at lines 4--4
+[]\TU/TimesNewRoman(0)/m/n/10.53937 GRAVES A. Adaptive computation time for rec
+urrent neural networks[]J[]. arXiv preprint
+ []
 
-LaTeX Warning: Empty bibliography on input line 4.
+[27
 
-) (./body/graduate/post/appendix.tex
-File: example-image.pdf Graphic file (type pdf)
-<use example-image.pdf>
-))
+
+]) (./body/graduate/post/appendix.tex [28]) (./body/graduate/post/cv.tex
+[29
+
+
+] [30
+
+]))
 
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 54.
 See the caption package documentation for explanation.
 
-[23
-
-
+[31
 
 ] (out/zjuthesis.aux)
 
@@ -1900,25 +1716,17 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                zjuthesis
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'zjuthesis.run.xml'.
 \openout1 = `zjuthesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36124 strings out of 475744
- 797206 string characters out of 5799089
- 1640963 words of memory out of 5000000
- 56605 multiletter control sequences out of 15000+600000
- 492326 words of font info for 182 fonts, out of 8000000 for 9000
+ 36384 strings out of 475744
+ 809776 string characters out of 5799089
+ 1650078 words of memory out of 5000000
+ 56850 multiletter control sequences out of 15000+600000
+ 492366 words of font info for 187 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 103i,18n,111p,1224b,1244s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,19n,111p,1370b,5396s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on out/zjuthesis.xdv (47 pages, 380020 bytes).
+Output written on out/zjuthesis.xdv (57 pages, 500068 bytes).

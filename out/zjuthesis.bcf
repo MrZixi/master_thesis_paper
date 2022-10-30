@@ -2913,24 +2913,38 @@
     <bcf:citekey order="2" intorder="1">saino2006hmm</bcf:citekey>
     <bcf:citekey order="2" intorder="2">oura2010recent</bcf:citekey>
     <bcf:citekey order="3" intorder="1">ren2020deepsinger</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">blaauw2020sequence</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">lee2019adversarially</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">wu2020adversarially</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">chen2020hifisinger</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">nmt</bcf:citekey>
-    <bcf:citekey order="8" intorder="2">vaswani2017attention</bcf:citekey>
-    <bcf:citekey order="8" intorder="3">hassan2018achieving</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">three_d_of_singability</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">gagast</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">gagast</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">interplay_lyrics_melody</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">LMD</bcf:citekey>
-    <bcf:citekey order="14" intorder="1">gagast</bcf:citekey>
-    <bcf:citekey order="15" intorder="1">bart</bcf:citekey>
-    <bcf:citekey order="16" intorder="1">act</bcf:citekey>
-    <bcf:citekey order="17" intorder="1">backtrans</bcf:citekey>
-    <bcf:citekey order="18" intorder="1">songmass</bcf:citekey>
-    <bcf:citekey order="19" intorder="1">diffsinger</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">ren2020deepsinger</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">blaauw2020sequence</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">blaauw2020sequence</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">lee2019adversarially</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">lee2019adversarially</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">wu2020adversarially</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">wu2020adversarially</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">chen2020hifisinger</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">chen2020hifisinger</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">nmt</bcf:citekey>
+    <bcf:citekey order="13" intorder="2">vaswani2017attention</bcf:citekey>
+    <bcf:citekey order="13" intorder="3">hassan2018achieving</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">three_d_of_singability</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">gagast</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">gagast</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">gagast</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">gagast</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">interplay_lyrics_melody</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">interplay_lyrics_melody</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">LMD</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">gagast</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">gagast</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">bart</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">act</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">act</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">backtrans</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">songmass</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">songmass</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">diffsinger</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">gagast</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">gagast</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">gagast</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

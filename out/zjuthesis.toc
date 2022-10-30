@@ -1,11 +1,12 @@
 \contentsline {chapter}{勘误表}{I}{section*.1}%
-\contentsline {chapter}{序言}{III}{section*.3}%
-\contentsline {chapter}{摘要}{V}{section*.5}%
-\contentsline {chapter}{Abstract}{VII}{section*.7}%
-\contentsline {chapter}{缩略词表}{IX}{section*.9}%
-\contentsline {chapter}{目录}{XI}{section*.11}%
-\contentsline {chapter}{图目录}{XIII}{section*.12}%
-\contentsline {chapter}{表目录}{XV}{section*.13}%
+\contentsline {chapter}{致谢}{III}{section*.3}%
+\contentsline {chapter}{序言}{V}{section*.5}%
+\contentsline {chapter}{摘要}{VII}{section*.7}%
+\contentsline {chapter}{Abstract}{IX}{section*.9}%
+\contentsline {chapter}{缩略词表}{XI}{section*.11}%
+\contentsline {chapter}{目录}{XIII}{section*.13}%
+\contentsline {chapter}{图目录}{XV}{section*.14}%
+\contentsline {chapter}{表目录}{XVII}{section*.15}%
 \contentsline {chapter}{\numberline {1\hspace {.3em}}绪论}{1}{chapter.0.1}%
 \contentsline {section}{\numberline {1.1}引言}{1}{section.0.1.1}%
 \contentsline {section}{\numberline {1.2}国内外研究现状}{1}{section.0.1.2}%
@@ -25,31 +26,33 @@
 \contentsline {subsection}{\numberline {3.3.2}对齐解码器的结构}{11}{subsection.0.3.3.2}%
 \contentsline {subsubsection}{\numberline {3.3.2.1}自适应音符分组预测}{11}{subsubsection.0.3.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.3.2.2}自适应分组模块的梯度计算}{13}{subsubsection.0.3.3.2.2}%
-\contentsline {section}{\numberline {3.4}基于Back Translation的数据增强}{13}{section.0.3.4}%
-\contentsline {section}{\numberline {3.5}损失函数对于自动歌曲翻译模型的优化}{13}{section.0.3.5}%
-\contentsline {section}{\numberline {3.6}歌曲翻译的评价指标}{13}{section.0.3.6}%
-\contentsline {section}{\numberline {3.7}实验设计}{14}{section.0.3.7}%
-\contentsline {section}{\numberline {3.8}实验结果与分析}{14}{section.0.3.8}%
-\contentsline {section}{\numberline {3.9}本章小结}{14}{section.0.3.9}%
-\contentsline {chapter}{\numberline {4\hspace {.3em}}基于扩散模型的歌声合成}{17}{chapter.0.4}%
-\contentsline {section}{\numberline {4.1}歌声合成数据集}{17}{section.0.4.1}%
-\contentsline {section}{\numberline {4.2}歌声合成数据的收集和预处理}{17}{section.0.4.2}%
-\contentsline {section}{\numberline {4.3}歌声合成的参数前端}{17}{section.0.4.3}%
-\contentsline {section}{\numberline {4.4}扩散模型}{17}{section.0.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}正向扩散过程}{17}{subsection.0.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}反向去噪过程}{17}{subsection.0.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}训练和采样生成}{17}{subsection.0.4.4.3}%
-\contentsline {section}{\numberline {4.5}浅扩散机制}{17}{section.0.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}浅扩散机制的原理}{17}{subsection.0.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}浅扩散点的选取}{17}{subsection.0.4.5.2}%
-\contentsline {section}{\numberline {4.6}歌声合成的评价指标}{17}{section.0.4.6}%
-\contentsline {section}{\numberline {4.7}实验结果与分析}{17}{section.0.4.7}%
-\contentsline {section}{\numberline {4.8}本章小结}{17}{section.0.4.8}%
-\contentsline {chapter}{\numberline {5\hspace {.3em}}歌曲到歌声翻译系统}{19}{chapter.0.5}%
-\contentsline {section}{\numberline {5.1}歌曲翻译结果后处理}{19}{section.0.5.1}%
-\contentsline {chapter}{\numberline {6\hspace {.3em}}总结和展望}{21}{chapter.0.6}%
-\contentsline {section}{\numberline {6.1}总结}{21}{section.0.6.1}%
-\contentsline {section}{\numberline {6.2}挑战与未来展望}{21}{section.0.6.2}%
-\contentsline {chapter}{附录}{23}{section*.22}%
-\contentsline {section}{\numberline {A}一个附录}{23}{section.0.7.1}%
-\contentsline {section}{\numberline {B}另一个附录}{23}{section.0.7.2}%
+\contentsline {section}{\numberline {3.4}基于Back Translation的数据增强}{14}{section.0.3.4}%
+\contentsline {section}{\numberline {3.5}损失函数对于自动歌曲翻译模型的优化}{15}{section.0.3.5}%
+\contentsline {section}{\numberline {3.6}歌曲翻译的评价指标}{15}{section.0.3.6}%
+\contentsline {section}{\numberline {3.7}实验设计}{16}{section.0.3.7}%
+\contentsline {section}{\numberline {3.8}实验结果与分析}{17}{section.0.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}主要实验结果}{17}{subsection.0.3.8.1}%
+\contentsline {subsection}{\numberline {3.8.2}消融实验分析}{17}{subsection.0.3.8.2}%
+\contentsline {section}{\numberline {3.9}本章小结}{18}{section.0.3.9}%
+\contentsline {chapter}{\numberline {4\hspace {.3em}}基于扩散模型的歌声合成}{21}{chapter.0.4}%
+\contentsline {section}{\numberline {4.1}歌声合成数据集}{21}{section.0.4.1}%
+\contentsline {section}{\numberline {4.2}歌声合成数据的收集和预处理}{21}{section.0.4.2}%
+\contentsline {section}{\numberline {4.3}歌声合成的参数前端}{21}{section.0.4.3}%
+\contentsline {section}{\numberline {4.4}扩散模型}{21}{section.0.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}正向扩散过程}{21}{subsection.0.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}反向去噪过程}{21}{subsection.0.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}训练和采样生成}{21}{subsection.0.4.4.3}%
+\contentsline {section}{\numberline {4.5}浅扩散机制}{21}{section.0.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}浅扩散机制的原理}{21}{subsection.0.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}浅扩散点的选取}{21}{subsection.0.4.5.2}%
+\contentsline {section}{\numberline {4.6}歌声合成的评价指标}{21}{section.0.4.6}%
+\contentsline {section}{\numberline {4.7}实验结果与分析}{21}{section.0.4.7}%
+\contentsline {section}{\numberline {4.8}本章小结}{21}{section.0.4.8}%
+\contentsline {chapter}{\numberline {5\hspace {.3em}}歌曲到歌声翻译系统}{23}{chapter.0.5}%
+\contentsline {section}{\numberline {5.1}歌曲翻译结果后处理}{23}{section.0.5.1}%
+\contentsline {chapter}{\numberline {6\hspace {.3em}}总结和展望}{25}{chapter.0.6}%
+\contentsline {section}{\numberline {6.1}总结}{25}{section.0.6.1}%
+\contentsline {section}{\numberline {6.2}挑战与未来展望}{25}{section.0.6.2}%
+\contentsline {chapter}{参考文献}{27}{section*.26}%
+\contentsline {chapter}{附录}{29}{section*.28}%
+\contentsline {chapter}{作者简历}{31}{section*.30}%

@@ -1,19 +1,23 @@
 \addvspace {10.0pt}
-\contentsline {figure}{\numberline {1.1}{\ignorespaces 以\textit {Rolling In the Deep}一曲中``But you play it to the beat''一句的完整歌曲翻译为例。\relax }}{2}{figure.caption.14}%
+\contentsline {figure}{\numberline {1.1}{\ignorespaces 以\textit {Rolling In the Deep}一曲中``But you play it to the beat''一句的完整歌曲翻译为例。\relax }}{2}{figure.caption.16}%
 \addvspace {10.0pt}
 \addvspace {10.0pt}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces 本文提出的歌曲翻译数据标注流程概览。\relax }}{8}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces 本章提出的模型架构概览，图示以第$j$个解码时间步进行了说明。Transformer解码器将输出目标语言的词语，对齐解码器会输出对齐音符的数量。\relax }}{9}{figure.caption.17}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces （a）音符表示池化嵌入层会根据音符序列的表示和对齐信息进行编码。（b）（c）对齐解码器会根据停止概率的分布计算对齐音符的数量。\relax }}{9}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces 本文提出的歌曲翻译数据标注流程概览。\relax }}{8}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces 本章提出的模型架构概览，图示以第$j$个解码时间步进行了说明。Transformer解码器将输出目标语言的词语，对齐解码器会输出对齐音符的数量。\relax }}{9}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces （a）音符表示池化嵌入层会根据音符序列的表示和对齐信息进行编码。（b）（c）对齐解码器会根据停止概率的分布计算对齐音符的数量。\relax }}{9}{figure.caption.20}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {The note-pooling embedding layer}}}{9}{subfigure.3.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {The alignment decoder}}}{9}{subfigure.3.2}%
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Adaptive grouping process}}}{9}{subfigure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Example scores of the source, reference and the translation for ``Is love I can be sure of'' in 《\textit {Will You Love Me Tomorrow}》 and ``她会有多幸运'' in 《\textit {小幸运}》 from three systems.\relax }}{15}{figure.caption.21}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {源歌谱和参考翻译结果 左图：英$\rightarrow $中。 右图： 中$\rightarrow $英。}}}{15}{subfigure.4.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {GagaST}}}{15}{subfigure.4.2}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LTAG-cls}}}{15}{subfigure.4.3}%
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {LTAG}}}{15}{subfigure.4.4}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces 如何在歌词和歌曲-旋律对齐的共同翻译训练中使用回译数据和带注释的数据的图示说明。``bt''表示来自back-translation回译数据增强得到的数据，``at''表示来自人工标注的准确歌曲数据。\relax }}{15}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces 源歌词、参考翻译结果和本章中进行比较的三个歌曲翻译模型的翻译结果的歌谱示例。两个例子分别为《\textit {Will You Love Me Tomorrow}》一曲中的``Is love I can be sure of''和《\textit {小幸运}》一曲中的``她会有多幸运''。\relax }}{19}{figure.caption.24}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {源歌谱和参考翻译结果 左图：英$\rightarrow $中。 右图： 中$\rightarrow $英。}}}{19}{subfigure.5.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {GagaST}}}{19}{subfigure.5.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LTAG-cls}}}{19}{subfigure.5.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {LTAG}}}{19}{subfigure.5.4}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces En$\rightarrow $Zh方向测试集中的真实歌曲翻译结果对齐情况和模型预测的对齐结果重叠展示的频率分布直方图。\relax }}{19}{figure.caption.25}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {GagaST}}}{19}{subfigure.6.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {LTAG-cls}}}{19}{subfigure.6.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LTAG}}}{19}{subfigure.6.3}%
 \addvspace {10.0pt}
 \addvspace {10.0pt}
 \addvspace {10.0pt}
-\contentsline {figure}{\numberline {A.1}{\ignorespaces 附录中的图片\relax }}{23}{figure.caption.24}%

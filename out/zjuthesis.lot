@@ -1,9 +1,9 @@
 \addvspace {10.0pt}
 \addvspace {10.0pt}
 \addvspace {10.0pt}
-\contentsline {table}{\numberline {3.1}{\ignorespaces 本文中所涉及的数据集的数据统计情况。\relax }}{7}{table.caption.15}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces The Mean Opinion Score in translation intelligibility and naturalness\nobreakspace {}(MOS-T), singability\nobreakspace {}(MOS-S) and overall quality\nobreakspace {}(MOS-Q) with 95\% confidence intervals. The translation direction with $^\dagger $ means that audio samples of the translated song for evaluation are generated with the voice synthesis model that is not trained for that target language. So those results are presented in Appendix \ref {appendix:zh-en} and for reference only.\relax }}{14}{table.caption.19}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces 两个翻译方向上的saceBLEU和对齐分数。*表示行内第二优的结果。\relax }}{15}{table.caption.20}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces 本文中所涉及的数据集的数据统计情况。\relax }}{7}{table.caption.17}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces 对于歌曲翻译的可理解度（MOS-T）、翻译后歌曲的自然度、可唱性（MOS-S）和整体质量评估（MOS-T）的平均意见得分和95\%置信区间。带有$^\dagger $标记的翻译方向表示其评测时提供的翻译歌曲片段的音频样本是用未针对该目标语言训练的语音合成模型生成的。因此，这些结果仅供参考。\relax }}{17}{table.caption.22}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces 两个翻译方向上的sacreBLEU分数和对齐分数结果。（*表示行内第二优的结果。）\relax }}{18}{table.caption.23}%
 \addvspace {10.0pt}
 \addvspace {10.0pt}
 \addvspace {10.0pt}

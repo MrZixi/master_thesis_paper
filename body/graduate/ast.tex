@@ -20,7 +20,7 @@
      测试集 & 中文、英文 & 25 & 629 & 标注\\
     \hline
     \end{tabular}
-    \caption{本文中所涉及的数据集的数据统计情况。}
+    \caption{本文中所涉及的歌曲翻译数据集的数据统计情况。}
     \label{tab:dataset_stat}
 \end{table}
 \section{歌曲翻译数据的收集和预处理}
@@ -229,7 +229,7 @@ Note that the theoretical upper bound of $\sum_{k=1}^{K(j)-1}\alpha_j^k$ is $K(j
 为了生成符合音乐五线谱规则的乐谱和歌声，我们在对齐预测中添加了一些基于规则的后处理，以获得对模型预测结果更大的容忍度。
 对于序列整体对齐音符预测总和大于旋律中音符的数量的情况，预测的对齐音符数量会被从最后一个词语到第一个词语（或从第一个词语至最后一个词语）一一减小直到预测总数和旋律的音符总数相符。
 对于预测音符数量较少的情况，所有相差的对齐音符数量都会被添加到最后一个词语处。这样的规则是统一、简单又比较符合直觉的，不会对预测结果产生本质性影响。
-
+\section{模型训练}
 \section{实验结果与分析}
 \subsection{主要实验结果}
 本节对\modelname~和上节中阐述的其他两个基线歌曲翻译模型进行比较，并报告实验结果。
@@ -237,6 +237,32 @@ Note that the theoretical upper bound of $\sum_{k=1}^{K(j)-1}\alpha_j^k$ is $K(j
 总体上来说，本章提出的\modelname~与两个基线模型相比都得到了改进，但人工评测的实验结果也显示，模型间和不同实验设置之间的差距并不明显。
 这样的实验结果部分是由于专业人士翻译歌词的结果通常是意译较多而非直译较多。那么在不同片段中，一个单词缺失可能会对人工评价的结果造成负面、中性甚至正面的影响，只有较明显的语义偏差或语法错误会导致分数在一定程度上下降。
 正如在节\ref{sec:metric}中所讨论的，自动评测指标sacreBLEU应该不是比较歌词的机器翻译质量和自由翻译质量的合适的衡量标准。
+\begin{table}[tbp]
+    \centering
+    \begin{tabular}{l|c|c|c|c}
+    \hline
+    \multirow{2}{*}{模型名称} & \multicolumn{2}{c|}{BLEU$\uparrow$} & \multicolumn{2}{c}{AS. $\uparrow$}\\
+    \cline{2-5}
+    & En$\rightarrow$Zh & Zh$\rightarrow$En & En$\rightarrow$Zh & Zh$\rightarrow$En \\
+    \hline\hline
+    GagaST & 11.87 & 5.67 & 0.701 & 0.468\\
+    \hline
+    \modelname-cls & 14.21 & 10.01 & 0.827 & 0.555\\
+    ~~~ only bt  & 15.54 & 10.21 & 0.709 & 0.667\\
+    ~~~ w/o bt & 13.73 & 8.26 & 0.704 & 0.490 \\
+    \hline
+    \modelname & 16.02* & \textbf{10.68} & \textbf{0.923} & \textbf{0.781} \\
+    ~~~ only bt  & \textbf{16.27} & 10.26* & 0.880* & 0.718* \\
+    ~~~ w/o bt & 14.12 & 7.86 & 0.845 & 0.710\\
+    ~~~ w/o $\mathbf{e}_{align}$  & 15.16 & 9.24 & 0.852 & 0.703\\
+    \hline
+    \end{tabular}
+    \caption{两个翻译方向上的sacreBLEU分数和对齐分数结果。（*表示行内第二优的结果。）}
+    \label{tab:objective}
+\end{table}
+但本节仍然和一般的机器翻译文章保持一直，在表\ref{tab:objective}中给出sacreBLEU分数结果。
+可以看到，本章提出的系统\modelname~在两个翻译方向上都显著优于近来的基线模型GagaST。
+与本章提出模型的变种\modelname-cls~相比，\modelname~的表现仍然略优一些。
 \begin{table}[t]
     \centering
     %\setlength{\tabcolsep}{4pt}
@@ -265,33 +291,43 @@ Note that the theoretical upper bound of $\sum_{k=1}^{K(j)-1}\alpha_j^k$ is $K(j
     %带*的结果仅供参考
     \label{tab:subjective}
 \end{table}
-
-
-\begin{table}[tbp]
-    \centering
-    \begin{tabular}{l|c|c|c|c}
-    \hline
-    \multirow{2}{*}{模型名称} & \multicolumn{2}{c|}{BLEU$\uparrow$} & \multicolumn{2}{c}{AS. $\uparrow$}\\
-    \cline{2-5}
-    & En$\rightarrow$Zh & Zh$\rightarrow$En & En$\rightarrow$Zh & Zh$\rightarrow$En \\
-    \hline\hline
-    GagaST & 11.87 & 5.67 & 0.701 & 0.468\\
-    \hline
-    \modelname-cls & 14.21 & 10.01 & 0.827 & 0.555\\
-    ~~~ only bt  & 15.54 & 10.21 & 0.709 & 0.667\\
-    ~~~ w/o bt & 13.73 & 8.26 & 0.704 & 0.490 \\
-    \hline
-    \modelname & 16.02* & \textbf{10.68} & \textbf{0.923} & \textbf{0.781} \\
-    ~~~ only bt  & \textbf{16.27} & 10.26* & 0.880* & 0.718* \\
-    ~~~ w/o bt & 14.12 & 7.86 & 0.845 & 0.710\\
-    ~~~ w/o $\mathbf{e}_{align}$  & 15.16 & 9.24 & 0.852 & 0.703\\
-    \hline
-    \end{tabular}
-    \caption{两个翻译方向上的sacreBLEU分数和对齐分数结果。（*表示行内第二优的结果。）}
-    \label{tab:objective}
-\end{table}
+至于歌词-旋律对齐预测的质量，本节报告两个翻译方向的人工评价分数（MOS-S）。
+在表\ref{tab:subjective}中，\modelname~在此项上显著优于其他系统，尤其优于在解码进行简单的长度控制的模型GagaST。
+值得注意的是，本章提出模型的变种\modelname~cls的性能却比其他模型更差，这表明歌词和旋律之间更灵活的对齐只有在足够合理的情况下才会给听者带来听觉享受，否则，对齐的灵活性可能适得其反，还不如比较简单规整的一对一固定对齐。另外，本节还通过使用图\ref{fig:align_hist}中展示的测试集中的真实歌曲翻译结果对齐情况和模型预测的对齐结果重叠展示的频率分布直方图来观察评估对齐质量。
+在表\ref{tab:objective}中，AS列计算了每个模型的直方图与真实直方图之间的对齐分数。
+直方图显示，\modelname~生成的对齐的分布类似于真实对齐的分布，而GagaST由于歌词和旋律之间仅提供一对一对齐，因此缺乏多样性。
+总之，两个结果都表明，在预测翻译歌词和旋律之间的合理对齐方面，自适应分组方法比长度控制或简单分类器显示出显著优势。
+在表\ref{tab:subjective}中，MOS-Q主要反映了歌曲翻译的整体可理解性、自然度、可唱性和美感。
+由于歌词文本的翻译和歌词-旋律的对齐的质量都对这一最终结果的评价有影响，因此模型之间的差异似乎不太明显。
+但考虑到95\%的置信度区间，这里可以得出结论，\modelname~的表现仍然是最好的。
 
 \begin{figure}[t]
+    \centering
+% \subfigure[GT]{
+%     \includegraphics[width=0.23\textwidth,clip=true]{figures/align_hist.pdf}
+% }
+\subfloat[GagaST]{
+    \includegraphics[width=0.31\textwidth,clip=true]{figure/ast/hists/gagast_align_hist.pdf}
+}
+\subfloat[\modelname-cls]{
+    \includegraphics[width=0.31\textwidth,clip=true]{figure/ast/hists/baseline_align_hist.pdf}
+}
+\subfloat[\modelname]{
+    \includegraphics[width=0.31\textwidth,clip=true]{figure/ast/hists/ltag_align_hist.pdf}
+}
+\caption{En$\rightarrow$Zh方向测试集中的真实歌曲翻译结果对齐情况和模型预测的对齐结果重叠展示的频率分布直方图。}
+\label{fig:align_hist}
+\end{figure}
+
+\subsection{消融实验分析}
+首先，本节分析了一些消融实验以研究不同设置下通过回译增强产生的数据的影响。
+在表\ref{tab:subjective}中，对\modelname~和\modelname-cls的分析可以得到有以下几点发现：
+（1）由于回译增强产生的歌曲翻译数据量明显大于真实人工标注的数据量，如果仅使用回译增强产生的翻译数据进行训练，则模型在翻译质量上的表现几乎没有差异。这使得在平行数据非常匮乏和昂贵的情况下，无监督训练方式可以很好地满足训练模型的需要。
+（2）如果只使用数量有限的人工标注监督数据，模型性能会显著下降。
+（3）\modelname~在这一系列消融实验中的表现始终要比\modelname-cls更好。
+此外，从音符表示池化嵌入层和对齐解码器中移除本章提出的对齐嵌入结构$\mathbf{e}_{align}$的消融实验验证了这以结构的重要性。从相关实验结果的对比中可以观察到，不使用$\mathbf{e}_{align}$提供的信息，模型翻译的歌曲的BLEU和对齐分数都出现了不可忽略的下降。
+
+\begin{figure}[htbp]
     \centering
 \subfloat[源歌谱和参考翻译结果 左图：英$\rightarrow$中。 右图： 中$\rightarrow$英。]{
     \includegraphics[width=0.55\textwidth,clip=true]{figure/ast/analysis_cases/exp_en_1.pdf}
@@ -312,31 +348,7 @@ Note that the theoretical upper bound of $\sum_{k=1}^{K(j)-1}\alpha_j^k$ is $K(j
 \caption{源歌词、参考翻译结果和本章中进行比较的三个歌曲翻译模型的翻译结果的歌谱示例。两个例子分别为《\textit{Will You Love Me Tomorrow}》一曲中的``Is love I can be sure of''和《\textit{小幸运}》一曲中的``她会有多幸运''。}
 \label{fig:score_analysis}
 \end{figure}
-\subsection{消融实验分析}
-首先，本节分析了一些消融实验以研究不同设置下通过回译增强产生的数据的影响。
-在表\ref{tab:subjective}中，对\modelname~和\modelname-cls的分析可以得到有以下几点发现：
-（1）由于回译增强产生的歌曲翻译数据量明显大于真实人工标注的数据量，如果仅使用回译增强产生的翻译数据进行训练，则模型在翻译质量上的表现几乎没有差异。这使得在平行数据非常匮乏和昂贵的情况下，无监督训练方式可以很好地满足训练模型的需要。
-（2）如果只使用数量有限的人工标注监督数据，模型性能会显著下降。
-（3）\modelname~在这一系列消融实验中的表现始终要比\modelname-cls更好。
-此外，从音符表示池化嵌入层和对齐解码器中移除本章提出的对齐嵌入结构$\mathbf{e}_{align}$的消融实验验证了这以结构的重要性。从相关实验结果的对比中可以观察到，不使用$\mathbf{e}_{align}$提供的信息，模型翻译的歌曲的BLEU和对齐分数都出现了不可忽略的下降。
-
-
-\begin{figure}[t]
-    \centering
-% \subfigure[GT]{
-%     \includegraphics[width=0.23\textwidth,clip=true]{figures/align_hist.pdf}
-% }
-\subfloat[GagaST]{
-    \includegraphics[width=0.31\textwidth,clip=true]{figure/ast/hists/gagast_align_hist.pdf}
-}
-\subfloat[\modelname-cls]{
-    \includegraphics[width=0.31\textwidth,clip=true]{figure/ast/hists/baseline_align_hist.pdf}
-}
-\subfloat[\modelname]{
-    \includegraphics[width=0.31\textwidth,clip=true]{figure/ast/hists/ltag_align_hist.pdf}
-}
-\caption{En$\rightarrow$Zh方向测试集中的真实歌曲翻译结果对齐情况和模型预测的对齐结果重叠展示的频率分布直方图。}
-\label{fig:align_hist}
-\end{figure}
+图\ref{fig:score_analysis}中的一些案例分析显示，当源歌词中的词语和音符出现一对多对齐的情况时，GagaST通常会因为需要满足解码长度限制而给出不太合适的歌词翻译，甚至会解码出不发声的富豪，如逗号或句号等，这既损害了翻译质量，又影响了翻译歌词的可唱性。
+相比之下，Transformer子结构+简单分类器的\modelname-cls~已经可以实现相对灵活的对齐了。然而，实验评估结果表明，本章提出的轻量的对齐解码器网络结构能够在目标端词语和音符之间预测出更合理的对齐。
 \section{本章小结}
-本章主要针对自动歌曲翻译任务提出了一个可以进行同时考虑歌词和歌词-旋律对齐情况的翻译模型。本章提出的\modelname，。本章细致阐述了，介绍了本章提出的数据收集方法、实验中使用的数据集情况、。最后，通过对比实验和翻译结果的歌谱展示说明了\modelname~相比两个很强的基线模型取得了更好的文本语义翻译表现和更为合理、更有表现力的歌词-旋律对齐，从而获得了整体上更好的歌曲翻译表现。
+本章主要针对自动歌曲翻译任务提出了一个可以进行同时考虑歌词和歌词-旋律对齐情况的翻译模型。本章提出的\modelname，。本章细致阐述了，介绍了本章提出的数据收集方法、实验中使用的数据集情况、。最后，通过一系列实验和翻译结果的歌谱分析，本章说明了\modelname~相比两个很强的基线模型取得了更好的文本语义翻译表现和更为合理、更有表现力的歌词-旋律对齐，从而获得了整体上更好的歌曲翻译表现。

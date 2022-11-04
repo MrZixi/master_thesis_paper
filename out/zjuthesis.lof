@@ -2,22 +2,37 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces 以\textit {Rolling In the Deep}一曲中``But you play it to the beat''一句的完整歌曲翻译为例。\relax }}{2}{figure.caption.16}%
 \addvspace {10.0pt}
 \addvspace {10.0pt}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces 本文提出的歌曲翻译数据标注流程概览。\relax }}{8}{figure.caption.18}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces 本章提出的模型架构概览，图示以第$j$个解码时间步进行了说明。Transformer解码器将输出目标语言的词语，对齐解码器会输出对齐音符的数量。\relax }}{9}{figure.caption.19}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces （a）音符表示池化嵌入层会根据音符序列的表示和对齐信息进行编码。（b）（c）对齐解码器会根据停止概率的分布计算对齐音符的数量。\relax }}{9}{figure.caption.20}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {The note-pooling embedding layer}}}{9}{subfigure.3.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {The alignment decoder}}}{9}{subfigure.3.2}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Adaptive grouping process}}}{9}{subfigure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces 如何在歌词和歌曲-旋律对齐的共同翻译训练中使用回译数据和带注释的数据的图示说明。``bt''表示来自back-translation回译数据增强得到的数据，``at''表示来自人工标注的准确歌曲数据。\relax }}{15}{figure.caption.21}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces 源歌词、参考翻译结果和本章中进行比较的三个歌曲翻译模型的翻译结果的歌谱示例。两个例子分别为《\textit {Will You Love Me Tomorrow}》一曲中的``Is love I can be sure of''和《\textit {小幸运}》一曲中的``她会有多幸运''。\relax }}{19}{figure.caption.24}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {源歌谱和参考翻译结果 左图：英$\rightarrow $中。 右图： 中$\rightarrow $英。}}}{19}{subfigure.5.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {GagaST}}}{19}{subfigure.5.2}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LTAG-cls}}}{19}{subfigure.5.3}%
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {LTAG}}}{19}{subfigure.5.4}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces En$\rightarrow $Zh方向测试集中的真实歌曲翻译结果对齐情况和模型预测的对齐结果重叠展示的频率分布直方图。\relax }}{19}{figure.caption.25}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {GagaST}}}{19}{subfigure.6.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {LTAG-cls}}}{19}{subfigure.6.2}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LTAG}}}{19}{subfigure.6.3}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces 本文提出的歌曲翻译数据标注流程概览。\relax }}{10}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces 本章提出的模型架构概览，图示以第$j$个解码时间步进行了说明。Transformer解码器将输出目标语言的词语，对齐解码器会输出对齐音符的数量。\relax }}{11}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces （a）音符表示池化嵌入层会根据音符序列的表示和对齐信息进行编码。（b）（c）对齐解码器会根据停止概率的分布计算对齐音符的数量。\relax }}{11}{figure.caption.20}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {The note-pooling embedding layer}}}{11}{subfigure.3.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {The alignment decoder}}}{11}{subfigure.3.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Adaptive grouping process}}}{11}{subfigure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces 如何在歌词和歌曲-旋律对齐的共同翻译训练中使用回译数据和带注释的数据的图示说明。``bt''表示来自back-translation回译数据增强得到的数据，``at''表示来自人工标注的准确歌曲数据。\relax }}{17}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces En$\rightarrow $Zh方向测试集中的真实歌曲翻译结果对齐情况和模型预测的对齐结果重叠展示的频率分布直方图。\relax }}{21}{figure.caption.24}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {GagaST}}}{21}{subfigure.5.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {LTAG-cls}}}{21}{subfigure.5.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LTAG}}}{21}{subfigure.5.3}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces 源歌词、参考翻译结果和本章中进行比较的三个歌曲翻译模型的翻译结果的歌谱示例。两个例子分别为《\textit {Will You Love Me Tomorrow}》一曲中的``Is love I can be sure of''和《\textit {小幸运}》一曲中的``她会有多幸运''。\relax }}{22}{figure.caption.25}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {源歌谱和参考翻译结果 左图：英$\rightarrow $中。 右图： 中$\rightarrow $英。}}}{22}{subfigure.6.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {GagaST}}}{22}{subfigure.6.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {LTAG-cls}}}{22}{subfigure.6.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {LTAG}}}{22}{subfigure.6.4}%
 \addvspace {10.0pt}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces 一个简单的扩散模型正向、逆向过程示意图。\relax }}{24}{figure.caption.26}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces 前端编码器和辅助解码器详细的模型结构图示。$x$表示音乐乐谱信息，$E_m$表示音乐音符所代表的条件序列。 $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle M$}\mathaccent "0365{M}$表示由辅助解码器生成的有模糊现象的梅尔频谱。辅助解码器的训练使用的是L1损失。\relax }}{28}{figure.caption.27}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {前端编码器}}}{28}{subfigure.2.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {辅助解码器}}}{28}{subfigure.2.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces 去噪模型的详细模型结构图示。$E_t$表示扩散时间步的嵌入表示，$E_m$是音乐旋律条件序列。$N$是残差连接层的层数。去噪模型结构来源于非因果性WaveNet，但这里将原本设计中的膨胀卷积层替换为原始卷积层做了简化。\relax }}{30}{figure.caption.28}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces 本章提出的DiffSinger模型概览（虚线框中表示模型中的浅扩散机制）。在子图\ref {fig:main_fig_sub1}中，$x$ is the music score；$t$是扩散时间步；$M$表示输入的真实波形得到的梅尔频谱；$\setbox \z@ \hbox {\mathsurround \z@ $\textstyle M$}\mathaccent "0365{M}$表示使用L1损失训练出的辅助解码器生成的有模糊现象的梅尔频谱；$M_t$是真实梅尔频谱$M$在正向扩散过程第$t$时间步时的情况。在子图(b)中，$M_T$表示真实梅尔频谱$M$在最大扩散时间步$T$时的情况（接近高斯白噪声）；$k$是预测出的浅扩散交汇边界点；开关图标表示可以通过选择使用$M_T$（即基础版本）还是$\setbox \z@ \hbox {\mathsurround \z@ $\textstyle M$}\mathaccent "0365{M}_k$（即浅扩散版本）作为反向去噪过程的起点来控制使用哪个版本的推理过程。\relax }}{31}{figure.caption.29}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {本章提出的DiffSinger模型的训练过程}}}{31}{subfigure.4.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {本章提出的DiffSinger模型的采样推理过程}}}{31}{subfigure.4.2}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces 正向扩散过程中在各个时间步的梅尔频谱图。第一行展示的是用L1损失训练的辅助解码器生成的梅尔频谱图$\setbox \z@ \hbox {\mathsurround \z@ $\textstyle M$}\mathaccent "0365{M}$的变化情况； 第二行展示的是真实的梅尔频谱图的变化情况。\relax }}{32}{figure.caption.30}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces $M$和$\setbox \z@ \hbox {\mathsurround \z@ $\textstyle M$}\mathaccent "0365{M}$在正向扩散过程中的轨迹示意图。$q(M_t| M_0)$和$q(\setbox \z@ \hbox {\mathsurround \z@ $\textstyle M$}\mathaccent "0365{M}_t| \setbox \z@ \hbox {\mathsurround \z@ $\textstyle M$}\mathaccent "0365{M}_0)$这两个分布会随着时间步$t$增大而逐渐接近。\relax }}{32}{figure.caption.31}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces 来自三个模型（DiffSinger，GAN-Singer和FFT-Singer）的预测结果和真实的梅尔频谱（GT）的可视化图。\relax }}{39}{figure.caption.36}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\textit {GT}}}}{39}{subfigure.7.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\textit {DiffSinger}}}}{39}{subfigure.7.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {\textit {GAN-singer}}}}{39}{subfigure.7.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {\textit {FFT-Singer}}}}{39}{subfigure.7.4}%
 \addvspace {10.0pt}
 \addvspace {10.0pt}

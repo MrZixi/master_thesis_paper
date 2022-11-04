@@ -1,4 +1,34 @@
 \chapter{相关研究介绍}
-本文的研究对象涉及自然语言处理的多个子领域，本章将分别介绍xxxxxx的研究现状和相关研究进展。以下分别对xxxxx进行阐述。
+本文的研究对象涉及自然语言处理的多个子领域，本章将分领域分别介绍歌曲歌词生成及限制性翻译和歌声合成相关技术的研究现状和近期进展。
+歌曲歌词生成及限制性翻译目前；
+歌声合成技术。
+以下分别对这两个子领域进行阐述。
 \section{歌曲歌词生成及限制性翻译研究介绍}
-\section{扩散模型相关研究介绍}
+歌词自动翻译研究历经基于规则的方法的阶段、统计机器翻译方法阶段和使用具有节奏和词汇句法约束的有限状态机阶段\citep{spanish_verse, Manurung2004AnEA, He_Zhou_Jiang_2012}，近年来也逐渐开始引入神经网络模型向神经机器翻译靠拢
+\citep{ghazvininejad-etal-2016-generating,ghazvininejad-etal-2017-hafez, ghazvininejad-etal-2018-neural}。
+在语言学研究中，传统人工歌曲翻译研究通过利用语言学知识在歌词翻译和歌词旋律对齐方面都取得了一些进展
+~\citep{interplay_lyrics_melody,low_2003,low2008translating,low_2022,three_d_of_singability,trans_of_music}.
+当然，这些研究针对的对象都是专业歌手创作的歌曲，这些方法追求在一些有代表性的曲目中进行高质量的歌词翻译和歌词旋律对齐，力求达到``信、达、雅''的三重境界。
+
+在近来基于神经机器翻译的工作\citep{gagast}中，自动歌曲翻译大多被作为一种存在一定限制条件的文本翻译任务。
+基于此，很多工作~\citep{hokamp-liu-2017-lexically,lakew-etal-2019-controlling,li-etal-2020-rigid,zou_controllable}尝试在解码过程中直接对解码搜索时的评分施加目的性限制，这方面的探索证明了这类比较直接的做法大部分都比较有效，而且对于一些简单的限制来说编码工作量小，实施起来非常方便。
+除此之外，很多工作尝试在训练过程中施加约束，如在输入中添加与格式限制有关的嵌入表示来控制解码~\citep{li-etal-2020-rigid}、引入特殊词语或对解码搜索时的评分进行重评分操作以达到长度控制的目的~\citep{lakew-etal-2019-controlling,saboo-baumann-2019-integration}，这些数据驱动的方法同样表现出良好的性能，且能施加的限制更复杂，模型表现更可靠。
+在下一章中，本文将提出歌词旋律对齐和歌词共同翻译模型，在翻译的语料上进行翻译域偏移，同时也对翻译文本结果进行长度限制。
+
+包含歌词旋律对齐预测的歌词生成是自动歌曲制作中最重要的任务之一，近年来随着神经网络模型在自动写歌谱曲任务中的进展。
+近期的工作~\citep{lee-etal-2019-icomposer,Chen2020MelodyConditionedLG,songmass,telemelody,ai_lyricist,xue-etal-2021-deeprapper}绝大部分都使用了神经网络进行序列生成的模型框架，但是各自的侧重点不太一样。
+有些工作关注如何限制生成结果的和节奏的对齐，也有写工作专注于限制了生成文本的主题或适配歌曲的类别。
+另一些工作~\citep{songmass,telemelody}运用注意力机制，通过在注意力权重值的矩阵上进行动态规划求得最短路来找到歌词旋律之间合适的对齐方式。
+然而，由于这种方法得出的对齐路径来自于某种对齐距离矩阵，在未加限制的情况下有时会导致一音符对齐多字的非单调性输出，并且自注意力机制模块在训练中也需要相对大量的数据。但最重要的一点可能是，这种方法的对齐组件是在得到翻译结果后提供类似基于规则的固定约束，而不是在训练期间和翻译一起动态地学习对齐的继承，即类似于后处理网络，而不是动态学习对齐从而限制歌词生成的模块。
+本文提出的模型框架利用了歌词旋律对齐排列的单调性，进而设计了一个用于与翻译过程并行的进行对齐预测的轻量的神经网络。
+
+\section{语音合成声学模型和扩散模型相关研究介绍}
+\label{sec:svs_intro}
+Initial works of singing voice synthesis generate the sounds using concatenated~\citep{macon1997concatenation,kenmochi2007vocaloid} or HMM-based parametric~\citep{saino2006hmm,oura2010recent} methods, which are kind of cumbersome and lack flexibility and harmony. Thanks to the rapid evolution of deep learning, several SVS systems based on deep neural networks have been proposed in the past few years. \citet{nishimura2016singing,blaauw2017neural,kim2018korean,nakamura2019singing,gu2020bytesing} utilize neural networks to map the contextual features to acoustic features. \citet{ren2020deepsinger} build the SVS system from scratch using singing data mined from music websites. \citet{blaauw2020sequence} propose a feed-forward Transformer SVS model for fast inference and avoiding exposure bias issues caused by autoregressive models. Besides,
+with the help of adversarial training, \citet{lee2019adversarially}~propose an end-to-end framework which directly generates linear-spectrograms. \citet{wu2020adversarially}~present a multi-singer SVS system with limited available recordings and improve the voice quality by adding multiple random window discriminators. \citet{chen2020hifisinger}~introduce multi-scale adversarial training to synthesize singing with a high sampling rate (48kHz). The voice naturalness and diversity of SVS system
+have been continuously improved in recent years.
+
+\subsection{Denoising Diffusion Probabilistic Models}
+A diffusion probabilistic model is a parameterized Markov chain trained by optimizing variational lower bound, which generates samples matching the data distribution in constant steps~\citep{Ho2020ddpm}. Diffusion model is first proposed by \citet{sohl2015deep}. \citet{Ho2020ddpm}~make progress of diffusion model to generate high-quality images using a certain parameterization and reveal an equivalence between diffusion model and denoising score matching~\citep{song2019generative,song2021scorebased}. Recently, \citet{kong2021diffwave}~and
+\citet{chen2021wavegrad}~apply the diffusion model to neural vocoders, which generate high-fidelity waveform conditioned on mel-spectrogram. \citet{chen2021wavegrad}~also propose a continuous noise schedule to reduce the inference iterations while maintaining synthesis quality. \citet{song2021denoising} extend diffusion model by providing a faster sampling mechanism, and a way to interpolate between samples meaningfully. Diffusion model is a fresh and developing technique, which has been applied in the fields of unconditional image generation, conditional spectrogram-to-waveform generation (neural vocoder). And in our work, we propose a diffusion model for the acoustic model which generates mel-spectrogram given music scores (or text). There is a concurrent work~\citep{jeong2021diff} at the submission time of our preprint which adopts a diffusion model as the acoustic model for TTS task.
+\section{本章小结}

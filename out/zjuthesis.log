@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.10.24)  30 OCT 2022 16:01
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.10.24)  4 NOV 2022 19:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1118,7 +1118,7 @@ Package: subfig 2005/06/28 ver: 1.3 subfig package
 \c@subtable@save=\count497
 \sf@top=\skip148
 \sf@bottom=\skip149
-))
+)
 (/usr/local/texlive/2022/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2022/06/29 v1.29 mathematical typesetting tools
 
@@ -1201,10 +1201,64 @@ LaTeX Info: Redefining \] on input line 2954.
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup6
 )
+(/usr/local/texlive/2022/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+Invalid UTF-8 byte or sequence at line 284 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 299 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 550 replaced by U+FFFD.
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count511
+\algocf@hangindent=\skip154
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count512
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+\skiptotal=\skip155
+\skiplinenumber=\skip156
+\skiprule=\skip157
+\skiphlne=\skip158
+\skiptext=\skip159
+\skiplength=\skip160
+\algomargin=\skip161
+\skipalgocfslide=\skip162
+\algowidth=\dimen333
+\inoutsize=\dimen334
+\inoutindent=\dimen335
+\interspacetitleruled=\dimen336
+\interspacealgoruled=\dimen337
+\interspacetitleboxruled=\dimen338
+\algocf@ruledwidth=\skip163
+\algocf@inoutbox=\box87
+\algocf@inputbox=\box88
+\AlCapSkip=\skip164
+\AlCapHSkip=\skip165
+\algoskipindent=\skip166
+\algocf@nlbox=\box89
+\algocf@hangingbox=\box90
+\algocf@untilbox=\box91
+\algocf@skipuntil=\skip167
+\algocf@capbox=\box92
+\algocf@lcaptionbox=\skip168
+\algoheightruledefault=\skip169
+\algoheightrule=\skip170
+\algotitleheightruledefault=\skip171
+\algotitleheightrule=\skip172
+\c@algocfline=\count513
+\c@algocfproc=\count514
+\c@algocf=\count515
+\algocf@algoframe=\box93
+\algocf@algobox=\box94
+))
 (./config/format/general/caption.tex) (./config/format/general/geometry.tex)
 (./config/format/major/cs/geometry.tex) (./config/format/general/layout.tex
-\listoffiguresnamelen=\skip154
-\listoftablesnamelen=\skip155
+\listoffiguresnamelen=\skip173
+\listoftablesnamelen=\skip174
 )
 (./config/format/major/cs/layout.tex) (./config/format/general/tables.tex)
 (./config/format/major/cs/tables.tex) (./config/format/general/heading.tex)
@@ -1288,8 +1342,8 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 ))
 (./config/format/general/title.tex)))
-\@quotelevel=\count511
-\@quotereset=\count512
+\@quotelevel=\count516
+\@quotereset=\count517
 Package translations Info: No language package found. I am going to use `englis
 h' as default language. on input line 163.
  (out/zjuthesis.aux)
@@ -1427,7 +1481,7 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count513
+\c@lstlisting=\count518
 
 (./page/graduate/cover.tex (./page/graduate/cover-chn.tex
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd)
@@ -1562,29 +1616,33 @@ Overfull \hbox (7.54721pt too wide) in alignment at lines 21--27
 ] (out/zjuthesis.toc
 Underfull \vbox (badness 2035) has occurred while \output is active []
 
- [13])
+ [13]
+[14])
 \tf@toc=\write4
 \openout4 = `zjuthesis.toc'.
 
+ [15] [16
 
-[14] (out/zjuthesis.lof
+] (out/zjuthesis.lof
 
 LaTeX Font Warning: Font shape `TU/STFangsong(0)/m/it' undefined
-(Font)              using `TU/STFangsong(0)/m/n' instead on input line 12.
+(Font)              using `TU/STFangsong(0)/m/n' instead on input line 16.
 
-)
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17])
 \tf@lof=\write5
 \openout5 = `zjuthesis.lof'.
 
- [15
 
-] [16
-
-] (out/zjuthesis.lot)
+[18] (out/zjuthesis.lot)
 \tf@lot=\write6
 \openout6 = `zjuthesis.lot'.
 
-) [17] [18
+) [19
+
+] [20
 
 ] (./body/graduate/content.tex
 (./body/graduate/intro.tex
@@ -1596,9 +1654,9 @@ File: figure/ast/exp.pdf Graphic file (type pdf)
 <use figure/ast/exp.pdf>
  [2] [3]) (./body/graduate/related.tex [4]
 2
-) (./body/graduate/ast.tex [5
+[5
 
-] [6
+] [6]) (./body/graduate/ast.tex [7] [8
 
 ]
 3
@@ -1611,7 +1669,7 @@ File: figure/ast/da_pipeline.pdf Graphic file (type pdf)
 
 Underfull \vbox (badness 5893) has occurred while \output is active []
 
- [7]
+ [9]
 File: figure/ast/pipeline_svs.pdf Graphic file (type pdf)
 <use figure/ast/pipeline_svs.pdf>
 File: figure/ast/note-pooling.pdf Graphic file (type pdf)
@@ -1621,19 +1679,30 @@ File: figure/ast/alignment_decoder.pdf Graphic file (type pdf)
 File: figure/ast/act_gp.pdf Graphic file (type pdf)
 <use figure/ast/act_gp.pdf>
 
-[8] [9]
+[10] [11]
 Missing character: There is no ， ("FF0C) in font cmr12!
-[10]
+[12]
 Underfull \vbox (badness 4168) has occurred while \output is active []
 
- [11]
-[12] [13] [14]
+ [13]
+[14] [15] [16]
 File: figure/ast/backtrans_curriculum.pdf Graphic file (type pdf)
 <use figure/ast/backtrans_curriculum.pdf>
- [15]
+ [17]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16]
+ [18]
+[19]
+File: figure/ast/hists/gagast_align_hist.pdf Graphic file (type pdf)
+<use figure/ast/hists/gagast_align_hist.pdf>
+File: figure/ast/hists/baseline_align_hist.pdf Graphic file (type pdf)
+<use figure/ast/hists/baseline_align_hist.pdf>
+File: figure/ast/hists/ltag_align_hist.pdf Graphic file (type pdf)
+<use figure/ast/hists/ltag_align_hist.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20]
 File: figure/ast/analysis_cases/exp_en_1.pdf Graphic file (type pdf)
 <use figure/ast/analysis_cases/exp_en_1.pdf>
 File: figure/ast/analysis_cases/exp_zh_2.pdf Graphic file (type pdf)
@@ -1643,7 +1712,7 @@ File: figure/ast/analysis_cases/exp_gagast_zh_1.pdf Graphic file (type pdf)
 File: figure/ast/analysis_cases/exp_gagast_en_2.pdf Graphic file (type pdf)
 <use figure/ast/analysis_cases/exp_gagast_en_2.pdf>
 
-Overfull \hbox (4.48378pt too wide) in paragraph at lines 303--303
+Overfull \hbox (4.48378pt too wide) in paragraph at lines 339--339
  [][] 
  []
 
@@ -1652,7 +1721,7 @@ File: figure/ast/analysis_cases/exp_baseline_zh_1.pdf Graphic file (type pdf)
 File: figure/ast/analysis_cases/exp_baseline_en_2.pdf Graphic file (type pdf)
 <use figure/ast/analysis_cases/exp_baseline_en_2.pdf>
 
-Overfull \hbox (4.48378pt too wide) in paragraph at lines 307--307
+Overfull \hbox (4.48378pt too wide) in paragraph at lines 343--343
  [][] 
  []
 
@@ -1661,52 +1730,144 @@ File: figure/ast/analysis_cases/exp_LTAG_zh_1.pdf Graphic file (type pdf)
 File: figure/ast/analysis_cases/exp_LTAG_en_2.pdf Graphic file (type pdf)
 <use figure/ast/analysis_cases/exp_LTAG_en_2.pdf>
 
-Overfull \hbox (4.48378pt too wide) in paragraph at lines 311--311
+Overfull \hbox (4.48378pt too wide) in paragraph at lines 347--347
  [][] 
  []
 
-[17]
-File: figure/ast/hists/gagast_align_hist.pdf Graphic file (type pdf)
-<use figure/ast/hists/gagast_align_hist.pdf>
-File: figure/ast/hists/baseline_align_hist.pdf Graphic file (type pdf)
-<use figure/ast/hists/baseline_align_hist.pdf>
-File: figure/ast/hists/ltag_align_hist.pdf Graphic file (type pdf)
-<use figure/ast/hists/ltag_align_hist.pdf>
-) (./body/graduate/svs.tex [18] [19] [20
+) (./body/graduate/svs.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-]
+ [21]
+[22]
 4
-) (./body/graduate/sys.tex [21] [22
+File: figure/svs/diffusion-new.pdf Graphic file (type pdf)
+<use figure/svs/diffusion-new.pdf>
+[23
+
+] [24] [25]
+
+LaTeX Warning: Reference `sec:naive_DiffSinger' on page 26 undefined on input l
+ine 110.
+
+[26]
+File: figure/svs/Encoder.pdf Graphic file (type pdf)
+<use figure/svs/Encoder.pdf>
+File: figure/svs/auxiliary_decoder.pdf Graphic file (type pdf)
+<use figure/svs/auxiliary_decoder.pdf>
+
+
+LaTeX Warning: Float too large for page by 9.41985pt on input line 141.
+
+File: figure/svs/denoiser.pdf Graphic file (type pdf)
+<use figure/svs/denoiser.pdf>
+File: figure/svs/model_a.pdf Graphic file (type pdf)
+<use figure/svs/model_a.pdf>
+
+Overfull \hbox (1.47255pt too wide) in paragraph at lines 162--162
+ [][] 
+ []
+
+File: figure/svs/model_b.pdf Graphic file (type pdf)
+<use figure/svs/model_b.pdf>
+
+Overfull \hbox (1.47255pt too wide) in paragraph at lines 167--168
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 32.78844pt on input line 170.
+
+[27] [28]
+File: figure/svs/fake_real_mel.pdf Graphic file (type pdf)
+<use figure/svs/fake_real_mel.pdf>
+File: figure/svs/manifold.pdf Graphic file (type pdf)
+<use figure/svs/manifold.pdf>
+
+Underfull \vbox (badness 1694) has occurred while \output is active []
+
+ [29]
+[30] [31] [32] [33]
+Missing character: There is no ， ("FF0C) in font cmr12!
+Missing character: There is no ｛ ("FF5B) in font cmr12!
+Missing character: There is no ｛ ("FF5B) in font cmr12!
+Missing character: There is no ｝ ("FF5D) in font cmr12!
+[34]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[35] [36]
+Missing character: There is no ＝ ("FF1D) in font cmr12!
+Missing character: There is no ＝ ("FF1D) in font cmr12!
+File: figure/svs/case_GT.png Graphic file (type bmp)
+<figure/svs/case_GT.png>
+File: figure/svs/case_diffmel.png Graphic file (type bmp)
+<figure/svs/case_diffmel.png>
+
+Overfull \hbox (2.9451pt too wide) in paragraph at lines 336--341
+ [][][][] 
+ []
+
+File: figure/svs/case_fsadv.png Graphic file (type bmp)
+<figure/svs/case_fsadv.png>
+File: figure/svs/case_fs2.png Graphic file (type bmp)
+<figure/svs/case_fs2.png>
+
+Overfull \hbox (2.9451pt too wide) in paragraph at lines 346--352
+ [][][][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 1694) has occurred while \output is active []
+
+ [37]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 1783) has occurred while \output is active []
+
+ [38]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./body/graduate/sys.tex [39] [40] [41] [42
 
 ]
 5
-) [23] [24
+) [43] [44
 
 ]
 6
-) [25] [26
+) [45] [46
 
-] (./body/graduate/post.tex (./body/graduate/post/ref.tex
+] (./body/graduate/post.tex (./body/graduate/post/ref.tex [47
+
+
+]
+[48]
 Underfull \hbox (badness 6063) in paragraph at lines 4--4
 []\TU/TimesNewRoman(0)/m/n/10.53937 GRAVES A. Adaptive computation time for rec
 urrent neural networks[]J[]. arXiv preprint
  []
 
-[27
+[49]) (./body/graduate/post/appendix.tex [50]) (./body/graduate/post/cv.tex
+[51
 
 
-]) (./body/graduate/post/appendix.tex [28]) (./body/graduate/post/cv.tex
-[29
-
-
-] [30
+] [52
 
 ]))
 
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 54.
 See the caption package documentation for explanation.
 
-[31
+[53
 
 ] (out/zjuthesis.aux)
 
@@ -1716,17 +1877,20 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
 Package logreq Info: Writing requests to 'zjuthesis.run.xml'.
 \openout1 = `zjuthesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36384 strings out of 475744
- 809776 string characters out of 5799089
- 1650078 words of memory out of 5000000
- 56850 multiletter control sequences out of 15000+600000
- 492366 words of font info for 187 fonts, out of 8000000 for 9000
+ 37873 strings out of 475744
+ 845750 string characters out of 5799089
+ 1692706 words of memory out of 5000000
+ 58303 multiletter control sequences out of 15000+600000
+ 494234 words of font info for 197 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 103i,19n,111p,1370b,5396s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,19n,111p,1557b,5401s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on out/zjuthesis.xdv (57 pages, 500068 bytes).
+Output written on out/zjuthesis.xdv (81 pages, 943908 bytes).

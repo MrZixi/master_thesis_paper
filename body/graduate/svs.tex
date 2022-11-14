@@ -36,11 +36,11 @@
 \newcommand{\bepsilon}{{\boldsymbol{\epsilon}}}
 \newcommand{\bmu}{{\boldsymbol{\mu}}}
 \newcommand{\bnu}{{\boldsymbol{\nu}}}
-\chapter{基于扩散模型的歌声合成}
+\chapter{针对翻唱的歌声合成}
 本章将详细介绍本文在基于扩散模型的歌声合成研究中使用的数据、提出的模型和实验结果。本章首先说明了收集的中文流行歌曲歌声合成数据集的方法，然后介绍本章基于扩散模型提出的声学模型和对于扩散模型的改进——浅扩散机制，最后阐述进行的一系列实验并分析实验结果。实验结果清晰地显示，本章提出的声学模型相比其他基线歌声合成模型在合成音频的质量、、上都取得了更好的效果，浅扩散机制也在几乎不损失扩散机制生成效果的情况下大幅优化了这一合成模型在推理时所需要的时间。
 \section{歌声合成数据集}
 由于本章所涉及的歌声合成研究开始时尚没有公开的高质量中文无伴奏纯歌声数据集，本章收集并标注了一个中国普通话流行歌曲数据集：PopCS，以评估本章提出的模型和方法。PopCS收录了117首中国流行歌曲（总计5.89小时，带有歌词标注），这些歌曲都来自一位专业的女歌手。所有的音频文件都在专业录音室中录制。每首歌曲的音频文件采样率都统一为24kHz，采用16位编码。为了获得与歌曲相对应的更准确的乐谱，本章1）按照DeepSinger~\citep{ren2020deepsinger}一文中的做法，将每首整首歌曲拆分为歌词句的片段，并使用这些句子和音频相对应的片段训练蒙特利尔强制对齐工具（Montreal Forced Aligner，MFA）~\citep{mcauliffe2017montreal}模型，以获得歌曲片段与其对应歌词之间音素级别的对齐；2）使用Parselmouth工具从原始波形中提取$F_0$（基频）作为基音信息，遵循\citet{wu2020adversarially,blaauw2020sequence,ren2020deepsinger}等之前工作中的做法。在实验中，测试集和验证集都是各随机选取了一首歌曲的全部歌曲片段。本章在对这些歌曲进行了清理和分割后，总计得到了1651个歌曲片段，其中大部分片段的持续时间在10-13秒之间。
-\section{扩散模型}
+\section{基于扩散模型的歌声合成声学模型}
 本节将详细介绍扩散模型的理论。对于这一合成模型相关理论的完整证明可以参考前文中提到的一些工作\citep{Ho2020ddpm,kong2021diffwave,song2021denoising}。简而言之，扩散模型通过类似物理学中的扩散过程将原始数据逐渐转换为先验的高斯分布，然后学习逆向过程以达到从高斯白噪声中恢复数据分布的目的。这样的过程就如图~\ref{fig:two_process}所示。
 \begin{figure}[htbp]
 	\centering
@@ -128,12 +128,12 @@ $\mathcal{N}(\bzero, \bI)$分布中采样的高斯白噪声作为梅尔频谱反
     \centering
     \subfloat[前端编码器]{
     	\centering
-    	\includegraphics[width=0.49\textwidth,clip=true]{figure/svs/Encoder.pdf}
+    	\includegraphics[width=0.45\textwidth,clip=true]{figure/svs/Encoder.pdf}
     	\label{supfig:encoder}
-    } \\
+    }
     \subfloat[辅助解码器]{
     	\centering
-    	\includegraphics[width=0.49\textwidth,clip=true]{figure/svs/auxiliary_decoder.pdf}
+    	\includegraphics[width=0.45\textwidth,clip=true]{figure/svs/auxiliary_decoder.pdf}
     	\label{supfig:aux_decoder}
     }
     \caption{前端编码器和辅助解码器详细的模型结构图示。$x$表示音乐乐谱信息，$E_m$表示音乐音符所代表的条件序列。 $\widetilde{M}$表示由辅助解码器生成的有模糊现象的梅尔频谱。辅助解码器的训练使用的是L1损失。}
@@ -269,6 +269,17 @@ D_{KL}(\mathcal{N}(M_t) || \mathcal{N}(\widetilde{M}_t)) = \frac{\bar\alpha_t}{2
 \end{algorithm}
 \section{模型实现和训练细节}
 \label{sec:svs_inference}
+本章实验通过\textit{pypinyin}工具（\citet{ren2020deepsinger}一文中的做法）将中文歌词转换为音素，训练使用的梅尔频谱都是从真实波形中提取出的，音频使用采样率24kHz，hop size和frame size的大小相应设置为128和512。
+文本经处理后的音素词汇表的大小为61。梅尔频谱的bin的数量$H_m$为80。在实际处理中，梅尔频谱的值会被线性缩放到$[-1，1]$范围，基频F0也按照零均值和单位方差进行归一化。
+在歌词编码器中，音素嵌入表示的维度为256，Transformer模块的设置与FastSpeech 2~\citep{ren2021fastspeech}中的相同。
+在音调编码器中，查找音高表的大小为300，编码的音调嵌入表示的维度为256。前文提到的信道大小$C$也被设置为256。在去噪模型中，卷积层的数量$N$为20，卷积核核大小为3，每个层的膨胀度设置为1（即无膨胀操作），更大的膨胀度可以增加去噪模型的感受野，但经实际实验，这对DiffSinger并无明显作用。
+本章实验使用的最大扩散时间步$T$为$100$，噪声规划$\beta$均设置为常数，从$\beta_1=10^{-4}$开始随时间步线性增加到$\beta_T=0.06$。
+DiffSinger中使用的辅助解码器的模型设置与FastSpeech 2中使用的梅尔频谱解码器相同。
+在交汇点预测器中，卷积层的数量为5，根据实践经验，这里的交汇点预测阈值设置为0.4。
+
+
+本章提出的DiffSinger模型的训练需要分两个阶段进行：1）预热阶段：用乐谱的前端编码器单独训练辅助解码器约160k步，然后利用辅助解码器的输出训练交汇预测器约30k步，获得交汇时间步$k$的值；2）主要训练阶段：将DiffSinger按照算法~\ref{alg:training}描述的方式训练约160k步，直到收敛。
+在推理阶段，对于所有实验，声学模型一致使用预训练过的的ParallelWaveGAN（PWG)~\citep{yamamoto2020parallel}作为声码器，这里由于歌声合成特殊设置，PWG声码器会采用基频F0驱动的激励~\citep{wang2020using}作为附加输入，类似于\citet{chen2020hifisinger}中的做法。然后声码器公平地将声学模型生成的梅尔频谱转换为波形。
 \section{实验设计}
 为了评估对合成音频质量的直观感受，本章使用了和上一章中类似的平均意见分数（mean opinion score，MOS）和相对平均意见分数（Comparative CMOS）对模型在测试集上的表现进行人工评测。 评测包括了18名合格的听众对合成的歌声和语音音频样本进行判别打分。本章实验会将提出的\textit{DiffSinger}模型生成的歌曲样本和语音样本的人工评测MOS值与以下模型和来源进行比较：1）\textit{GT}，真实的音频；2）\textit{GT（Mel + PWG）}，此处将真实的歌唱音频先转换为真实的梅尔频谱，然后使用节~\ref{sec:svs_inference}中描述的PWG声码器将这些梅尔频谱转换回音频；3）\textit{FFT-NPSS（WORLD）}~\citep{blaauw2020sequence}，基于前馈Transformer层构建的歌声合成系统，生成WORLD声码器使用的特征~\citep{morise2016world}并使用WORLD声码器合成音频；4）\textit{FFT-Singer (Mel + PWG)} 基于前馈Transformer层构建的歌声合成系统，生成梅尔频谱。使用PWG声码器来合成音频；5）\textit{GAN-Singer(Mel + PWG)}
 ~\citep{wu2020adversarially}，使用具有多个随机窗口的鉴别器进行对抗训练的歌声合成系统。
@@ -300,7 +311,7 @@ D_{KL}(\mathcal{N}(M_t) || \mathcal{N}(\widetilde{M}_t)) = \frac{\bar\alpha_t}{2
 	\caption{95\%置信区间下的歌声样本人工评测的相对意见平均分数结果。``DiffSinger Naive''表示基础版本的DiffSinger模型，没有使用浅扩散机制。}
 	\label{tab:main_exp}
 \end{table}
-接下来，本节进行了一些消融研究以证明本章提出的模型和方法的有效性，并进行了一些超参数研究以获得最佳模型设置。这些实验都使用了相对意见分数进行人工评估。表~\ref{tab:ablations}中列出了\textit{DiffSinger}模型的各种变体和不同模型设置的评价结果。从中，可以得出以下几点结论：1）不使用浅扩散机制会导致模型输出的梅尔频谱质量下降（-0.500 CMOS），这与主要实验结果表中的测试结果一致，也验证了本章提出的浅扩散机制的有效性（第一行与第二行结果相比）；2）采用其他时间步$k$值（第一行和第三行相比），而不是交汇点预测器预测出的交汇点时间步$k$会导致模型生成的梅尔频谱质量下降，这验证了本章提出的交汇点预测网络可以预测出针对浅扩散机制的合适的时间步$k$；3）信道数为$C＝256$且$L＝20$的模型输出的结果是表现最佳的（第一行与第二、四、六、七行相比），表明了本章训练时使用的模型设置的参数容量足够得到较好的实验结果。
+接下来，本节进行了一些消融研究以证明本章提出的模型和方法的有效性，并进行了一些超参数研究以获得最佳模型设置。这些实验都使用了相对意见分数进行人工评估。表~\ref{tab:ablations}中列出了\textit{DiffSinger}模型的各种变体和不同模型设置的评价结果。从中，可以得出以下几点结论：1）不使用浅扩散机制会导致模型输出的梅尔频谱质量下降（-0.500 CMOS），这与主要实验结果表中的测试结果一致，也验证了本章提出的浅扩散机制的有效性（第一行与第二行结果相比）；2）采用其他时间步$k$值（第一行和第三行相比），而不是交汇点预测器预测出的交汇点时间步$k$会导致模型生成的梅尔频谱质量下降，这验证了本章提出的交汇点预测网络可以预测出针对浅扩散机制的合适的时间步$k$；3）信道数为$C=256$且$L＝20$的模型输出的结果是表现最佳的（第一行与第二、四、六、七行相比），表明了本章训练时使用的模型设置的参数容量足够得到较好的实验结果。
 \begin{table}[h]
     \small
     \centering
@@ -354,9 +365,6 @@ D_{KL}(\mathcal{N}(M_t) || \mathcal{N}(\widetilde{M}_t)) = \frac{\bar\alpha_t}{2
 \end{figure}
 同时，浅扩散机制将原始扩散模型的推理速度加快了45.1\%，以实时因数（RealTime Factor），即生成1秒音频所需的秒数进行衡量，使用浅扩散机制前后的RTF结果分别为0.191 vs.0.348。
 表~\ref{suptab:model_size}中汇总了本章实验中进行比较的几个模型的参数量规模。可以看出本章提出的DiffSinger模型的可学习参数的规模与其他最先进的模型相比相差无几。
-
-另外，为了检验本章提出的模型在语音合成任务上的泛化性能，本节如前文所述，报告模型在LJSpeech数据集\cite{ljspeech17}上进行的扩展实验的结果。语音合成任务人工评测的结果如表~\ref{tab:exp_tts}所示。所有实验中进行比较的声学模型都使用了最新工作HiFi-GAN~\citep{kong2020hifi}作为转换到音频波形的声码器。
-从表中的实验结果可以看出，\textit{DiffSpeech}的表现也优于FastSpeech 2和Glow TTS，这证明了本章提出的模型和方法良好的泛化性能。此外，表~\ref{tab:exp_tts}中的最后两行的结果同样佐证了浅扩散机制的有效性，加速率为29.2\%，实时因数分别为0.121 vs.0.171。
 \begin{table}[h]
     \centering
     \begin{tabular}{ l | c }
@@ -412,5 +420,7 @@ D_{KL}(\mathcal{N}(M_t) || \mathcal{N}(\widetilde{M}_t)) = \frac{\bar\alpha_t}{2
 \caption{模型的参数量规模比较统计表。}
 \label{suptab:model_size}
 \end{table}
+另外，为了检验本章提出的模型在语音合成任务上的泛化性能，本节如前文所述，报告模型在LJSpeech数据集\cite{ljspeech17}上进行的扩展实验的结果。语音合成任务人工评测的结果如表~\ref{tab:exp_tts}所示。所有实验中进行比较的声学模型都使用了最新工作HiFi-GAN~\citep{kong2020hifi}作为转换到音频波形的声码器。
+从表中的实验结果可以看出，\textit{DiffSpeech}的表现也优于FastSpeech 2和Glow TTS，这证明了本章提出的模型和方法良好的泛化性能。此外，表~\ref{tab:exp_tts}中的最后两行的结果同样佐证了浅扩散机制的有效性，加速率为29.2\%，实时因数分别为0.121 vs.0.171。
 \section{本章小结}
 本章主要针对歌声合成任务提出了一个基于扩散模型的声学模型以合成质量更高的梅尔频谱并提出了浅扩散机制来优化扩散模型的推理过程。本章提出的DiffSinger（DiffSpeech）模型通过，。主要实验结果说明了DiffSinger（DiffSpeech）和之前的声学模型相关工作相比，训练稳定、合成质量更高，和其他扩散模型相比在推理速度上也有了极大提升。相应的消融实验结果也说明了本章提出的浅扩散机制能改善模型生成的质量，交汇点预测器得到的交汇点契合浅扩散的原理。

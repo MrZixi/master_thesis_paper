@@ -1,6 +1,6 @@
 \ifthenelse{\equal{\Degree}{graduate}}
 {
-    
+
     \ifthenelse{\equal{\GradLevel}{doctor}}
     {
         \fancypagestyle{previous}
@@ -30,7 +30,34 @@
         \setlength{\cftsubsecindent}    {1em}
         \setlength{\cftsubsubsecindent} {2em}
     }
-    {}
+    {
+        \fancypagestyle{previous}
+        {
+            \fancyhead{}
+            \fancyhead[L]{\zihao{-4} \TitleTypeName}
+            \fancyhead[R]{\zihao{-4} \leftmark}
+            \renewcommand{\headrulewidth}{1.2pt}
+
+            \fancyfoot{}
+            \fancyfoot[C]{\zihao{-5} \thepage}
+        }
+        \fancypagestyle{common}
+        {
+            \commonhead{}
+            \fancyfoot{}
+            \fancyfoot[C]{\zihao{-5} \thepage}
+        }
+
+        \tocloftpagestyle{previous}
+        \renewcommand{\cfttoctitlefont} {\hfill\zihao{-2}\heiti}\renewcommand{\cftaftertoctitle}{\hfill}
+        \renewcommand{\cftloftitlefont} {\hfill\zihao{-2}\heiti}\renewcommand{\cftafterloftitle}{\hfill}
+        \renewcommand{\cftlottitlefont} {\hfill\zihao{-2}\heiti}\renewcommand{\cftafterlottitle}{\hfill}
+        \renewcommand{\cftchapfont}     {\zihao{-4}\heiti}
+        \setlength{\cftchapindent}      {0em}
+        \setlength{\cftsecindent}       {0em}
+        \setlength{\cftsubsecindent}    {1em}
+        \setlength{\cftsubsubsecindent} {2em}
+    }
 }
 {
     \ifthenelse{\equal{\Period}{proposal}}

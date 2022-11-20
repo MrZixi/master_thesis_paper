@@ -9,7 +9,7 @@
 在语言学研究中，传统人工歌曲翻译研究通过利用语言学知识在歌词翻译和歌词旋律对齐方面都取得了一些进展
 ~\citep{interplay_lyrics_melody,low_2003,low2008translating,low_2022,three_d_of_singability,trans_of_music}.
 当然，这些研究针对的对象都是专业歌手创作的歌曲，这些方法追求在一些有代表性的曲目中进行高质量的歌词翻译和歌词旋律对齐，力求达到``信、达、雅''的三重境界。
-\begin{figure}[htbp]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.99\textwidth]{figure/related/teacher-forcing.pdf}
   \caption{Teacher-forcing训练方式图示}
@@ -27,16 +27,17 @@
 \begin{equation}
   P(y_t|y_0,y_1......y_{t-1}, X)+f(y_0,y_1......y_{t-1}, \mbox{restrictions})
 \end{equation}
-\begin{figure}[t]
-  \includegraphics[width=0.99\textwidth]{figure/related/decoded_constrain.pdf}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.80\textwidth]{figure/related/decoded_constrain.pdf}
   \caption{对解码搜索进行目的性限制的示例。}
 \end{figure}
 如\citet{relyme}一文中设计了代价函数来限制音调、轻重拍等以提升解码出的歌词和旋律的契合度：
 \begin{equation*}
   R_r(y_{0:t-1},x) = \left\{
   \begin{array}{rcl}
-    1, & & {\mbox{if rhythm is matched}} \\
-    0, & & {\mbox{otherwise}}
+    1, & & {\mbox{如果当前歌词符合节奏型要求}} \\
+    0, & & {\mbox{不符合}}
   \end{array}
   \right.
 \end{equation*}
@@ -47,11 +48,11 @@
 此方面工作的探索证明了这类比较直接的做法大部分都比较有效，而且对于一些本质比较简单的限制来说，这种做法所需的编码工作量小，实施起来非常方便，而且无需对已经训练好的神经网络模型做其他调整。
 
 除此之外，很多相关工作尝试在训练过程中施加约束，如在输入中添加与格式限制有关的嵌入表示作为条件，以在推理时通过输入的条件控制解码~\citep{li-etal-2020-rigid}或引入特殊词语以达到长度控制的目的~\citep{lakew-etal-2019-controlling,saboo-baumann-2019-integration}等。这些方法通过在输入时引入额外的条件作为控制信息，在训练时通过相应的结果监督来使得模型依赖控制信息对最终结果产生的影响，进而在推理时通过提供不同的控制信息来控制解码结果。这些数据驱动的方法同样表现出良好的性能，且能施加更加复杂的限制，模型表现更可靠。但是和仅干预解码过程的做法相比，限制的变动都需要设计和训练模型学习限制的方式。
-\begin{figure}[ht]
+\begin{figure}[!h]
   \includegraphics[width=0.99\textwidth]{figure/related/train_constrain.pdf}
   \caption{\citet{li-etal-2020-rigid}中在训练中限制生成的宋词诗句格式的模型示意图。}
 \end{figure}
-\subsubsection{自动歌词生成研究}
+% \subsubsection{自动歌词生成研究}
 
 在下一章中，本文将提出歌词旋律对齐和歌词共同翻译模型，在翻译的语料上进行翻译域偏移适应，同时也对翻译文本结果进行长度限制。
 \subsection{歌词-旋律对齐预测方法}
@@ -70,7 +71,7 @@
   \caption{真实的对齐情况可以对歌词和旋律之间的注意力权重矩阵进行监督。}
   \label{fig:attn_loss}
 \end{figure}
-通过在注意力权重值的矩阵上进行动态规划算法（如算法\ref{alg:dp}）求得最短路来找到歌词旋律之间合适的对齐方式。
+通过在注意力权重值的矩阵上进行动态规划算法求得最短路来找到歌词旋律之间合适的对齐方式。
 % \begin{algorithm}[h]
 % 	\caption{\label{alg:dp}求歌词-旋律对齐的动态规划算法\citep{songmass}}%算法标题
 % 	\begin{algorithmic}[1]%一行一个标行号
@@ -126,7 +127,7 @@
 基于深度神经网络的合成方法大致可以分成自回归和非自回归两类。
 \subsubsection{时序自回归式的声学模型}
 自回归类模型被提出的较早，其利用序列建模的方法，使用LSTM等循环神经网络对声音信号的线性频谱或梅尔频谱进行时序建模，一帧一帧地预测频谱的高低频情况。这一类模型的代表作就是Tacotron系列。
-\begin{figure}[htbp]
+\begin{figure}[ht]
   \includegraphics[width=0.99\textwidth]{figure/related/tacotron2.pdf}
   \caption{Tacotron声学模型示意图}
 \end{figure}
@@ -135,18 +136,18 @@ Tacotron\citep{tacotron}构建的基于注意力机制的编码器-解码器框�
 \citet{nonattentivetacotron}和\citet{durian}则尝试替换Tacotron中的注意力机制，而使用一个单独的持续时间预测器进行自回归预测。
 也有基于Tacotron构建端到端的文本直接生成波形的模型，如Wave Tacotron\citep{wavetacotron}。
 基于Transformer结构的模型的提出最直接的动机就是使用循环神经网络构建的自回归模型有无法同时平行地训练和推理带来的模型效率问题和长频谱下自回归模型建模能力衰减的问题。
-\begin{figure}[htbp]
-  \subfloat{
+\citet{transformertts}提出使用基于Transformer的编码器-解码器的基本模型结构来从输入的音素直接生成梅尔频谱。
+\citet{transformertts}除了Transformer结构以外，仍沿用了Tacotron 2的一些设计，达到了和Tacotron 2的相似质量的音质，但训练和推理速度更快。然而，与基于循环神经网络Tacotron系列模型相比，Transformer中的编码器-解码器的注意力计算不够稳定和鲁棒，因此，一些工作开始致力于增强基于Transformer的声学模型的鲁棒性，如对注意力矩阵添加对角化限制\citep{robutrans}等。
+但由于自回归本身的训练会带来暴露偏差（exposed bias）问题，这种建模方法有一定的缺陷，在实际应用中反映出的就是拖音、漏音、静音过长、韵律预测不稳等现象。
+\begin{figure}[ht]
+  \subfloat[]{
     \includegraphics[width=0.49\textwidth]{figure/related/transformertts_a.jpg}
   }
-  \subfloat{
+  \subfloat[]{
     \includegraphics[width=0.49\textwidth]{figure/related/transformertts_b.jpg}
   }
   \caption{基于Transformer的自回归声学模型示意图}
 \end{figure}
-\citet{transformertts}提出使用基于Transformer的编码器-解码器的基本模型结构来从输入的音素直接生成梅尔频谱。
-\citet{transformertts}除了Transformer结构以外，仍沿用了Tacotron 2的一些设计，达到了和Tacotron 2的相似质量的音质，但训练和推理速度更快。然而，与基于循环神经网络Tacotron系列模型相比，Transformer中的编码器-解码器的注意力计算不够稳定和鲁棒，因此，一些工作开始致力于增强基于Transformer的声学模型的鲁棒性，如对注意力矩阵添加对角化限制\citep{robutrans}等。
-但由于自回归本身的训练会带来暴露偏差（exposed bias）问题，这种建模方法有一定的缺陷，在实际应用中反映出的就是拖音、漏音、静音过长、韵律预测不稳等现象。
 \subsubsection{非自回归式的声学模型}
 非自回归类模型的提出相对较晚，但相关工作近年来层出不穷，从基于Transformer结构的模型到基于各类生成模型的结构，非自回归类的声学模型有后来居上的趋势。
 无论是Tacotron系列，还是基于Transformer的自回归模型，都存在上节提到的两个问题：推理速度慢和鲁棒性问题。
@@ -190,17 +191,17 @@ Tacotron\citep{tacotron}构建的基于注意力机制的编码器-解码器框�
 % \end{figure}
 近年来，歌声合成系统的音频结果的语音自然度和多样性都在不断提高，已显现在24kHz和48kHz下媲美人声的潜力。
 \subsection{扩散模型相关研究介绍}
-扩散概率模型也一种是通过优化似然函数整体变分下界进行训练的参数化的马尔可夫链，这样一个参数化的随机过程能以恒定的时间步长生成与数据分布匹配的样本~\citep{Ho2020ddpm}。
+扩散概率模型也一种是通过优化似然函数整体变分下界进行训练的参数化的马尔可夫链，这样一个参数化的随机过程能以恒定的时间步长生成与数据分布匹配的样本~\citep{Ho2020ddpm}，其最大的优势在于整个过程对似然函数的计算更加精确，因而在理论上可以获得更好的数据分布拟合效果。
 扩散模型首先由\citet{sohl2015deep}一文在2015年提出，之后的工作\citet{Ho2020ddpm}~又对最初的扩散模型进行了改进，以使用特定的参数化方式生成高质量图像，也揭示了扩散模型与去噪梯度得分匹配之间的等价性~\citep{song2019generative,song2021scorebased}。
-\begin{figure}[htbp]
+\begin{figure}[!h]
   \includegraphics[width=0.99\textwidth]{figure/related/ddpm.pdf}
   \caption{基于扩散过程的图像去噪合成示意图}
 \end{figure}
 近来，随着扩散模型本身理论不断成熟，越来越多的工作开始尝试在应用任务中使用扩散模型来利用其高质量生成的优点并解决其运行速度慢的问题。\citet{kong2021diffwave}~和\citet{chen2021wavegrad}~两篇工作尝试将扩散模型应用于神经声码器这样的应用任务，根据梅尔频谱生成高保真的声音波形。
-\begin{figure}[htbp]
+\begin{figure}[!h]
   \includegraphics[width=0.99\textwidth]{figure/related/diffwave.png}
   \caption{基于扩散过程的声音波形合成示意图\citep{kong2021diffwave}。}
 \end{figure}
-\citet{chen2021wavegrad}~还提出了一种连续的噪声规划来减少推理迭代所需要的时间步数，同时保持原有的合成质量。\citet{song2021denoising}~通过提供更快的采样机制和有意义地在样本之间插值的方法来扩展扩散模型。扩散模型是一种新兴的技术，已应用于无条件图像生成、条件指导下的梅尔频谱到波形生成（神经声码器）等领域。在本文的工作中，\ref{sec:svs}节为提出了一个基于扩散模型声学模型，该模型在给定乐谱和文本（或仅给定文本）的情况下生成梅尔频谱。
+\citet{chen2021wavegrad}~还提出了一种连续的噪声规划来减少推理迭代所需要的时间步数，同时保持原有的合成质量。\citet{song2021denoising}~通过提供更快的采样机制和有意义地在样本之间插值的方法来扩展扩散模型。扩散模型是一种新兴的技术，已应用于无条件图像生成、条件指导下的梅尔频谱到波形生成（神经声码器）等领域。在本文的工作中，\ref{sec:s第vs}章提出了一个基于扩散模型声学模型，该模型在给定乐谱和文本（或仅给定文本）的情况下生成相应的歌声梅尔频谱。
 \section{本章小结}
 本章主要分多个领域分别介绍了歌曲歌词生成及限制性翻译、歌词-旋律对齐预测、语音合成声学模型、歌声合成和扩散模型相关技术的背景、基本原理、国内外相关研究介绍和近期进展。

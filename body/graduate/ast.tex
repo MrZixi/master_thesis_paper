@@ -27,6 +27,7 @@
     \label{fig:align_enc}
     \includegraphics[width=0.69\textwidth,clip=true]{figure/ast/note-pooling.pdf}
     \caption{音符表示池化嵌入层结构图示。该层会根据音符序列的表示和对齐信息进行编码。}
+    \label{fig:align_enc}
 \end{figure}
 音符的MIDI音高和持续时间可以分别表示为嵌入表示$e_{midi}$和$e_{dur}$。
 定义第$i$个音符的嵌入表示为：
@@ -117,20 +118,18 @@
 \begin{equation}
 \begin{array}{rl}
     L_G = & \left| \sum_j K(j) - N \right| + \sum_j \left|K(j) - \Delta_j\right| \\
-    \approx &\left|\sum_j \left(K(j) - (1 - R(j))\right) - N \right| \\
-    & + \sum_j \left|K(j) - (1 - R(j)) - \Delta_j\right|
+    \approx &\left|\sum_j \left(K(j) - (1 - R(j))\right) - N \right| + \sum_j \left|K(j) - (1 - R(j)) - \Delta_j\right|
 \end{array}
 \end{equation}
 
 \subsubsection{自适应分组模块的梯度计算}
 本小节将详细阐述\ref{subsec:act}小节中介绍的自适应分组算法的优化过程，由于算法运行过程是求满足$\sum_{k=1}^K \alpha_j^k \geq 1-\epsilon$的$k$的最小值，该过程本身不可导，所以对算法中使用的神经网络参数的优化和梯度计算需要一些技巧。
 在人工标注的歌词-旋律对齐数据中，每个目标端文本序列的词语所对齐的音符数的真实值都被标注出来了，这里先将序列中第$j$个词语对齐的此值记为$\Delta_j$。
-与自适应计算时间方法\citep{act}原文中最小化``思考成本''$\sum_j K(j) + R(j)$不同的是，本节提出的自适应分组算法会通过最小化下面这项自适应分组损失$L_G$来优化参数。这种做法会通过引入$\Delta_j$来自然地限制目标端文本序列中每个词语的``思考成本''的上界。
+与自适应计算时间方法\citep{act}原文中最小化``思考成本''~$\sum_j K(j) + R(j)$不同的是，本节提出的自适应分组算法会通过最小化下面这项自适应分组损失$L_G$来优化参数。这种做法会通过引入$\Delta_j$来自然地限制目标端文本序列中每个词语的``思考成本''的上界。
 \begin{equation}
 \begin{array}{rl}
     L_G = & \left| \sum_j K(j) - N \right| + \sum_j \left|K(j) - \Delta_j\right| \\
-    \approx &\left|\sum_j \left(K(j) - (1 - R(j))\right) - N \right| \\
-    & + \sum_j \left|K(j) - (1 - R(j)) - \Delta_j\right|
+    \approx &\left|\sum_j \left(K(j) - (1 - R(j))\right) - N \right| + \sum_j \left|K(j) - (1 - R(j)) - \Delta_j\right|
 \end{array}
 \end{equation}
 显然，变量$K(j)$的计算方式对于停止概率是不连续的，因此模型在优化时近似使用了$1-R(j)$项以使自适应分组损失可微。
@@ -198,6 +197,8 @@ Note that the theoretical upper bound of $\sum_{k=1}^{K(j)-1}\alpha_j^k$ is $K(j
 两组单语言歌曲数据仅被用于训练模型，测试数据是在经专业标注人员标注的真实数据上进行的。数据集概述见表\ref{tab:dataset_stat}.
 \begin{table}[htbp]
     \centering
+    \setlength{\belowcaptionskip}{8pt} %段后
+    \caption{本文中所涉及的歌曲翻译数据集的数据统计情况。}
     % \setlength{\tabcolsep}{2pt}
     \begin{tabular}{|l|c|c|c|c|}
     \hline
@@ -212,7 +213,6 @@ Note that the theoretical upper bound of $\sum_{k=1}^{K(j)-1}\alpha_j^k$ is $K(j
      测试集 & 中文、英文 & 25 & 629 & 标注\\
     \hline
     \end{tabular}
-    \caption{本文中所涉及的歌曲翻译数据集的数据统计情况。}
     \label{tab:dataset_stat}
 \end{table}
 \subsection{歌曲翻译数据收集流程}
@@ -274,19 +274,19 @@ musicxml是一种和MIDI相比相对开放自由，易于分发的记谱文件�
 本章提出的\modelname~模型进行预训练时使用了基于WMT的公开翻译数据、从公开歌词翻译网站上爬取的数据和从公开歌词网站上爬取的数据进行预训练，即预训练数据包括并行语料和单语言语料。预训练时使用的语料情况如表\ref{tab:pretrain_data}所示。
 \begin{table}[htbp]
     \centering
-    % \setlength{\tabcolsep}{2pt}
-    \caption{本文中所涉及的歌曲翻译数据集的数据统计情况。}
+    \setlength{\belowcaptionskip}{8pt} %段后
+    \caption{本文中所涉及的预训练数据统计情况。}
     \begin{tabular}{|l|c|c|c|c|}
     \hline
-         & 语种 & 歌曲数（首） & 歌词数（句） & 数据来源和实验用途\\
+         & 语种 & 歌曲数（首） & 语句数\\
     \hline
-     LMD & 英文 & \diagbox[]{}{} & 152,991 & 回译\\
+     WMT14 & 英文 & \diagbox[]{}{} & 152,991\\
     \hline
-     唱吧 & 中文 & \diagbox[]{}{} & 542,034 & 回译\\
+     唱吧 & 中文 & \diagbox[]{}{} & 542,034\\
     \hline
-     PopCV & 中文、英文 & 79 & 2,959 & 标注\\
+     PopCV & 中文、英文 & 79 & 2,959\\
     \hline
-     测试集 & 中文、英文 & 25 & 629 & 标注\\
+     测试集 & 中文、英文 & 25 & 629\\
     \hline
     \end{tabular}
     \label{tab:pretrain_data}
@@ -295,7 +295,7 @@ musicxml是一种和MIDI相比相对开放自由，易于分发的记谱文件�
 对于联合翻译训练，本章使用一个Tesla V100 GPU，批最大词总数设置为4096。
 
 
-对于实验评测时展示的乐谱，本节使用musescore的命令行工具对乐谱文件进行渲染并保存图片结果。图片清晰度统一为600dpi。对于模型的输出到musicxml结构，本章使用了musicly python库进行简单处理。所以展示的乐谱会缺少连音线、和弦线等一些乐谱记号，但不影响对音符和歌词标注的阅读。
+对于实验评测时展示的乐谱，本节使用musescore的命令行工具对乐谱文件进行渲染并保存图片结果。图片清晰度统一为600dpi。对于模型的输出到musicxml结构的组织和转换，本章使用了musicly python库进行简单处理。所以展示的乐谱会缺少连音线、和弦线等一些乐谱记号，但不影响对音符和歌词标注的阅读。
 \begin{figure}[ht]
   \includegraphics[width=0.99\textwidth]{figure/ast/MOS_eval_page.pdf}
   \caption{人工评测页面示例图。}
@@ -315,12 +315,13 @@ musicxml是一种和MIDI相比相对开放自由，易于分发的记谱文件�
 正如在节\ref{sec:metric}中所讨论的，自动评测指标sacreBLEU应该不是比较歌词的机器翻译质量和自由翻译质量的合适的衡量标准。
 \begin{table}[tbp]
     \centering
+    \setlength{\belowcaptionskip}{8pt} %段后
     \caption{两个翻译方向上的sacreBLEU分数和对齐分数结果。（*表示行内第二优的结果。）}
     \begin{tabular}{l|c|c|c|c}
     \hline
     \multirow{2}{*}{模型名称} & \multicolumn{2}{c|}{BLEU$\uparrow$} & \multicolumn{2}{c}{AS. $\uparrow$}\\
     \cline{2-5}
-    & En$\rightarrow$Zh & Zh$\rightarrow$En & En$\rightarrow$Zh & Zh$\rightarrow$En \\
+    & 英文$\rightarrow$中文 & 中文$\rightarrow$英文 & 英文$\rightarrow$中文 & 中文$\rightarrow$英文 \\
     \hline\hline
     GagaST & 11.87 & 5.67 & 0.701 & 0.468\\
     \hline
@@ -342,6 +343,7 @@ musicxml是一种和MIDI相比相对开放自由，易于分发的记谱文件�
 \begin{table}[t]
     \centering
     %\setlength{\tabcolsep}{4pt}
+    \setlength{\belowcaptionskip}{8pt} %段后
     \caption{英文$\rightarrow$中文方向测试机上对于歌曲翻译的可理解度（MOS-T）、翻译后歌曲的自然度、可唱性（MOS-S）和整体质量评估（MOS-T）的平均意见得分和95\%置信区间。}
     \begin{tabular}{l|c|c|c}
     \hline
@@ -364,7 +366,8 @@ musicxml是一种和MIDI相比相对开放自由，易于分发的记谱文件�
 \begin{table}[t]
     \centering
     %\setlength{\tabcolsep}{4pt}
-    \caption{Zh$\rightarrow$En方向测试机上对于歌曲翻译的可理解度（MOS-T）、翻译后歌曲的自然度、可唱性（MOS-S）和整体质量评估（MOS-T）的平均意见得分和95\%置信区间。此翻译方向表示其评测时提供的翻译歌曲片段的音频样本是用未针对该目标语言训练的语音合成模型生成的。因此，这些结果仅供参考。}
+    \setlength{\belowcaptionskip}{8pt} %段后
+    \caption{中文$\rightarrow$英文方向测试机上对于歌曲翻译的可理解度（MOS-T）、翻译后歌曲的自然度、可唱性（MOS-S）和整体质量评估（MOS-T）的平均意见得分和95\%置信区间。此翻译方向表示其评测时提供的翻译歌曲片段的音频样本是用未针对该目标语言训练的语音合成模型生成的。因此，这些结果仅供参考。}
     \begin{tabular}{l|c|c|c}
     \hline
     模型名称 & MOS-T & MOS-S & MOS-Q \\
@@ -424,7 +427,7 @@ musicxml是一种和MIDI相比相对开放自由，易于分发的记谱文件�
 \subfloat[\modelname-cls]{
     \includegraphics[width=0.49\textwidth,clip=true]{figure/ast/hists/baseline_align_hist.pdf}
 }
-\caption{En$\rightarrow$Zh方向测试集中的真实歌曲翻译结果对齐情况和模型预测的对齐结果重叠展示的频率分布直方图。}
+\caption{英文$\rightarrow$中文方向测试集中的真实歌曲翻译结果对齐情况和模型预测的对齐结果重叠展示的频率分布直方图。}
 \label{fig:align_hist1}
 \end{figure}
 另外，本节还通过使用图\ref{fig:align_hist1}中展示的测试集中的真实歌曲翻译结果对齐情况和模型预测的对齐结果重叠展示的频率分布直方图来观察评估对齐质量。
@@ -439,7 +442,7 @@ musicxml是一种和MIDI相比相对开放自由，易于分发的记谱文件�
 \subfloat[\modelname]{
     \includegraphics[width=0.49\textwidth,clip=true]{figure/ast/hists/ltag_align_hist.pdf}
 }
-\caption{En$\rightarrow$Zh方向测试集中的真实歌曲翻译结果对齐情况和模型预测的对齐结果重叠展示的频率分布直方图。}
+\caption{英文$\rightarrow$中文方向测试集中的真实歌曲翻译结果对齐情况和模型预测的对齐结果重叠展示的频率分布直方图。}
 \label{fig:align_hist2}
 \end{figure}
 在表\ref{tab:subjective}中，MOS-Q主要反映了歌曲翻译的整体可理解性、自然度、可唱性和美感。
@@ -452,8 +455,7 @@ musicxml是一种和MIDI相比相对开放自由，易于分发的记谱文件�
 （2）如果只使用数量有限的人工标注监督数据，模型性能会显著下降。这说明模型的容量需要更大的数据量才能进行有效训练，当训练数据不足时，歌词翻译和歌词-旋律对齐的预测性能都会下降，因此，基于back-translation的数据增强手段对于这个任务是很重要的。
 （3）\modelname~在这一系列消融实验中的表现始终要比\modelname-cls更好。这说明本章提出的轻量级的对齐解码器结构比一般的分类器有效得多，利用自适应分组算法进行的对齐预测对于歌词-旋律对齐是成功的。
 此外，从音符表示池化嵌入层和对齐解码器中移除本章提出的对齐嵌入结构$\mathbf{e}_{align}$的消融实验也验证了这一结构的重要性。从相关实验结果的对比中可以观察到，不使用$\mathbf{e}_{align}$提供的信息，模型翻译的歌曲的BLEU和对齐分数都出现了不可忽略的下降。
-
-\begin{figure}[htbp]
+\begin{figure}[!h]
     \centering
 \subfloat[源歌谱和参考翻译结果 左图：英$\rightarrow$中。 右图： 中$\rightarrow$英。]{
     \includegraphics[width=0.55\textwidth,clip=true]{figure/ast/analysis_cases/exp_en_1.pdf}

@@ -1,0 +1,11 @@
+# Fdb version 3
+["xdvipdfmx"] 0 "out/zjuthesis.xdv" "out/zjuthesis.pdf" "out/zjuthesis" 0
+  "out/zjuthesis.xdv" 0 -1 0 "xelatex"
+  (generated)
+  "out/zjuthesis.pdf"
+["xelatex"] 0 "zjuthesis.tex" "out/zjuthesis.xdv" "zjuthesis" 0
+  "out/zjuthesis.aux" 1669707402 32 3985256e7290058c681f74d7a3565a19 ""
+  "zjuthesis.tex" 0 -1 0 ""
+  (generated)
+  "out/zjuthesis.log"
+  "out/zjuthesis.xdv"

@@ -146,7 +146,17 @@ $\mathcal{N}(\bzero, \bI)$分布中采样的高斯白噪声作为梅尔频谱反
 去噪模型$\bepsilon_\theta$以扩散时间步$t$时的中间样本$M_t$为输入，以时间步嵌入表示$E_t$和音乐旋律条件序列$E_m$为条件，来预测正向扩散过程中添加的噪声项$\bepsilon$。由于扩散模型本身并没有对模型架构提出什么约束~\citep{sohl2015deep,kong2021diffwave}， 所以降噪模型的设计其实有很多选择。这里，
 本章采用了\citet{rethage2018wavenet,kong2021diffwave}
 中提出的非因果式的WaveNet~\citep{vanwavenet}结构作为去噪模型的主干网络。基于WaveNet的去噪模型由一些$1\times1$卷积层组成，可以将$H_m$个信道的梅尔频谱$M_t$映射为有$C$个信道的隐藏层输入表示序列$\mathcal{H}$。之后，还有$N$层堆叠的带有残差连接的卷积层组对隐藏层输入表示序列进行处理。每个卷积层组包括：1）逐分量的加法运算，用于将时间步嵌入表示$E_t$加到$\mathcal{H}$；2）非因果性的卷积网络，用于将$\mathcal{H}$ 从$C$个信道映射出$2C$个信道；3）$1\times1$卷积层，用于将音乐旋律条件序列表示$E_m$映射为$2C$个信道；4）门控单元，用于融合输入的梅尔频谱得到的隐藏层表示序列和其他条件表示；5）残差连接模块，用于将融合后的隐藏层表示平分为各有$C$个信道的两支，即下面的$\mathcal{H}$和将加在最终结果上的``skip hidden''部分，这使得去噪模型能合并使用各个层级的特征表示来给出最终的预测结果。
-\begin{figure}[!h]
+\section{实验设计}
+\subsection{歌声合成数据集}
+由于本章所涉及的歌声合成研究开始时尚没有公开的高质量中文无伴奏纯歌声干声数据集，本章收集并标注了一个中国普通话流行歌曲干声数据集：PopCS，以评估本章提出的模型和方法。PopCS收录了117首中国流行歌曲（总计5.89小时），这些歌曲的干声都来自一位专业的女歌手。所有的音频文件都在专业录音室中录制。每首歌曲的音频文件采样率都统一为24kHz，采用16位编码。为了获得与歌曲相对应的更准确的乐谱，本章1）按照DeepSinger~\citep{ren2020deepsinger}一文中的做法，将每首整首歌曲拆分为歌词句的片段，并使用这些句子和音频相对应的片段训练蒙特利尔强制对齐工具（Montreal Forced Aligner，MFA）~\citep{mcauliffe2017montreal}模型，以获得歌曲片段与其对应歌词之间音素级别的对齐；2）使用Parselmouth\footnote{https://github.com/YannickJadoul/Parselmouth}工具从原始波形中提取$F_0$（基频）作为基音信息，遵循\citet{wu2020adversarially,blaauw2020sequence,ren2020deepsinger}等之前工作中的做法。在实验中，测试集和验证集都是各随机选取了一首歌曲的全部歌曲片段。本章在对这些歌曲进行了清理和分割后，总计得到了1651个歌曲片段，其中大部分片段的持续时间在10-13秒之间。
+本章同时使用了一部分歌曲翻译数据集中测试集的数据，以MIDI为音高输入，进行测试。
+\subsection{实验设计细节}
+为了评估对合成音频质量的直观感受，本章使用了和上一章中类似的平均意见分数（mean opinion score，MOS）和相对平均意见分数（Comparative CMOS）对模型在测试集上的表现进行人工评测。 评测包括了18名合格的听众对合成的歌声和语音音频样本进行判别打分。本章实验会将提出的基于扩散模型的歌声合成声学模型模型生成的歌曲样本的人工评测MOS值与以下模型和来源进行比较：1）真实的音频；2）将真实的歌唱音频先转换为真实的梅尔频谱，然后使用节~\ref{sec:svs_inference}中描述的PWG声码器将这些梅尔频谱转换回音频；
+% 3）\textit{FFT-Singer（WORLD）}~\citep{blaauw2020sequence}，基于FastSpeech 2中使用的前馈Transformer层构建的歌声合成系统，生成WORLD声码器使用的特征~\citep{morise2016world}并使用WORLD声码器合成音频；
+3）\textit{FFT-Singer} 基于FastSpeech 2中使用的前馈Transformer层构建的歌声合成系统，生成梅尔频谱。使用PWG声码器来合成音频；4）\textit{GAN-Singer}
+~\citep{wu2020adversarially}，使用具有多个随机窗口的鉴别器进行对抗训练的歌声合成系统。
+所有模型使用的乐谱旋律条件输入都如前文所述。模型使用的PWG声码器参数都相同。
+\begin{figure}[!ht]
     \centering
     \subfloat[本章提出的基于扩散模型的翻唱歌声合成声学模型训练过程]{
     	\centering
@@ -158,18 +168,11 @@ $\mathcal{N}(\bzero, \bI)$分布中采样的高斯白噪声作为梅尔频谱反
     	\includegraphics[width=0.49\textwidth,clip=true]{figure/svs/model_b.pdf}
     	\label{fig:main_fig_sub2}
     }
-    \caption{本章提出的基于扩散模型的翻唱歌声合成声学模型概览（虚线框中表示模型中的浅扩散机制）。在子图\ref{fig:main_fig_sub1}中，$x$是歌谱信息；$t$是扩散时间步；$M$表示输入的真实波形得到的梅尔频谱；$\widetilde{M}$表示使用L1损失训练出的辅助解码器生成的有模糊现象的梅尔频谱；$M_t$是真实梅尔频谱$M$在正向扩散过程第$t$时间步时的情况。在子图\ref{fig:main_fig_sub2}中，$M_T$表示真实梅尔频谱$M$在最大扩散时间步$T$时的情况（接近高斯白噪声）；$k$是预测出的浅扩散交汇边界点；开关图标表示可以通过选择使用$M_T$（即基础版本）还是$\widetilde{M}_k$（即浅扩散版本）作为反向去噪过程的起点来控制使用哪个版本的推理过程。}
+    \caption{本章提出的基于扩散模型的翻唱歌声合成声学模型概览（虚线框中表示实现浅扩散机制（见\ref{sec:shallow_mechanism}）时模型所需要的额外模块）。
+		% 在子图\ref{fig:main_fig_sub1}中，$x$是歌谱信息；$t$是扩散时间步；$M$表示输入的真实波形得到的梅尔频谱；$\widetilde{M}$表示使用L1损失训练出的辅助解码器生成的有模糊现象的梅尔频谱；$M_t$是真实梅尔频谱$M$在正向扩散过程第$t$时间步时的情况。在子图\ref{fig:main_fig_sub2}中，$M_T$表示真实梅尔频谱$M$在最大扩散时间步$T$时的情况（接近高斯白噪声）；
+		$k$是预测出的浅扩散交汇边界点；开关图标表示可以通过选择使用$M_T$（即基础版本）还是$\widetilde{M}_k$（即使用浅扩散时的情况）作为反向去噪过程的起点来控制进行何种推理过程。}
     \label{fig:main_fig}
 \end{figure}
-\section{实验设计}
-\subsection{歌声合成数据集}
-由于本章所涉及的歌声合成研究开始时尚没有公开的高质量中文无伴奏纯歌声干声数据集，本章收集并标注了一个中国普通话流行歌曲干声数据集：PopCS，以评估本章提出的模型和方法。PopCS收录了117首中国流行歌曲（总计5.89小时），这些歌曲的干声都来自一位专业的女歌手。所有的音频文件都在专业录音室中录制。每首歌曲的音频文件采样率都统一为24kHz，采用16位编码。为了获得与歌曲相对应的更准确的乐谱，本章1）按照DeepSinger~\citep{ren2020deepsinger}一文中的做法，将每首整首歌曲拆分为歌词句的片段，并使用这些句子和音频相对应的片段训练蒙特利尔强制对齐工具（Montreal Forced Aligner，MFA）~\citep{mcauliffe2017montreal}模型，以获得歌曲片段与其对应歌词之间音素级别的对齐；2）使用Parselmouth\footnote{https://github.com/YannickJadoul/Parselmouth}工具从原始波形中提取$F_0$（基频）作为基音信息，遵循\citet{wu2020adversarially,blaauw2020sequence,ren2020deepsinger}等之前工作中的做法。在实验中，测试集和验证集都是各随机选取了一首歌曲的全部歌曲片段。本章在对这些歌曲进行了清理和分割后，总计得到了1651个歌曲片段，其中大部分片段的持续时间在10-13秒之间。
-本章同时使用了一部分歌曲翻译数据集中测试集的数据，以MIDI为音高输入，进行测试。
-\subsection{实验设计细节}
-为了评估对合成音频质量的直观感受，本章使用了和上一章中类似的平均意见分数（mean opinion score，MOS）和相对平均意见分数（Comparative CMOS）对模型在测试集上的表现进行人工评测。 评测包括了18名合格的听众对合成的歌声和语音音频样本进行判别打分。本章实验会将提出的基于扩散模型的歌声合成声学模型模型生成的歌曲样本的人工评测MOS值与以下模型和来源进行比较：1）真实的音频；2）将真实的歌唱音频先转换为真实的梅尔频谱，然后使用节~\ref{sec:svs_inference}中描述的PWG声码器将这些梅尔频谱转换回音频；3）\textit{FFT-Singer（WORLD）}~\citep{blaauw2020sequence}，基于FastSpeech 2中使用的前馈Transformer层构建的歌声合成系统，生成WORLD声码器使用的特征~\citep{morise2016world}并使用WORLD声码器合成音频；4）\textit{FFT-Singer} 基于FastSpeech 2中使用的前馈Transformer层构建的歌声合成系统，生成梅尔频谱。使用PWG声码器来合成音频；5）\textit{GAN-Singer}
-~\citep{wu2020adversarially}，使用具有多个随机窗口的鉴别器进行对抗训练的歌声合成系统。
-所有模型使用的乐谱旋律条件输入都如前文所述。模型使用的PWG声码器参数都相同。
-
 % 另外，为了检验本章提出的模型在语音合成任务上的泛化性能，本节还设计了\textit{DiffSinger}模型在语音合成LJSpeech数据集\cite{ljspeech17}上进行的扩展实验。LJSpeech这个数据集包含13100个英文音频片段（总计约$\sim$24小时）和相应的文本内容。在语音数据集上进行的实验按照FastSpeech 2\citep{ren2021fastspeech}一文中的训练-验证-测试集划分、对梅尔频谱的预处理和音素处理及相应使用的工具\footnote{https://github.com/Kyubyong/g2p}。为了构建本章提出的模型相应的语音合成声学模型\textit{DiffSpeech}，需要做出如下调整：1）在\textit{DiffSinger}中加入音调和持续时间预测模块，因为此时不再有给定的旋律信息来指导发声的音高和持续时间，方便期间本节使用了中提出的音调和持续时间预测模块；2）对于在LJSpeech数据集上的浅扩散机制，采用$k=70$作为交汇点时间步。
 % 这样，本章的在语音合成任务上的扩展实验与以下模型和来源进行比较：1）\textit{GT}，真实的语音音频；2）\textit{GT（Mel + Hifi-GAN）}，此处将真实的歌唱音频先转换为真实的梅尔频谱，然后使用最新工作Hifi-GAN声码器将这些梅尔频谱转换回音频；3）\textit{Tacotron2}~\citep{shen2018natural}，经典的自回归式声学模型；4）\textit{BVAE-TTS}\citep{lee2020bidirectional}，基于双向变分推断构建的非自回归声学模型；5）\textit{Glow-TTS}\citep{kim2020glow}，一种轻量的基于生成归一化流的声学模型；6）FastSpeech 2\citep{ren2021fastspeech}，经典的非回归声学模型。
 % 实验的评测实验了Amazon Mechanical Turk平台，规定需要10名评测人员来给出人工评测的平均意见分数。其结果如表~\ref{tab:exp_tts}所示。所有比较的声学模型都使用了最新工作HiFi-GAN~\citep{kong2020hifi}作为转换到音频波形的声码器。
@@ -317,7 +320,7 @@ $\mathcal{N}(\bzero, \bI)$分布中采样的高斯白噪声作为梅尔频谱反
 		\textit{真实音频} & 4.30 $\pm$ 0.09  \\
 	    \textit{真实频谱+PWG声码器} & 4.04 $\pm$ 0.11  \\
 		\midrule
-		\textit{FFT-Singer（WORLD）+WORLD声码器} & 1.75  $\pm$ 0.17  \\
+		% \textit{FFT-Singer（WORLD）+WORLD声码器} & 1.75  $\pm$ 0.17  \\
 		\textit{FFT-Singer+PWG声码器} & 3.67 $\pm$ 0.11 \\
 		\textit{基于对抗训练的声学模型+PWG声码器} & 3.74 $\pm$ 0.12  \\
 		\midrule
@@ -443,7 +446,36 @@ $\mathcal{N}(\bzero, \bI)$分布中采样的高斯白噪声作为梅尔频谱反
 % 另外，为了检验本章提出的模型在语音合成任务上的泛化性能，本节如前文所述，报告模型在LJSpeech数据集\cite{ljspeech17}上进行的扩展实验的结果。语音合成任务人工评测的结果如表~\ref{tab:exp_tts}所示。所有实验中进行比较的声学模型都使用了最新工作HiFi-GAN~\citep{kong2020hifi}作为转换到音频波形的声码器。
 % 从表中的实验结果可以看出，\textit{DiffSpeech}的表现也优于FastSpeech 2和Glow TTS，这证明了本章提出的模型和方法良好的泛化性能。此外，表~\ref{tab:exp_tts}中的最后两行的结果同样佐证了浅扩散机制的有效性，加速率为29.2\%，实时因数分别为0.121 vs.0.171。
 \section{对歌曲翻译结果的适配}
-为了适配一般流行歌曲的翻译结果，本节还测试了本章提出的翻唱歌声合成模型的``音域''，即模型在多大的输入音高范围内能保证合成的歌声不跑调、梅尔频谱不会出现异常。测试时，本节输入元音单音节字``啊''、``喔''、``鹅''、``衣''、``乌''、``鱼''作为歌词内容，以1秒时间指定不同音高进行测试。
+为了适配一般流行歌曲的以音符为旋律输入和字词为对齐单元的翻译结果，本章额外设计了以音符MIDI为输入预测发声基频F0和已知整字对齐音符时长预测音素发声时长的适配组件，使用OpenCpop数据集对此部分进行了训练。如图\ref{fig:ada_encoder}所示，
+\begin{figure}[!ht]
+  \centering
+	\includegraphics[width=0.69\textwidth]{figure/svs/ada_encoder.pdf}
+	\caption{适配组件结构示意图。}
+\label{fig:ada_encoder}
+\end{figure}
+适配组件和原前端编码器的主要不同就是基频信息被MIDI音符的音高输入替代，并且在前端编码器中加入了一个根据歌词音素和MIDI音符信息，在歌词的对应音符时长条件下预测音素级别帧时长的组件。
+表\ref{tab:singing_obj}中显示了这些适配组件以音符和字词与旋律对齐为输入的情况下，对音素的基频F0预测的均方根误差（Root Mean Square Error， RMSE）和时长预测误差。
+\begin{table}[!ht]
+	\centering
+	\setlength{\belowcaptionskip}{8pt} %段后
+	\caption{适配组件对音素的发声基频F0和时长预测误差情况。}
+	\begin{tabular}{|l|c|c|}
+		\toprule
+		Model &  F0 RMSE（Hz）& Duration Acc.  \\
+		\midrule
+		% \textit{FFT-Singer（WORLD）+WORLD声码器} & 1.75  $\pm$ 0.17 & \\
+		% \textit{FFT-Singer+PWG声码器} & 3.67 $\pm$ 0.11 &\\
+		% \textit{基于对抗训练的声学模型+PWG声码器} & 3.74 $\pm$ 0.12 & \\
+		% \midrule
+		\textit{参数前端适配组件} & 8.09 & \\
+% 		\textit{DiffSinger$_{large}$ (Mel + PWG)} & 3.75 $\pm$ 0.12 \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:singing_obj}
+\end{table}
+
+
+本节还测试了本章提出的翻唱歌声合成模型的``音域''，即模型在多大的输入音高范围内能保证合成的歌声没有明显的跑调现象、梅尔频谱不会出现异常。测试时，本节输入元音单音节字``啊''、``喔''、``鹅''、``衣''、``乌''、``鱼''作为歌词内容，以1秒时间指定不同音高进行测试。
 % \begin{figure}
 % 	\includegraphics[width=0.99\textwidth]{pitch_range_delta.pdf}
 % 	\caption{模型预测音频和标准频率的平均音高频率差统计图。}
@@ -454,31 +486,14 @@ $\mathcal{N}(\bzero, \bI)$分布中采样的高斯白噪声作为梅尔频谱反
 % 	\caption{模型预测音频的听感平均意见分数统计图。}
 % 	\label{fig:pitch_range_mos}
 % \end{figure}
-图\ref{fig:pitch_range_mos}和图\ref{fig:pitch_range_delta}分别显示了基于扩散模型的合成模型预测的音频基频F0与标准音高（以A4=440.00Hz为准）的平均频率差和听感的平均意见分数情况。
+% 图\ref{fig:pitch_range_mos}和
+图\ref{fig:pitch_range_delta}显示了基于扩散模型的合成模型预测的音频基频F0与标准音高（以A4=440.00Hz为准）的平均频率差情况。
 \begin{figure}[!ht]
   \centering
-	\includegraphics[width=0.99\textwidth]{figure/svs/pitch_range_delta.pdf}
-	\caption{在不同音调下的合成音频基频F0与标准音高频率差值统计。}
+	\includegraphics[width=0.89\textwidth]{figure/svs/pitch_range_delta.pdf}
+	\caption{在不同音调下的合成音频基频F0与标准音高频率差值统计折线图。}
 \label{fig:pitch_range_delta}
 \end{figure}
-可以看出，本章提出的模型在PopCS数据集上进行训练后，在小字组的E，即E3，至小字三组的D，即D5范围内都能有较好的音准和较高的合成质量，但当输入的音高超出此范围后，模型的合成质量就出现显著的下降了。此范围已经能满足大部分流行歌曲的音域，因此本章搭建的模型也能适配大部分歌曲翻译的结果并给出歌曲翻唱的合成音频了。
-\begin{table}[!ht]
-	\centering
-	\setlength{\belowcaptionskip}{8pt} %段后
-	\caption{合成的歌声音频的音高和时长准确率情况。}
-	\begin{tabular}{|l|c|c|}
-		\toprule
-		Method &  F0-RMSE & Duration Acc.  \\
-		\midrule
-		\textit{FFT-Singer（WORLD）+WORLD声码器} & 1.75  $\pm$ 0.17 & \\
-		\textit{FFT-Singer+PWG声码器} & 3.67 $\pm$ 0.11 &\\
-		\textit{基于对抗训练的声学模型+PWG声码器} & 3.74 $\pm$ 0.12 & \\
-		\midrule
-		\textit{基于扩散模型的声学模型+PWG声码器} & 3.71 $\pm$ 0.10 &\\
-% 		\textit{DiffSinger$_{large}$ (Mel + PWG)} & 3.75 $\pm$ 0.12 \\
-		\bottomrule
-	\end{tabular}
-	\label{tab:singing_obj}
-\end{table}
+可以看出，本章提出的模型在PopCS数据集上进行训练后，在小字组的E，即E3，至小字三组的D，即D5范围内都能有较好的音准和较高的合成质量，但当输入的音高超出此范围后，模型合成的音频在基频上的偏差很大，质量也出现了显著的下降。此范围已经能满足大部分流行歌曲的音域，因此本章搭建的模型也能适配大部分歌曲翻译的结果并给出歌曲翻唱的合成音频了。
 \section{本章小结}
 本章主要针对翻唱歌声合成提出了一个基于扩散模型和对抗训练的声学模型以合成质量更高的梅尔频谱，由于扩散模型本身机制导致的推理时间长的问题，本章又实现了浅扩散机制\citep{diffsinger}来优化扩散模型的推理过程。本章提出的基于扩散模型的翻唱歌声合成模型通过参数前端支持适配歌曲的歌词和旋律输入，之后使用声学参数作为条件指导基于扩散模型和对抗训练的歌声合成，在训练时利用扩散模型更精确的似然计算来更好地学习数据分布，在推理时迭代地进行去噪声以取得高质量的梅尔频谱合成效果。在歌声合成数据集上的主要实验结果说明了本章提出的模型和之前的歌声合成声学模型相关工作相比，训练稳定、合成质量更高，在实现了浅扩散机制后在推理速度上也有了极大提升，能适配歌曲翻译的结果，提供高质量的翻唱合成音频。

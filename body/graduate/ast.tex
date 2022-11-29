@@ -26,7 +26,6 @@
 输入的旋律音符序列由MIDI格式的音高和每个音符的持续时间两部分组成。每一个音符的持续时间都是离散的谱面时长的一类：四分音符、半音符或八分音符等。
 \begin{figure}[t]
     \centering
-    \label{fig:align_enc}
     \includegraphics[width=0.69\textwidth,clip=true]{figure/ast/note-pooling.pdf}
     \caption{音符表示池化嵌入层结构图示。该层会根据音符序列的表示和对齐信息进行编码。}
     \label{fig:align_enc}
@@ -249,7 +248,7 @@
 乐谱的制作和到处使用的软件为musescore。
 \subsection{musicxml文件解析处理}
 musicxml是一种和MIDI相比相对开放自由，易于分发的记谱文件格式。musicxml文件是基于标准xml技术的，是一种文本文件而非二进制文件。musicxml显示格式有着精确的定义，因此可以做到对于同一个文件在不同的环境下打开都有着同样的谱面显示内容。musicxml中的音乐语义主要由xml式的elements表达，也就是其中的xml标签，并以标签的嵌套关系表达音乐语义的元素包含关系。本章进行数据集收集处理的musicxml文件的头部由谱子信息，xml文件信息和各声部信息组成。其中，musicxml里包含的声部信息通常包含这个声部的乐器的ID、名字，MIDI乐器编号和音量等。而标注的数据主要在之后的小节中。小节由小节内容和小节信息组成。小节信息主要包括小节的属性元素，指乐谱此小节中的一些特殊元素，如谱号、调号、记号和文字等。小节内容则是音符和嵌套的音符信息。此处主要提取的是音符的音名（Step标签）、八度位置（Octave标签）、相对长度（Duration标签）和音符类型（Type标签）。
-如图\ref{fig:musicxml_exp}中显示的信息就会被整理为：C4 1/8 八分音符。
+例如，图\ref{fig:musicxml_exp}中显示的信息就会被整理为：C4 1/8 八分音符。
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.99\textwidth]{figure/ast/musicxml_exp.png}
@@ -277,7 +276,7 @@ musicxml是一种和MIDI相比相对开放自由，易于分发的记谱文件�
 总之，和musicxml相比，MIDI格式是以播放为目的，且历史悠久，所以可以搜集到的数据文件也相对较多。但是各个MIDI文件数据格式不统一，数据杂乱，对自动化处理造成了很多困难。musicxml与MIDI相比，记谱排版格式明确且是唯一的。虽然网络上原生的musicxml相对较少，由MIDI转换到musicxml意义寥寥，但是建立以musicxml为处理对象的自动化处理流程仍是必要且有意义的。
 \subsection{实验设计细节}
 在本章进行的实验中，本章提出的模型LTAG（\underline{L}yrics-Melody \underline{T}ranslation with
-\underline{A}daptive \underline{G}roupin）与两个基线模型GagaST和LTAG-cls进行了对比。
+\underline{A}daptive \underline{G}rouping）与两个基线模型GagaST和LTAG-cls（LTAG using classifier）进行了对比。
 其中之一是在上文中提到过的GagaST系统~\cite{gagast}，该工作的主要内容是根据如中文这样的带音调语言的歌词音调限制翻译结果，并搭建了一个歌词翻译系统，在对解码过程的限制进行调整后也能适应无音调语言的歌词翻译。该工作对翻译歌词这样的特殊语体进行了适应性训练，并提出了在预训练时同时使用单语言语料和平行翻译语料以扩增可以使用的语料数量。
 另一个基线模型是本章提出的模型的变体LTAG-cls。此变体仍使用基于Transformer的编码器-解码器子结构，但对每个翻译出的目标端的词语的对齐音符进行预测的方式变成使用对Transformer输出的隐层表示的分类器进行分类。此模型在编码端对输入信息的编码方式和本章提出的模型完全相同，但是对齐预测使用的是比较平凡的结构。对齐预测分类的对齐音符的最大数目类别设置为30，这个量与上节阐述的对齐解码器中模型允许的出现最大$K(j)$相同。
 

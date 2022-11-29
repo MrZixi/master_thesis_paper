@@ -17,7 +17,7 @@
                 number=\arabic{chapter},
                 beforeskip=18pt,
                 afterskip=18pt,
-                fixskip=true
+                fixskip=true,
             },
             section =
             {
@@ -72,29 +72,32 @@
             chapter =
             {
                 format=\centering\zihao{-2}\bfseries,
+                aftername=~~,
                 name={第, 章},
                 number=\arabic{chapter},
-                beforeskip=18pt,
+                beforeskip=13pt,
                 afterskip=18pt,
-                fixskip=true
+                fixskip=true,
             },
             section =
             {
                 format=\raggedright\zihao{-3}\bfseries,
+                aftername=~~,
                 name={},
                 number=\arabic{chapter}.\arabic{section},
                 beforeskip=-5pt,
-                afterskip=0pt,
-                fixskip=true
+                afterskip=-15pt
+                % fixskip=true,
             },
             subsection =
             {
                 format=\raggedright\zihao{4}\bfseries,
+                aftername=~~,
                 name={},
                 number=\arabic{chapter}.\arabic{section}.\arabic{subsection},
                 beforeskip=-5pt,
                 afterskip=0pt,
-                fixskip=true
+                fixskip=true,
             },
             subsubsection =
             {
@@ -104,7 +107,7 @@
                 numbering=true,
                 number=\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection},
                 beforeskip=-5pt,
-                afterskip=0pt
+                afterskip=0pt,
             }
         }
 

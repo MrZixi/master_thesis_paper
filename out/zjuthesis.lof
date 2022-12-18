@@ -8,13 +8,13 @@
 \contentsline {figure}{\numberline {2.5}{\ignorespaces 真实的对齐情况可以对歌词和旋律之间的注意力权重矩阵进行监督。\relax }}{10}{figure.caption.13}%
 \contentsline {figure}{\numberline {2.6}{\ignorespaces 自适应计算时间控制循环神经网络的示意图。\relax }}{11}{figure.caption.14}%
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Tacotron声学模型示意图\relax }}{13}{figure.caption.15}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces 基于Transformer的自回归声学模型示意图\relax }}{14}{figure.caption.16}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{14}{subfigure.8.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{14}{subfigure.8.2}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces FastSpeech\blx@tocontentsinit {0}\citep {ren2019fastspeech}基于Transformer的非自回归声学模型示意图\relax }}{15}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces 基于Transformer的自回归声学模型示意图\relax }}{15}{figure.caption.16}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{15}{subfigure.8.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{15}{subfigure.8.2}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces FastSpeech\blx@tocontentsinit {0}\citep {ren2019fastspeech}基于Transformer的非自回归声学模型示意图\relax }}{16}{figure.caption.17}%
 \contentsline {figure}{\numberline {2.10}{\ignorespaces 基于变分自编码器的声学模型示意图\blx@tocontentsinit {0}\citep {lee2020bidirectional}。\relax }}{16}{figure.caption.18}%
 \contentsline {figure}{\numberline {2.11}{\ignorespaces 基于生成式流模型搭建的声学模型示意图\relax }}{17}{figure.caption.19}%
-\contentsline {figure}{\numberline {2.12}{\ignorespaces 基于扩散过程的图像去噪合成示意图\blx@tocontentsinit {0}\citep {Ho2020ddpm}。\relax }}{18}{figure.caption.20}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces 基于扩散过程的图像去噪合成示意图\blx@tocontentsinit {0}\citep {Ho2020ddpm}。\relax }}{19}{figure.caption.20}%
 \contentsline {figure}{\numberline {2.13}{\ignorespaces 基于扩散过程的声音波形合成示意图\blx@tocontentsinit {0}\citep {kong2021diffwave}。\relax }}{19}{figure.caption.21}%
 \addvspace {10.0pt}
 \contentsline {figure}{\numberline {3.1}{\ignorespaces 本章提出的模型架构概览，图示以第$j$个解码时间步进行了说明。Transformer解码器将输出目标语言的词语，对齐解码器会输出对齐音符的数量。\relax }}{21}{figure.caption.22}%
@@ -31,9 +31,9 @@
 \contentsline {figure}{\numberline {3.10}{\ignorespaces 英文$\rightarrow $中文方向测试集中的真实歌曲翻译结果对齐情况和模型预测的对齐结果重叠展示的频率分布直方图。此处为GagaST（左）和基线模型LTAG-cls（右）的情况对比。\relax }}{40}{figure.caption.36}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {GagaST}}}{40}{subfigure.10.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {LTAG-cls}}}{40}{subfigure.10.2}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces 英文$\rightarrow $中文方向测试集中的真实歌曲翻译结果对齐情况和模型预测的对齐结果重叠展示的频率分布直方图。此处为GagaST（左）和本章提出的LTAG模型（右）的情况对比。\relax }}{40}{figure.caption.37}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {GagaST}}}{40}{subfigure.11.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {LTAG}}}{40}{subfigure.11.2}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces 英文$\rightarrow $中文方向测试集中的真实歌曲翻译结果对齐情况和模型预测的对齐结果重叠展示的频率分布直方图。此处为GagaST（左）和本章提出的LTAG模型（右）的情况对比。\relax }}{41}{figure.caption.37}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {GagaST}}}{41}{subfigure.11.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {LTAG}}}{41}{subfigure.11.2}%
 \contentsline {figure}{\numberline {3.12}{\ignorespaces 源歌词、参考翻译结果和本章中进行比较的三个歌曲翻译模型的翻译结果的歌谱示例。两个例子分别为《\textit {Will You Love Me Tomorrow}》一曲中的``Is love I can be sure of''和《\textit {小幸运}》一曲中的``她会有多幸运''。\relax }}{42}{figure.caption.38}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {源歌谱和参考翻译结果 左图：英$\rightarrow $中。 右图： 中$\rightarrow $英。}}}{42}{subfigure.12.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {GagaST}}}{42}{subfigure.12.2}%
@@ -41,20 +41,20 @@
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {LTAG}}}{42}{subfigure.12.4}%
 \addvspace {10.0pt}
 \contentsline {figure}{\numberline {4.1}{\ignorespaces 一个针对梅尔频谱的扩散模型正向、反向过程示意图。\relax }}{44}{figure.caption.39}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces 前端编码器和去噪模型详细的模型结构图示。$x$表示音乐乐谱信息，$E_m$表示音乐音符所代表的条件序列。$E_t$表示扩散时间步的嵌入表示。$N$是残差连接层的层数。去噪模型结构来源于非因果性WaveNet\blx@tocontentsinit {0}\citep {vanwavenet}，但这里因为任务差别将原本设计中的膨胀卷积层替换为普通卷积层做了简化。\relax }}{49}{figure.caption.40}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {前端编码器}}}{49}{subfigure.2.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {去噪模型}}}{49}{subfigure.2.2}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces 本章提出的基于扩散模型的翻唱歌声合成声学模型概览（虚线框中表示实现浅扩散机制（见\ref {sec:shallow_mechanism}）时模型所需要的额外模块）。 $k$是预测出的浅扩散交汇边界点；开关图标表示可以通过选择使用$M_T$（即基础版本）还是$\setbox \z@ \hbox {\mathsurround \z@ $\textstyle M$}\mathaccent "0365{M}_k$（即使用浅扩散时的情况）作为反向去噪过程的起点来控制进行何种推理过程。\relax }}{51}{figure.caption.41}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces 前端编码器和去噪模型详细的模型结构图示。$x$表示音乐乐谱信息，$E_m$表示音乐音符所代表的条件序列。$E_t$表示扩散时间步的嵌入表示。$N$是残差连接层的层数。去噪模型结构来源于非因果性WaveNet\blx@tocontentsinit {0}\citep {vanwavenet}，但这里因为任务差别将原本设计中的膨胀卷积层替换为普通卷积层做了简化。\relax }}{48}{figure.caption.40}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {前端编码器}}}{48}{subfigure.2.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {去噪模型}}}{48}{subfigure.2.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces 本章提出的基于扩散模型的翻唱歌声合成声学模型概览（虚线框中表示实现浅扩散机制（见\ref {sec:shallow_mechanism}）时模型所需要的额外模块）。 $k$是预测出的浅扩散交汇边界点；开关图标表示可以通过选择使用$M_T$（即基础版本）还是$\setbox \z@ \hbox {\mathsurround \z@ $\textstyle M$}\mathaccent "0365{M}_k$（即使用浅扩散时的情况）作为反向去噪过程的起点来控制进行何种推理过程。\relax }}{51}{figure.caption.42}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {本章提出的基于扩散模型的翻唱歌声合成声学模型训练过程}}}{51}{subfigure.3.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {本章提出的基于扩散模型的翻唱歌声合成声学模型的采样推理过程}}}{51}{subfigure.3.2}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces 辅助解码器详细结构图示。$\setbox \z@ \hbox {\mathsurround \z@ $\textstyle M$}\mathaccent "0365{M}$表示由辅助解码器生成的有模糊现象的梅尔频谱。辅助解码器的训练使用的是L1损失。\relax }}{52}{figure.caption.42}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces 正向扩散过程中在各个时间步的梅尔频谱图。第一行展示的是用L1损失训练的辅助解码器生成的梅尔频谱图$\setbox \z@ \hbox {\mathsurround \z@ $\textstyle M$}\mathaccent "0365{M}$的变化情况； 第二行展示的是真实的梅尔频谱图的变化情况。\relax }}{53}{figure.caption.43}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces $M$和$\setbox \z@ \hbox {\mathsurround \z@ $\textstyle M$}\mathaccent "0365{M}$在正向扩散过程中的轨迹示意图。$q(M_t| M_0)$和$q(\setbox \z@ \hbox {\mathsurround \z@ $\textstyle M$}\mathaccent "0365{M}_t| \setbox \z@ \hbox {\mathsurround \z@ $\textstyle M$}\mathaccent "0365{M}_0)$这两个分布会随着时间步$t$增大而逐渐接近。\relax }}{53}{figure.caption.44}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces 来自基于扩散模型的声学模型，基于对抗训练的声学模型和FFT-Singer的梅尔频谱预测结果和真实的梅尔频谱的可视化图。\relax }}{58}{figure.caption.49}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces 正向扩散过程中在各个时间步的梅尔频谱图。第一行展示的是用L1损失训练的辅助解码器生成的梅尔频谱图$\setbox \z@ \hbox {\mathsurround \z@ $\textstyle M$}\mathaccent "0365{M}$的变化情况； 第二行展示的是真实的梅尔频谱图的变化情况。\relax }}{52}{figure.caption.43}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces $M$和$\setbox \z@ \hbox {\mathsurround \z@ $\textstyle M$}\mathaccent "0365{M}$在正向扩散过程中的轨迹示意图\blx@tocontentsinit {0}\citep {diffsinger}。$q(M_t| M_0)$和$q(\setbox \z@ \hbox {\mathsurround \z@ $\textstyle M$}\mathaccent "0365{M}_t| \setbox \z@ \hbox {\mathsurround \z@ $\textstyle M$}\mathaccent "0365{M}_0)$这两个分布会随着时间步$t$增大而逐渐接近。\relax }}{53}{figure.caption.44}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces 辅助解码器详细结构图示。$\setbox \z@ \hbox {\mathsurround \z@ $\textstyle M$}\mathaccent "0365{M}$表示由辅助解码器生成的有模糊现象的梅尔频谱。辅助解码器的训练使用的是L1损失。\relax }}{53}{figure.caption.45}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces 来自基于扩散模型的、基于对抗训练的和基于前馈Transformer的声学模型产生的梅尔频谱预测结果和真实的梅尔频谱的可视化图。\relax }}{58}{figure.caption.50}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\textit {真实梅尔频谱}}}}{58}{subfigure.7.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\textit {基于扩散模型的歌声合成模型}}}}{58}{subfigure.7.2}%
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {\textit {基于对抗训练的歌声合成模型}}}}{58}{subfigure.7.3}%
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {\textit {FFT-Singer}}}}{58}{subfigure.7.4}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces 适配组件结构示意图。\relax }}{60}{figure.caption.51}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces 在不同音调下的合成音频基频F0与标准音高频率差值统计折线图。\relax }}{61}{figure.caption.53}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {\textit {基于前馈Transformer的歌声合成模型}}}}{58}{subfigure.7.4}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces 适配组件结构示意图。\relax }}{60}{figure.caption.52}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces 在不同音调下的合成音频基频F0与标准音高频率差值折线统计图。\relax }}{61}{figure.caption.54}%
 \addvspace {10.0pt}

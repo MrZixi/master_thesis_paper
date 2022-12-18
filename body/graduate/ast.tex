@@ -218,7 +218,7 @@
     % \setlength{\tabcolsep}{2pt}
     \begin{tabular}{|l|c|c|c|c|}
     \hline
-         & 语种 & 歌曲数（首） & 歌词数（句） & 数据来源和实验用途\\
+    \textbf{数据集名称} & \textbf{语种} & \textbf{歌曲数（首）} & \textbf{歌词数（句）} & \textbf{数据来源和实验用途}\\
     \hline
      LMD & 英文 & \diagbox[]{}{} & 152,991 & 回译\\
     \hline
@@ -248,8 +248,8 @@
 乐谱的制作和到处使用的软件为musescore。
 \subsection{musicxml文件解析处理}
 musicxml是一种和MIDI相比相对开放自由，易于分发的记谱文件格式。musicxml文件是基于标准xml技术的，是一种文本文件而非二进制文件。musicxml显示格式有着精确的定义，因此可以做到对于同一个文件在不同的环境下打开都有着同样的谱面显示内容。musicxml中的音乐语义主要由xml式的elements表达，也就是其中的xml标签，并以标签的嵌套关系表达音乐语义的元素包含关系。本章进行数据集收集处理的musicxml文件的头部由谱子信息，xml文件信息和各声部信息组成。其中，musicxml里包含的声部信息通常包含这个声部的乐器的ID、名字，MIDI乐器编号和音量等。而标注的数据主要在之后的小节中。小节由小节内容和小节信息组成。小节信息主要包括小节的属性元素，指乐谱此小节中的一些特殊元素，如谱号、调号、记号和文字等。小节内容则是音符和嵌套的音符信息。此处主要提取的是音符的音名（Step标签）、八度位置（Octave标签）、相对长度（Duration标签）和音符类型（Type标签）。
-例如，图\ref{fig:musicxml_exp}中显示的信息就会被整理为：C4 1/8 八分音符。
-\begin{figure}[ht]
+如图\ref{fig:musicxml_exp}中显示的信息就会被整理为：C4 1/8 八分音符。
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=0.99\textwidth]{figure/ast/musicxml_exp.png}
     \caption{\texttt{.musicxml}文件中涉及音符信息的标签内容示例。}
@@ -276,7 +276,7 @@ musicxml是一种和MIDI相比相对开放自由，易于分发的记谱文件�
 总之，和musicxml相比，MIDI格式是以播放为目的，且历史悠久，所以可以搜集到的数据文件也相对较多。但是各个MIDI文件数据格式不统一，数据杂乱，对自动化处理造成了很多困难。musicxml与MIDI相比，记谱排版格式明确且是唯一的。虽然网络上原生的musicxml相对较少，由MIDI转换到musicxml意义寥寥，但是建立以musicxml为处理对象的自动化处理流程仍是必要且有意义的。
 \subsection{实验设计细节}
 在本章进行的实验中，本章提出的模型LTAG（\underline{L}yrics-Melody \underline{T}ranslation with
-\underline{A}daptive \underline{G}rouping）与两个基线模型GagaST和LTAG-cls（LTAG using classifier）进行了对比。
+\underline{A}daptive \underline{G}rouping）与两个基线模型GagaST歌曲翻译系统和LTAG-cls（LTAG using classifier）进行了对比。
 其中之一是在上文中提到过的GagaST系统~\cite{gagast}，该工作的主要内容是根据如中文这样的带音调语言的歌词音调限制翻译结果，并搭建了一个歌词翻译系统，在对解码过程的限制进行调整后也能适应无音调语言的歌词翻译。该工作对翻译歌词这样的特殊语体进行了适应性训练，并提出了在预训练时同时使用单语言语料和平行翻译语料以扩增可以使用的语料数量。
 另一个基线模型是本章提出的模型的变体LTAG-cls。此变体仍使用基于Transformer的编码器-解码器子结构，但对每个翻译出的目标端的词语的对齐音符进行预测的方式变成使用对Transformer输出的隐层表示的分类器进行分类。此模型在编码端对输入信息的编码方式和本章提出的模型完全相同，但是对齐预测使用的是比较平凡的结构。对齐预测分类的对齐音符的最大数目类别设置为30，这个量与上节阐述的对齐解码器中模型允许的出现最大$K(j)$相同。
 
@@ -295,7 +295,7 @@ musicxml是一种和MIDI相比相对开放自由，易于分发的记谱文件�
     \caption{本文中所涉及的预训练数据统计情况。}
     \begin{tabular}{|l|c|c|c|}
     \hline
-     数据集名称 & 语种 & 语句数 & 来源\\
+     \textbf{数据集名称} & \textbf{语种} & \textbf{语句数} & \textbf{来源}\\
     \hline
      英文歌曲歌词 & 英文 & 95,148,672 & 爬取 \\
     \hline
@@ -336,9 +336,9 @@ musicxml是一种和MIDI相比相对开放自由，易于分发的记谱文件�
     \centering
     \setlength{\belowcaptionskip}{8pt} %段后
     \caption{两个翻译方向上的sacreBLEU分数和对齐分数结果。（*表示行内第二优的结果。）}
-    \begin{tabular}{l|c|c|c|c}
+    \begin{tabular}{|l|c|c|c|c|}
     \hline
-    \multirow{2}{*}{模型名称} & \multicolumn{2}{c|}{BLEU$\uparrow$} & \multicolumn{2}{c}{AS. $\uparrow$}\\
+    \multirow{2}{*}{\textbf{模型名称}} & \multicolumn{2}{c|}{\textbf{BLEU}$\uparrow$} & \multicolumn{2}{c}{\textbf{AS.} $\uparrow$}\\
     \cline{2-5}
     & 英文$\rightarrow$中文 & 中文$\rightarrow$英文 & 英文$\rightarrow$中文 & 中文$\rightarrow$英文 \\
     \hline\hline
@@ -364,9 +364,11 @@ musicxml是一种和MIDI相比相对开放自由，易于分发的记谱文件�
     %\setlength{\tabcolsep}{4pt}
     \setlength{\belowcaptionskip}{8pt} %段后
     \caption{英文$\rightarrow$中文翻译方向测试集上对于歌曲翻译的可理解度（MOS-T）、翻译后歌曲的自然度、可唱性（MOS-S）和整体质量评估（MOS-T）的平均意见得分和95\%置信区间。}
-    \begin{tabular}{l|c|c|c}
+    \begin{tabular}{|l|c|c|c|}
     \hline
-    模型名称 & MOS-T & MOS-S & MOS-Q \\
+    \textbf{模型名称} & \textbf{MOS-T} & \textbf{MOS-S} & \textbf{MOS-Q} \\
+    \hline
+    人工翻译翻唱 & 0.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00\\
     \hline\hline
     GagaST歌词翻译系统 & 3.66 $\pm$ 0.06 & 3.49 $\pm$ 0.10 & 3.65 $\pm$ 0.05\\
     \hline
@@ -387,9 +389,11 @@ musicxml是一种和MIDI相比相对开放自由，易于分发的记谱文件�
     %\setlength{\tabcolsep}{4pt}
     \setlength{\belowcaptionskip}{8pt} %段后
     \caption{中文$\rightarrow$英文翻译方向测试集上对于歌曲翻译的可理解度（MOS-T）、翻译后歌曲的自然度、可唱性（MOS-S）和整体质量评估（MOS-T）的平均意见得分和95\%置信区间。此翻译方向表示其评测时提供的翻译歌曲片段的音频样本是用未针对该目标语言训练的语音合成模型生成的。因此，这些结果仅供参考。}
-    \begin{tabular}{l|c|c|c}
+    \begin{tabular}{|l|c|c|c|}
     \hline
-    模型名称 & MOS-T & MOS-S & MOS-Q \\
+    \textbf{模型名称} & \textbf{MOS-T} & \textbf{MOS-S} & \textbf{MOS-Q} \\
+    \hline
+    人工翻译翻唱 & 0.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00\\
     \hline\hline
     GagaST歌词翻译系统 & 3.72 $\pm$ 0.05 & 3.04 $\pm$ 0.02 & 3.08 $\pm$ 0.03\\
     \hline
@@ -422,7 +426,7 @@ musicxml是一种和MIDI相比相对开放自由，易于分发的记谱文件�
 %     \modelname  & 3.71 $\pm$ 0.05& 3.85 $\pm$ 0.05 & 3.68 $\pm$ 0.05&  & 3.69 $\pm$ 0.04&\\
 %     ~~~ only bt & 3.71 $\pm$ 0.05 & 3.80 $\pm$ 0.05 & 3.58 $\pm$ 0.07 & & 3.65 $\pm$ 0.04&\\
 %     ~~~ w/o bt  & 3.69 $\pm$ 0.05 & 3.28 $\pm$ 0.04 & 3.63 $\pm$ 0.07 & & 3.67 $\pm$ 0.04&\\
-%     % \midrule
+%     % \hline
 %     % \modelname~w/o bt  & & & & & & \\
 %     % \modelname~only bt & & & & & & \\
 %     % \modelname~+ bt  & & & & & & \\
@@ -499,5 +503,6 @@ musicxml是一种和MIDI相比相对开放自由，易于分发的记谱文件�
 这种现象的原因就在于源曲在表达此句的意思时，部分歌词出现了一对多对齐的情况，此时音符的数量相比字词已经过多了，解码时的限制就变成了用更多字数表达相同的意思，对齐情况受限的模型只能添加更多无语义的字词语或者不合适的词语来满足限制。
 相比之下，Transformer子结构+简单分类器的\modelname-cls~已经可以实现相对灵活的对齐了。
 然而，实验评估结果表明，本章提出的轻量的对齐解码器网络结构能够在目标端词语和音符之间预测出更合理的对齐。
+\clearpage
 \section{本章小结}
-本章主要针对自动歌曲翻译任务提出了一个可以同时考虑歌词和歌词-旋律对齐情况来进行翻译的自回归模型。本章提出的歌词和歌词-旋律对齐共同翻译模型LTAG是在自回归的基于Transformer的编码器-解码器翻译框架下的改进。本章细致阐述了模型的设计动机，介绍了本章提出的数据收集方法、实验中使用的数据集情况、本章提出的音符表示池化嵌入层和对齐解码器的具体结构。最后，通过一系列实验和翻译结果的歌谱分析，本章说明了\modelname~相比两个很强的基线模型取得了更好的文本语义翻译表现和更为合理、更有表现力的歌词-旋律对齐，从而获得了整体上更好的歌曲翻译表现，模型有能力为翻唱提供了优质的歌词和歌谱参照。
+本章主要针对自动歌曲翻译任务创新性地提出了一个可以同时考虑歌词和歌词-旋律对齐情况来进行翻译的自回归模型并成功设计了一个收集相关数据集的流程方法来针对这一任务进行高效的、低成本的数据采集。本章提出的歌词和歌词-旋律对齐共同翻译模型LTAG是在自回归的基于Transformer的编码器-解码器翻译框架下的改进。本章细致阐述了模型的设计动机，详细介绍了本章提出的数据收集方法、实验中使用的数据集情况、本章提出的音符表示池化嵌入层和对齐解码器的具体结构，解释了如何对回译方法进行适应性的改造来进行数据增强。最后，通过一系列实验和翻译结果的歌谱分析，本章说明了提出的\modelname~相比两个很强的基线模型取得了更好的文本语义翻译表现和更为合理、更有表现力的歌词-旋律对齐，从而获得了整体上更好的歌曲翻译表现，模型有能力为翻唱提供了优质的歌词和歌谱参照。

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.10.24)  29 NOV 2022 15:37
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.10.24)  16 DEC 2022 20:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -29,7 +29,7 @@ Degree: {graduate}
 MajorFormat: {cs}
 Type: {thesis}
 Period: {paper}
-BlindReview: {false}
+BlindReview: {true}
 Language: {chinese}
 GradLevel: {master}
 PrintFilePath: {false}
@@ -1671,15 +1671,19 @@ File: tikzlibraryplotmarks.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmar
 ks.code.tex
 File: pgflibraryplotmarks.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-)))) (./config/format/general/caption.tex)
-(./config/format/general/geometry.tex) (./config/format/major/cs/geometry.tex)
-(./config/format/general/layout.tex
+))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/preprint/balance.sty
+Package: balance 1999/02/23 4.3 (PWD)
+\oldvsize=\dimen403
+)
+(./config/format/general/caption.tex) (./config/format/general/geometry.tex)
+(./config/format/major/cs/geometry.tex) (./config/format/general/layout.tex
 \listoffiguresnamelen=\skip175
 \listoftablesnamelen=\skip176
-) (./config/format/major/cs/layout.tex)
-(./config/format/general/tables.tex) (./config/format/major/cs/tables.tex)
-(./config/format/general/heading.tex) (./config/format/major/cs/heading.tex)
-(./config/format/general/fonts.tex
+)
+(./config/format/major/cs/layout.tex) (./config/format/general/tables.tex)
+(./config/format/major/cs/tables.tex) (./config/format/general/heading.tex)
+(./config/format/major/cs/heading.tex) (./config/format/general/fonts.tex
 
 Package xeCJK Warning: Redefining CJKfamily `zhfs' (STFangsong).
 
@@ -1797,7 +1801,11 @@ File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 \@quotereset=\count551
 Package translations Info: No language package found. I am going to use `englis
 h' as default language. on input line 163.
- (out/zjuthesis.aux)
+ (out/zjuthesis.aux
+
+LaTeX Warning: Label `fig:main_fig_sub1' multiply defined.
+
+)
 \openout1 = `zjuthesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 163.
@@ -1829,14 +1837,14 @@ LaTeX Font Info:    ... okay on input line 163.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: includehead includefoot 
-* h-part:(L,W,R)=(89.626pt, 418.25586pt, 89.626pt)
+* h-part:(L,W,R)=(88.77245pt, 419.96298pt, 88.77245pt)
 * v-part:(T,H,B)=(89.626pt, 664.37212pt, 91.04872pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=418.25586pt
+* \textwidth=419.96298pt
 * \textheight=610.99103pt
-* \oddsidemargin=17.35602pt
-* \evensidemargin=17.35602pt
+* \oddsidemargin=16.50246pt
+* \evensidemargin=16.50246pt
 * \topmargin=17.35602pt
 * \headheight=12.0pt
 * \headsep=11.38109pt
@@ -1956,7 +1964,7 @@ File: figure//logo/zjuchar.jpg Graphic file (type bmp)
 File: figure//logo/zju.pdf Graphic file (type pdf)
 <use figure//logo/zju.pdf>
 
-Overfull \hbox (44.7164pt too wide) in paragraph at lines 152--152
+Overfull \hbox (44.7164pt too wide) in paragraph at lines 167--167
  []|                                 |   []                                | 
  []
 
@@ -2008,6 +2016,48 @@ Package fontspec Info: Font family 'KaitiSC(0)' created for font 'Kaiti SC'
 
 ] (./page/graduate/previous.tex (./page/graduate/abstract.tex
 
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.45398pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.45398pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.45398pt}.
+
+[1
+
+
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.45398pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.45398pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.45398pt}.
+
+[2]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.45398pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.45398pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.45398pt}.
+
+[3
+
+])) (./page/graduate/toc.tex
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.45398pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.45398pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.45398pt}.
+
+[4]
+
 Package fontspec Warning: Font "Heiti SC" does not contain requested Script
 (fontspec)                "CJK".
 
@@ -2036,6 +2086,7 @@ Package fontspec Info: Font family 'HeitiSC(0)' created for font 'Heiti SC'
 (fontspec)             SC/BI/OT:language=dflt;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
+(out/zjuthesis.toc
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.45398pt, for example:
@@ -2044,9 +2095,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.45398pt}.
 
-[1
-
-
+[5
 
 ]
 
@@ -2057,38 +2106,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.45398pt}.
 
-[2
-
-])) (./page/graduate/toc.tex
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.45398pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.45398pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.45398pt}.
-
-[3] (out/zjuthesis.toc
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.45398pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.45398pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.45398pt}.
-
-[4
-
-]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.45398pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.45398pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.45398pt}.
-
-[5])
+[6])
 \tf@toc=\write5
 \openout5 = `zjuthesis.toc'.
 
@@ -2101,7 +2119,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.45398pt}.
 
-[6] (out/zjuthesis.lof
+[7] (out/zjuthesis.lof
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.45398pt, for example:
@@ -2110,24 +2128,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.45398pt}.
 
-[7
+[8
 
 ]
 
 Package fontspec Warning: Font "STFangsong" does not contain requested Script
 (fontspec)                "CJK".
-
-
-Overfull \hbox (0.83112pt too wide) in paragraph at lines 31--31
- \TU/SongtiSCLight(1)/m/n/12.045 型 预 测 的 对 齐 结 果 重 叠 展 示 的 频 率 分 布 直 方 图。|  此 处
- 为 \TU/TimesNewRoman(0)/m/n/12.045 GagaST 
- []
-
-
-Overfull \hbox (0.83112pt too wide) in paragraph at lines 34--34
- \TU/SongtiSCLight(1)/m/n/12.045 型 预 测 的 对 齐 结 果 重 叠 展 示 的 频 率 分 布 直 方 图。|  此 处
- 为 \TU/TimesNewRoman(0)/m/n/12.045 GagaST 
- []
 
 
 LaTeX Font Warning: Font shape `TU/SongtiSCLight(1)/m/it' undefined
@@ -2141,13 +2147,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.45398pt}.
 
-[8]
-Overfull \hbox (9.05276pt too wide) in paragraph at lines 52--52
+[9]
+Overfull \hbox (21.17377pt too wide) in paragraph at lines 51--51
  [][] [][]$\OML/cmm/m/it/12.045 M$ \TU/SongtiSCLight(1)/m/n/12.045 和 $[]$ 在 正 向
- 扩 散 过 程 中 的 轨 迹 示 意 图。| $\OML/cmm/m/it/12.045 q\OT1/cmr/m/n/12.045 (\OML/cmm/m
-/it/12.045 M[]\OMS/cmsy/m/n/12.045 j\OML/cmm/m/it/12.045 M[]\OT1/cmr/m/n/12.045
- )$ \TU/SongtiSCLight(1)/m/n/12.045 和 $\OML/cmm/m/it/12.045 q\OT1/cmr/m/n/12.04
-5 ([]\OMS/cmsy/m/n/12.045 j[]\OT1/cmr/m/n/12.045 )$ 
+ 扩 散 过 程 中 的 轨 迹 示 意 图$[]$。| $\OML/cmm/m/it/12.045 q\OT1/cmr/m/n/12.045 (\OML/c
+mm/m/it/12.045 M[]\OMS/cmsy/m/n/12.045 j\OML/cmm/m/it/12.045 M[]\OT1/cmr/m/n/12
+.045 )$ \TU/SongtiSCLight(1)/m/n/12.045 和 $\OML/cmm/m/it/12.045 q\OT1/cmr/m/n/1
+2.045 ([]\OMS/cmsy/m/n/12.045 j[]\OT1/cmr/m/n/12.045 )$ 
  []
 
 )
@@ -2163,15 +2169,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.45398pt}.
 
-[9] (out/zjuthesis.lot
-Overfull \hbox (5.49715pt too wide) in paragraph at lines 7--7
+[10] (out/zjuthesis.lot
+Overfull \hbox (3.79002pt too wide) in paragraph at lines 7--7
  [][] [][]\TU/SongtiSCLight(1)/m/n/12.045 英 文 $\OMS/cmsy/m/n/12.045 !$ \TU/Song
 tiSCLight(1)/m/n/12.045 中 文 翻 译 方 向 测 试 集 上 对 于 歌 曲 翻 译 的 可 理 解 度  |（\TU/TimesN
 ewRoman(0)/m/n/12.045 MOS- 
  []
 
 
-Overfull \hbox (5.49715pt too wide) in paragraph at lines 8--8
+Overfull \hbox (3.79002pt too wide) in paragraph at lines 8--8
  [][] [][]\TU/SongtiSCLight(1)/m/n/12.045 中 文 $\OMS/cmsy/m/n/12.045 !$ \TU/Song
 tiSCLight(1)/m/n/12.045 英 文 翻 译 方 向 测 试 集 上 对 于 歌 曲 翻 译 的 可 理 解 度  |（\TU/TimesN
 ewRoman(0)/m/n/12.045 MOS- 
@@ -2190,7 +2196,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.45398pt}.
 
-[10
+[11
 
 ] (./body/graduate/content.tex (./body/graduate/intro.tex
 第1章
@@ -2227,14 +2233,14 @@ File: figure/related/transformertts_a.jpg Graphic file (type bmp)
 File: figure/related/transformertts_b.jpg Graphic file (type bmp)
 <figure/related/transformertts_b.jpg>
 
-Overfull \hbox (3.68445pt too wide) in paragraph at lines 147--151
+Overfull \hbox (3.65033pt too wide) in paragraph at lines 147--151
 [][][][] 
  []
 
 [12] [13]
 File: figure/related/fs2.pdf Graphic file (type pdf)
 <use figure/related/fs2.pdf>
- [14] [15]
+ [14]
 File: figure/related/bvaetts.png Graphic file (type bmp)
 <figure/related/bvaetts.png>
 File: figure/related/glowtts_a.pdf Graphic file (type pdf)
@@ -2242,16 +2248,20 @@ File: figure/related/glowtts_a.pdf Graphic file (type pdf)
 File: figure/related/glowtts_b.pdf Graphic file (type pdf)
 <use figure/related/glowtts_b.pdf>
 
-Overfull \hbox (3.68445pt too wide) in paragraph at lines 177--181
+Overfull \hbox (3.65033pt too wide) in paragraph at lines 177--181
 [][][][] 
  []
 
-[16] [17]
+[15] [16] [17]
 File: figure/related/ddpm.pdf Graphic file (type pdf)
 <use figure/related/ddpm.pdf>
 File: figure/related/diffwave.png Graphic file (type bmp)
 <figure/related/diffwave.png>
- [18]) (./body/graduate/ast.tex [19]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[18]) (./body/graduate/ast.tex [19]
 第3章
 File: figure/ast/pipeline.pdf Graphic file (type pdf)
 <use figure/ast/pipeline.pdf>
@@ -2268,12 +2278,12 @@ File: figure/ast/alignment_decoder.pdf Graphic file (type pdf)
 File: figure/ast/act_gp.pdf Graphic file (type pdf)
 <use figure/ast/act_gp.pdf>
 
-Overfull \hbox (3.67807pt too wide) in paragraph at lines 85--90
+Overfull \hbox (3.6439pt too wide) in paragraph at lines 85--90
 [][][][] 
  []
 
 
-Overfull \hbox (24.60576pt too wide) in paragraph at lines 79--92
+Overfull \hbox (22.89864pt too wide) in paragraph at lines 79--92
 []\TU/SongtiSCLight(1)/m/n/12.045 受 前 章 内 容 中 提 及 的 自 适 应 计 算 时 间 方 法  |（\TU/Ti
 mesNewRoman(0)/m/n/12.045 Adaptive Computation Time\TU/SongtiSCLight(1)/m/n/12.
 045 ，| \TU/TimesNewRoman(0)/m/n/12.045 ACT\TU/SongtiSCLight(1)/m/n/12.045 ）|$[]
@@ -2286,9 +2296,13 @@ File: figure/ast/backtrans_model.pdf Graphic file (type pdf)
 File: figure/ast/backtrans_curriculum.pdf Graphic file (type pdf)
 <use figure/ast/backtrans_curriculum.pdf>
  [28] [29] [30]
+Overfull \hbox (15.832pt too wide) in paragraph at lines 219--233
+ [][] 
+ []
+
 File: figure/ast/da_pipeline.pdf Graphic file (type pdf)
 <use figure/ast/da_pipeline.pdf>
- [31]
+[31]
 File: figure/ast/musicxml_exp.png Graphic file (type bmp)
 <figure/ast/musicxml_exp.png>
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.53937> not available
@@ -2296,21 +2310,21 @@ LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.53937> not available
 File: figure/ast/lyric_exp1.png Graphic file (type bmp)
 <figure/ast/lyric_exp1.png>
 
-Overfull \hbox (1.84222pt too wide) in paragraph at lines 265--265
+Overfull \hbox (1.82516pt too wide) in paragraph at lines 265--265
  [][] 
  []
 
 File: figure/ast/lyric_exp2.png Graphic file (type bmp)
 <figure/ast/lyric_exp2.png>
 
-Overfull \hbox (1.84222pt too wide) in paragraph at lines 269--269
+Overfull \hbox (1.82516pt too wide) in paragraph at lines 269--269
  [][] 
  []
 
 File: figure/ast/lyric_exp3.png Graphic file (type bmp)
 <figure/ast/lyric_exp3.png>
 
-Overfull \hbox (1.84222pt too wide) in paragraph at lines 273--274
+Overfull \hbox (1.82516pt too wide) in paragraph at lines 273--274
  [][] 
  []
 
@@ -2323,7 +2337,7 @@ File: figure/ast/hists/gagast_align_hist.pdf Graphic file (type pdf)
 File: figure/ast/hists/baseline_align_hist.pdf Graphic file (type pdf)
 <use figure/ast/hists/baseline_align_hist.pdf>
 
-Overfull \hbox (3.68445pt too wide) in paragraph at lines 445--449
+Overfull \hbox (3.65033pt too wide) in paragraph at lines 449--453
  [][][][] 
  []
 
@@ -2332,21 +2346,24 @@ File: figure/ast/hists/gagast_align_hist.pdf Graphic file (type pdf)
 File: figure/ast/hists/ltag_align_hist.pdf Graphic file (type pdf)
 <use figure/ast/hists/ltag_align_hist.pdf>
 
-Overfull \hbox (3.68445pt too wide) in paragraph at lines 460--464
+Overfull \hbox (3.65033pt too wide) in paragraph at lines 464--468
  [][][][] 
  []
 
-[37]
+[37] [38]
+
+LaTeX Warning: Text page 39 contains only floats.
+
+[39]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[38] [39] [40]
 File: figure/ast/analysis_cases/exp_en_1.pdf Graphic file (type pdf)
 <use figure/ast/analysis_cases/exp_en_1.pdf>
 File: figure/ast/analysis_cases/exp_zh_2.pdf Graphic file (type pdf)
 <use figure/ast/analysis_cases/exp_zh_2.pdf>
 
-Overfull \hbox (0.66682pt too wide) in paragraph at lines 482--482
+Overfull \hbox (0.63266pt too wide) in paragraph at lines 486--486
  [][] 
  []
 
@@ -2355,7 +2372,7 @@ File: figure/ast/analysis_cases/exp_gagast_zh_1.pdf Graphic file (type pdf)
 File: figure/ast/analysis_cases/exp_gagast_en_2.pdf Graphic file (type pdf)
 <use figure/ast/analysis_cases/exp_gagast_en_2.pdf>
 
-Overfull \hbox (4.85345pt too wide) in paragraph at lines 486--486
+Overfull \hbox (4.8364pt too wide) in paragraph at lines 490--490
  [][] 
  []
 
@@ -2364,7 +2381,7 @@ File: figure/ast/analysis_cases/exp_baseline_zh_1.pdf Graphic file (type pdf)
 File: figure/ast/analysis_cases/exp_baseline_en_2.pdf Graphic file (type pdf)
 <use figure/ast/analysis_cases/exp_baseline_en_2.pdf>
 
-Overfull \hbox (4.85345pt too wide) in paragraph at lines 490--490
+Overfull \hbox (4.8364pt too wide) in paragraph at lines 494--494
  [][] 
  []
 
@@ -2373,54 +2390,50 @@ File: figure/ast/analysis_cases/exp_LTAG_zh_1.pdf Graphic file (type pdf)
 File: figure/ast/analysis_cases/exp_LTAG_en_2.pdf Graphic file (type pdf)
 <use figure/ast/analysis_cases/exp_LTAG_en_2.pdf>
 
-Overfull \hbox (4.85345pt too wide) in paragraph at lines 494--494
+Overfull \hbox (4.8364pt too wide) in paragraph at lines 498--498
  [][] 
  []
 
+[40]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[41]) (./body/graduate/svs.tex [42] [43]
+[41] [42]) (./body/graduate/svs.tex [43
+
+]
 第4章
 File: figure/svs/diffusion-new.pdf Graphic file (type pdf)
 <use figure/svs/diffusion-new.pdf>
 [44
 
-] [45] [46] [47]
+] [45] [46]
 File: figure/svs/Encoder.pdf Graphic file (type pdf)
 <use figure/svs/Encoder.pdf>
 File: figure/svs/denoiser.pdf Graphic file (type pdf)
 <use figure/svs/denoiser.pdf>
 
-Overfull \hbox (7.85834pt too wide) in paragraph at lines 134--140
+Overfull \hbox (7.84123pt too wide) in paragraph at lines 134--140
  [][][][] 
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[48] [49]
+[47] [48] [49]
 File: figure/svs/model_a.pdf Graphic file (type pdf)
 <use figure/svs/model_a.pdf>
 File: figure/svs/model_b.pdf Graphic file (type pdf)
 <use figure/svs/model_b.pdf>
 
-Overfull \hbox (3.68445pt too wide) in paragraph at lines 165--173
+Overfull \hbox (3.65033pt too wide) in paragraph at lines 182--190
  [][][][] 
  []
 
 [50]
-File: figure/svs/auxiliary_decoder.pdf Graphic file (type pdf)
-<use figure/svs/auxiliary_decoder.pdf>
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 File: figure/svs/fake_real_mel.pdf Graphic file (type pdf)
 <use figure/svs/fake_real_mel.pdf>
 File: figure/svs/manifold.pdf Graphic file (type pdf)
 <use figure/svs/manifold.pdf>
-[51]
+File: figure/svs/auxiliary_decoder.pdf Graphic file (type pdf)
+<use figure/svs/auxiliary_decoder.pdf>
+ [51]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -2432,17 +2445,21 @@ Missing character: There is no ， ("FF0C) in font cmr12!
 Missing character: There is no ｛ ("FF5B) in font cmr12!
 Missing character: There is no ｛ ("FF5B) in font cmr12!
 Missing character: There is no ｝ ("FF5D) in font cmr12!
+[53]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[53] [54] [55]
-Missing character: There is no ＝ ("FF1D) in font cmr12!
+[54] [55]
+Overfull \hbox (1.13927pt too wide) in paragraph at lines 330--347
+ [][] 
+ []
+
 File: figure/svs/case_GT.png Graphic file (type bmp)
 <figure/svs/case_GT.png>
 File: figure/svs/case_diffmel.png Graphic file (type bmp)
 <figure/svs/case_diffmel.png>
 
-Overfull \hbox (3.68445pt too wide) in paragraph at lines 368--373
+Overfull \hbox (3.65033pt too wide) in paragraph at lines 382--387
  [][][][] 
  []
 
@@ -2451,17 +2468,9 @@ File: figure/svs/case_fsadv.png Graphic file (type bmp)
 File: figure/svs/case_fs2.png Graphic file (type bmp)
 <figure/svs/case_fs2.png>
 
-Overfull \hbox (3.68445pt too wide) in paragraph at lines 378--384
+Overfull \hbox (3.65033pt too wide) in paragraph at lines 392--398
  [][][][] 
  []
-
-
-Overfull \hbox (21.88995pt too wide) in paragraph at lines 415--444
- [] 
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [56]
 
@@ -2481,24 +2490,17 @@ File: figure/svs/pitch_range_delta.pdf Graphic file (type pdf)
 
 
 ]
-[65] [66]
+[65] [66] [67] [68]
 
 Package biblatex Warning: No driver for 'unknown'.
-(biblatex)                Using fallback driver on input line 4.
+(biblatex)                Using fallback driver on input line 3.
 
-[67]) (./body/graduate/post/cv.tex [68]) (./page/graduate/acknowledgement.tex
-[69
-
-
-]))
+[69] [70] [71]))
 
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 54.
 See the caption package documentation for explanation.
 
-[70
-
-
-] (out/zjuthesis.aux)
+[72] (out/zjuthesis.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.22pt have occurred.
@@ -2506,17 +2508,20 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package logreq Info: Writing requests to 'zjuthesis.run.xml'.
 \openout1 = `zjuthesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 58089 strings out of 475744
- 1409489 string characters out of 5799089
- 2306871 words of memory out of 5000000
- 78143 multiletter control sequences out of 15000+600000
- 494306 words of font info for 206 fonts, out of 8000000 for 9000
+ 58079 strings out of 475744
+ 1408059 string characters out of 5799089
+ 2303327 words of memory out of 5000000
+ 78140 multiletter control sequences out of 15000+600000
+ 494274 words of font info for 202 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  115i,18n,112p,1557b,5425s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on out/zjuthesis.xdv (83 pages, 1274460 bytes).
+Output written on out/zjuthesis.xdv (86 pages, 1280620 bytes).

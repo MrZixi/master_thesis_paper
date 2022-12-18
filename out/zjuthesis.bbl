@@ -112,8 +112,8 @@
       \strng{nameabibnamehash}{64f7d0ef0ee1e274ec24f498c9fb54e7}
       \strng{nameanamehash}{37d1a3948e32e74d452a5691a3bf629d}
       \strng{nameafullhash}{fc130ebd57effd7c629266452cf7445a}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This paper develops automatic song translation (AST) for tonal languages and addresses the unique challenge of aligning words{'} tones with melody of a song in addition to conveying the original meaning. We propose three criteria for effective AST{---}preserving meaning, singability and intelligibility{---}and design metrics for these criteria. We develop a new benchmark for English{--}Mandarin song translation and develop an unsupervised AST system, Guided AliGnment for Automatic Song Translation (GagaST), which combines pre-training with three decoding constraints. Both automatic and human evaluations show GagaST successfully balances semantics and singability.}
@@ -208,8 +208,8 @@
       \strng{nameabibnamehash}{57b2a8da24b71954850929557fee14f4}
       \strng{nameanamehash}{bccfac823933f3d789675b4ab92bcd5b}
       \strng{nameafullhash}{df020f6d61ec2d346a9379d381abc95d}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{arXiv preprint arXiv:1904.06868}
@@ -292,8 +292,8 @@
       \strng{nameanamehash}{926acc85eb4ed906f8e5942f740c7a0c}
       \strng{nameafullhash}{8b87c310623f14b42d4e2219662aefc4}
       \field{extraname}{1}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Proc. Interspeech 2019}
@@ -351,8 +351,8 @@
       \strng{nameanamehash}{3bae8ee1f7ab4ba0e7d45fb82926c3c8}
       \strng{nameafullhash}{46685d172f014029ba85054dacd00542}
       \field{extraname}{1}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}
@@ -447,8 +447,8 @@
       \strng{nameanamehash}{83c0adb0ed261b46f6ff68a84a99f5ac}
       \strng{nameafullhash}{ce1abbf76c418e8bf91bcf2a5ee3bc7d}
       \field{extraname}{1}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery \& Data Mining}
@@ -533,8 +533,8 @@
       \strng{nameanamehash}{5d5b4c9bc3b1ce6b147ffde98930492a}
       \strng{nameafullhash}{08f451dfff35a9158b0426bb72493119}
       \field{extraname}{1}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{arXiv preprint arXiv:2009.01776}
@@ -3595,8 +3595,8 @@
       \strng{nameabibnamehash}{545ba18a942dd729b1e7d18236a59424}
       \strng{nameanamehash}{dd9ccd196d428e13c858c52ff08d66cd}
       \strng{nameafullhash}{fe34079112d3b93a5d4b37876a2b86c0}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Interspeech}
@@ -3654,8 +3654,8 @@
       \strng{nameanamehash}{3bae8ee1f7ab4ba0e7d45fb82926c3c8}
       \strng{nameafullhash}{46685d172f014029ba85054dacd00542}
       \field{extraname}{2}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Applied Sciences}
@@ -3755,8 +3755,8 @@
       \strng{nameanamehash}{896a6d3c697219fbdd8fc6e1d0ffee46}
       \strng{nameafullhash}{779cc10526e8b9a7cce3e97804adb748}
       \field{extraname}{1}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{INTERSPEECH 2018}
@@ -3878,8 +3878,8 @@
       \strng{nameabibnamehash}{f303bf74cf15b4546a90b4b9bea924d5}
       \strng{nameanamehash}{0ca374a10ca756401f62c5b3d6336458}
       \strng{nameafullhash}{69ad7df1986e1a9f1b08d0fd9363c42f}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{arXiv preprint arXiv:2004.11012}
@@ -4766,8 +4766,8 @@
       \strng{nameanamehash}{8d4617b05e2f79838cb66a3e3cb5d42a}
       \strng{nameafullhash}{d28adcb153e4cfe417467e416ec8c9fa}
       \field{extraname}{2}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{langid}{english}
@@ -5334,8 +5334,8 @@
       \strng{nameanamehash}{83c0adb0ed261b46f6ff68a84a99f5ac}
       \strng{nameafullhash}{ab3e65e21b48ecb82643437cd3db93bb}
       \field{extraname}{2}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Advances in Neural Information Processing Systems}
@@ -6436,6 +6436,135 @@
       \range{pages}{5}
       \keyw{mcauliffe2017montreal}
     \endentry
+    \entry{opencpop}{inproceedings}{}
+      \name{author}{9}{}{%
+        {{hash=b2eccb185095fccfeb40fdffd8b2105f}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yu},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=72f078df93f789c4dcb444c8d7460682}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Xinsheng},
+           giveni={X\bibinitperiod}}}%
+        {{hash=ee99673048309b4c99ab551b4a11e065}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Pengcheng},
+           giveni={P\bibinitperiod}}}%
+        {{hash=d14d813400632d1540675e5edb94d60a}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Jie},
+           giveni={J\bibinitperiod}}}%
+        {{hash=5f99c077cdc953309d9a76d08dd63940}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Hanzhao},
+           giveni={H\bibinitperiod}}}%
+        {{hash=327132c48f68f15ec846ca44af54c4dc}{%
+           family={Xue},
+           familyi={X\bibinitperiod},
+           given={Heyang},
+           giveni={H\bibinitperiod}}}%
+        {{hash=a811d3f055307b36bd6aa1f02f199d6f}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yongmao},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=d9501bb096bed7e71af1f43d9ee08d98}{%
+           family={Xie},
+           familyi={X\bibinitperiod},
+           given={Lei},
+           giveni={L\bibinitperiod}}}%
+        {{hash=6c939fff268dd91573c477f838df5d07}{%
+           family={Bi},
+           familyi={B\bibinitperiod},
+           given={Mengxiao},
+           giveni={M\bibinitperiod}}}%
+      }
+      \name{namea}{9}{}{%
+        {{hash=b2eccb185095fccfeb40fdffd8b2105f}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yu},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=72f078df93f789c4dcb444c8d7460682}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Xinsheng},
+           giveni={X\bibinitperiod}}}%
+        {{hash=ee99673048309b4c99ab551b4a11e065}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Pengcheng},
+           giveni={P\bibinitperiod}}}%
+        {{hash=d14d813400632d1540675e5edb94d60a}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Jie},
+           giveni={J\bibinitperiod}}}%
+        {{hash=5f99c077cdc953309d9a76d08dd63940}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Hanzhao},
+           giveni={H\bibinitperiod}}}%
+        {{hash=327132c48f68f15ec846ca44af54c4dc}{%
+           family={Xue},
+           familyi={X\bibinitperiod},
+           given={Heyang},
+           giveni={H\bibinitperiod}}}%
+        {{hash=a811d3f055307b36bd6aa1f02f199d6f}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yongmao},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=d9501bb096bed7e71af1f43d9ee08d98}{%
+           family={Xie},
+           familyi={X\bibinitperiod},
+           given={Lei},
+           giveni={L\bibinitperiod}}}%
+        {{hash=6c939fff268dd91573c477f838df5d07}{%
+           family={Bi},
+           familyi={B\bibinitperiod},
+           given={Mengxiao},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{732f5c87479ec410ccda984af68db0bf}
+      \strng{fullhash}{16f09538a45d6cb4b2d7735437692ec8}
+      \strng{bibnamehash}{b04bd8d2de39b7502745bc46dd10cb88}
+      \strng{authorbibnamehash}{b04bd8d2de39b7502745bc46dd10cb88}
+      \strng{authornamehash}{732f5c87479ec410ccda984af68db0bf}
+      \strng{authorfullhash}{16f09538a45d6cb4b2d7735437692ec8}
+      \strng{nameabibnamehash}{b04bd8d2de39b7502745bc46dd10cb88}
+      \strng{nameanamehash}{732f5c87479ec410ccda984af68db0bf}
+      \strng{nameafullhash}{16f09538a45d6cb4b2d7735437692ec8}
+      \field{extraname}{3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proc. Interspeech 2022}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{{Opencpop: A High-Quality Open Source Chinese Popular Song Corpus for Singing Voice Synthesis}}
+      \field{usera}{C}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{pages}{4242\bibrangedash 4246}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.21437/Interspeech.2022-48
+      \endverb
+      \keyw{opencpop}
+    \endentry
     \entry{diffsinger}{inproceedings}{}
       \name{author}{5}{}{%
         {{hash=52aa7046d8674d79fca5b103c3d5d772}{%
@@ -6732,7 +6861,7 @@
       \strng{nameabibnamehash}{02708aefd5a1c1ff4e190788e4e68c35}
       \strng{nameanamehash}{aeaae95a3851acdb0d7c761eee05b973}
       \strng{nameafullhash}{02708aefd5a1c1ff4e190788e4e68c35}
-      \field{extraname}{3}
+      \field{extraname}{4}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}

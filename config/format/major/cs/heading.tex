@@ -112,11 +112,11 @@
         }
 
         \renewcommand{\chapternonum}[1]
-        {
+        {   % for bibliography title
             \phantomsection
             \addcontentsline{toc}{chapter}{#1}
             \markboth{#1}{#1}
-            \chapter*{\bfseries \heiti #1}
+            \chapter*{\bfseries \songti #1}
         }
 
         \renewcommand{\contentsname}    {目录}

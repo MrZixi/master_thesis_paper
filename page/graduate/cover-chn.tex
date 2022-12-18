@@ -1,14 +1,29 @@
 \thispagestyle{cover}
 \newgeometry{left=2.8cm,right=2.8cm,top=2.2cm,bottom=1cm,marginpar=0pt}
-\begin{center}
-    \zihao{-4} \songti
-    \begin{tabularx}{\textwidth}{l l >{\raggedleft}X l}
-        分类号：           & \underline{TP391}  &
-        单位代码：         & \uline{\hfill 10335 \hfill} \\
-        密{\quad}级：      & \underline{\hfill ~~无~~ \hfill} &
-        学{\quad\quad}号： & \underline{\StudentID}
-    \end{tabularx}
-\end{center}
+\ifthenelse{\equal{\BlindReview}{true}}
+{
+  \begin{center}
+      \zihao{-4} \songti
+      \begin{tabularx}{\textwidth}{l l >{\raggedleft}X l}
+          分类号：           & \underline{}  &
+          单位代码：         & \uline{\hfill  \hfill} \\
+          密{\quad}级：      & \underline{\hfill ~~无~~ \hfill} &
+          学{\quad\quad}号： & \underline{}
+      \end{tabularx}
+  \end{center}
+}
+{
+  \begin{center}
+      \zihao{-4} \songti
+      \begin{tabularx}{\textwidth}{l l >{\raggedleft}X l}
+          分类号：           & \underline{TP391}  &
+          单位代码：         & \uline{\hfill 10335 \hfill} \\
+          密{\quad}级：      & \underline{\hfill ~~无~~ \hfill} &
+          学{\quad\quad}号： & \underline{\StudentID}
+      \end{tabularx}
+  \end{center}
+}
+
 
 
 \begin{center}

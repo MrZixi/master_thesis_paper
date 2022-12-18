@@ -7,8 +7,9 @@
 \contentsline {table}{\numberline {3.4}{\ignorespaces 英文$\rightarrow $中文翻译方向测试集上对于歌曲翻译的可理解度（MOS-T）、翻译后歌曲的自然度、可唱性（MOS-S）和整体质量评估（MOS-T）的平均意见得分和95\%置信区间。\relax }}{39}{table.caption.34}%
 \contentsline {table}{\numberline {3.5}{\ignorespaces 中文$\rightarrow $英文翻译方向测试集上对于歌曲翻译的可理解度（MOS-T）、翻译后歌曲的自然度、可唱性（MOS-S）和整体质量评估（MOS-T）的平均意见得分和95\%置信区间。此翻译方向表示其评测时提供的翻译歌曲片段的音频样本是用未针对该目标语言训练的语音合成模型生成的。因此，这些结果仅供参考。\relax }}{39}{table.caption.35}%
 \addvspace {10.0pt}
-\contentsline {table}{\numberline {4.1}{\ignorespaces 95\%置信区间下的歌声样本人工评测的相对意见平均分数结果。\relax }}{57}{table.caption.47}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces 95\%置信区间下的歌声样本人工评测的相对意见平均分数结果。在所有实验中，最大扩散时间步$T$的值都为100。$C$是频道数；$L$ 是去噪模型的网络层数；$k=54$是在测试集上得到的浅扩散交汇点。\relax }}{58}{table.caption.48}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces 模型的参数量规模比较统计表。\relax }}{59}{table.caption.50}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces 适配组件对音素的发声基频F0和时长预测误差情况。\relax }}{60}{table.caption.52}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces 本章中所涉及的歌声合成数据统计情况。\relax }}{50}{table.caption.41}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces 95\%置信区间下的歌声样本人工评测的相对意见平均分数结果。\relax }}{57}{table.caption.48}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces 95\%置信区间下的歌声样本人工评测的相对意见平均分数结果。在所有实验中，最大扩散时间步$T$的值都为100。$C$是频道数；$L$ 是去噪模型的网络层数；$k=54$是在测试集上得到的浅扩散交汇点。\relax }}{58}{table.caption.49}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces 模型的参数量规模比较统计表。\relax }}{59}{table.caption.51}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces 适配组件对音素的发声基频F0和时长预测误差情况。\relax }}{60}{table.caption.53}%
 \addvspace {10.0pt}
